@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Solo Revestimentos - Home Opção A (Marca)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --solo-calcario: #E7DED2;
+      --solo-basalto: #2F2E2C;
+      --solo-argila: #C1B6A7;
+      --solo-terracota: #8F3B14;
+      --solo-ocre: #EBA253;
+      --solo-verde: #718A71;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Work Sans", Arial, sans-serif;
+      color: var(--solo-basalto);
+      background: var(--solo-calcario);
+    }
+
+    .topbar {
+      position: absolute;
+      z-index: 4;
+      top: 0;
+      left: 0;
+      right: 0;
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px clamp(24px, 5vw, 72px);
+      color: var(--solo-calcario);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+    }
+
+    .brand img {
+      height: 40px;
+      width: auto;
+    }
+
+    .nav {
+      display: flex;
+      gap: 24px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .nav a {
+      color: var(--solo-calcario);
+      text-decoration: none;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(47, 46, 44, 0.76) 0%,
+          rgba(47, 46, 44, 0.64) 44%,
+          rgba(47, 46, 44, 0.42) 100%
+        ),
+        url("assets/Anticatto.jpg") center / cover no-repeat;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 26vh;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(47, 46, 44, 0) 0%,
+          rgba(231, 222, 210, 0.95) 100%
+        );
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      width: min(1120px, calc(100% - 48px));
+      margin: 0 auto;
+      padding-top: 80px;
+    }
+
+    .hero-copy {
+      width: min(720px, 100%);
+      color: var(--solo-calcario);
+    }
+
+    .eyebrow {
+      margin: 0 0 16px;
+      font-size: 13px;
+      line-height: 1.2;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--solo-argila);
+      font-weight: 600;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 680px;
+      font-size: clamp(42px, 6.2vw, 76px);
+      line-height: 1.03;
+      font-weight: 600;
+      letter-spacing: 0;
+      color: var(--solo-calcario);
+    }
+
+    .subheadline {
+      max-width: 650px;
+      margin: 24px 0 0;
+      font-size: clamp(18px, 2.2vw, 25px);
+      line-height: 1.46;
+      color: var(--solo-calcario);
+      font-weight: 400;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 56px;
+      padding: 16px 32px;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-family: "Work Sans", Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      transition: background 160ms ease, color 160ms ease, border-color 160ms ease;
+    }
+
+    .button.primary {
+      background: var(--solo-calcario);
+      color: var(--solo-basalto);
+      border: 1px solid var(--solo-calcario);
+    }
+
+    .button.primary:hover,
+    .button.primary:focus {
+      background: var(--solo-terracota);
+      color: var(--solo-calcario);
+      border-color: var(--solo-terracota);
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--solo-calcario);
+      border: 1px solid var(--solo-argila);
+    }
+
+    .button.secondary:hover,
+    .button.secondary:focus {
+      background: var(--solo-argila);
+      color: var(--solo-basalto);
+      border-color: var(--solo-argila);
+    }
+
+    .support {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 24px 0 0;
+      color: var(--solo-argila);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    .support::before {
+      content: "";
+      flex: 0 0 40px;
+      height: 1px;
+      background: var(--solo-argila);
+    }
+
+    .products {
+      min-height: 55vh;
+      padding: 80px clamp(24px, 5vw, 72px);
+      background: var(--solo-calcario);
+    }
+
+    .products-inner {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+      display: grid;
+      gap: 16px;
+    }
+
+    .products-label {
+      margin: 0;
+      color: var(--solo-terracota);
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .products h2 {
+      margin: 0;
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.12;
+      font-weight: 600;
+      letter-spacing: 0;
+      max-width: 780px;
+    }
+
+    .products p {
+      margin: 0;
+      max-width: 760px;
+      font-size: 18px;
+      line-height: 1.65;
+      font-weight: 400;
+    }
+
+    @media (max-width: 720px) {
+      .topbar {
+        min-height: 64px;
+        padding: 16px 24px;
+      }
+
+      .brand img {
+        height: 32px;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .hero {
+        min-height: 100svh;
+        background-position: center;
+      }
+
+      .hero-inner {
+        width: min(100% - 48px, 640px);
+        padding-top: 64px;
+      }
+
+      .eyebrow {
+        font-size: 12px;
+      }
+
+      h1 {
+        font-size: clamp(38px, 11vw, 54px);
+        line-height: 1.05;
+      }
+
+      .subheadline {
+        font-size: 18px;
+      }
+
+      .actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .button {
+        width: 100%;
+        min-height: 56px;
+        padding: 16px 24px;
+        font-size: 13px;
+      }
+
+      .support {
+        align-items: flex-start;
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar" aria-label="Cabeçalho de preview">
+    <div class="brand"><img src="assets/SOLO_Logotipo-H_Calcario.svg" alt="Solo Revestimentos"></div>
+    <nav class="nav" aria-label="Navegacao de preview">
+      <a href="#produtos">Produtos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Primeira dobra proposta">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Curadoria em revestimentos, louças e metais</p>
+          <h1>Revestimentos escolhidos com critério para o seu projeto</h1>
+          <p class="subheadline">A Solo apoia clientes e arquitetos na escolha de revestimentos, louças e metais com curadoria, atendimento especializado e segurança para cada etapa da obra.</p>
+          <div class="actions" aria-label="Acoes principais">
+            <a class="button primary" href="https://wa.me/5519989133662?text=Oi!%20Estou%20no%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista.">Falar com um especialista</a>
+            <a class="button secondary" href="#produtos">Conhecer os produtos</a>
+          </div>
+          <p class="support">Showrooms em Campinas e Rio Claro. Atendimento consultivo para projetos residenciais de médio-alto padrão.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="products" id="produtos" aria-label="Produtos">
+      <div class="products-inner">
+        <p class="products-label">Produtos</p>
+        <h2>Explore linhas, marcas e acabamentos para especificar com mais segurança.</h2>
+        <p>Este bloco representa a seção atual de produtos da Home. No Elementor, o CTA secundário deve apontar para a seção ou página de produtos já existente, sem alterar a estrutura de URLs e sem mexer em /porcelanato.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

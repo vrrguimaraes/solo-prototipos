@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catálogo Curado — Solo Revestimentos</title>
+  <meta name="description" content="Explore revestimentos, louças e metais por categoria, ambiente, efeito e marca. Curadoria da Solo Revestimentos.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --solo-calcario: #E7DED2;
+      --solo-basalto: #2F2E2C;
+      --solo-argila: #C1B6A7;
+      --solo-terracota: #8F3B14;
+      --solo-ocre: #EBA253;
+      --solo-verde: #718A71;
+      --solo-calcario-rgb: 231, 222, 210;
+      --solo-basalto-rgb: 47, 46, 44;
+      --font: "Work Sans", Arial, sans-serif;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font); color: var(--solo-basalto); background: var(--solo-calcario); }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ─── Header (simplified, scrolled state) ─── */
+    .header {
+      position: sticky; top: 0; z-index: 100;
+      height: 72px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 clamp(24px, 5vw, 72px);
+      background: rgba(var(--solo-calcario-rgb), 0.94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(var(--solo-basalto-rgb), 0.06);
+    }
+    .header img { height: 32px; filter: brightness(0.2); }
+    .header nav { display: flex; gap: 28px; align-items: center; }
+    .header nav a {
+      font-size: 13px; font-weight: 500; letter-spacing: 0.04em;
+      text-transform: uppercase; color: var(--solo-basalto);
+      transition: color 0.2s;
+    }
+    .header nav a:hover { color: var(--solo-terracota); }
+    .header-cta {
+      font-size: 12px; font-weight: 600; letter-spacing: 0.06em;
+      text-transform: uppercase; padding: 10px 20px;
+      background: var(--solo-basalto); color: var(--solo-calcario);
+      border: 1px solid var(--solo-basalto); transition: all 0.28s var(--ease);
+    }
+    .header-cta:hover { background: var(--solo-terracota); border-color: var(--solo-terracota); }
+
+    /* ─── Breadcrumb ─── */
+    .breadcrumb {
+      padding: 24px clamp(24px, 5vw, 72px);
+      font-size: 13px; color: var(--solo-argila);
+    }
+    .breadcrumb a { transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--solo-basalto); }
+    .breadcrumb span { margin: 0 8px; opacity: 0.5; }
+
+    /* ─── Page Hero ─── */
+    .page-hero {
+      padding: 40px clamp(24px, 5vw, 72px) 64px;
+      max-width: 1344px; margin: 0 auto;
+    }
+    .page-hero h1 {
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 600; line-height: 1.06;
+      letter-spacing: -0.01em;
+    }
+    .page-hero p {
+      font-size: 18px; font-weight: 400; line-height: 1.6;
+      color: var(--solo-argila); max-width: 600px; margin-top: 16px;
+    }
+
+    /* ─── Filter Bar ─── */
+    .filter-bar {
+      position: sticky; top: 72px; z-index: 50;
+      padding: 16px clamp(24px, 5vw, 72px);
+      background: rgba(var(--solo-calcario-rgb), 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(var(--solo-basalto-rgb), 0.06);
+      display: flex; gap: 12px; flex-wrap: wrap; align-items: center;
+    }
+
+    .filter-group {
+      position: relative;
+    }
+
+    .filter-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 10px 20px;
+      font-family: var(--font); font-size: 13px; font-weight: 500;
+      letter-spacing: 0.02em;
+      background: transparent;
+      border: 1px solid rgba(var(--solo-basalto-rgb), 0.12);
+      color: var(--solo-basalto);
+      cursor: pointer; transition: all 0.2s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      border-color: var(--solo-basalto);
+      background: var(--solo-basalto);
+      color: var(--solo-calcario);
+    }
+    .filter-btn svg { width: 14px; height: 14px; }
+
+    .filter-dropdown {
+      position: absolute; top: calc(100% + 8px); left: 0;
+      min-width: 220px; padding: 8px;
+      background: var(--solo-calcario);
+      border: 1px solid rgba(var(--solo-basalto-rgb), 0.1);
+      box-shadow: 0 12px 40px rgba(var(--solo-basalto-rgb), 0.1);
+      display: none; z-index: 10;
+    }
+    .filter-group.open .filter-dropdown { display: block; }
+
+    .filter-option {
+      display: block; width: 100%;
+      padding: 10px 16px;
+      font-family: var(--font); font-size: 14px; font-weight: 400;
+      background: none; border: none; text-align: left;
+      color: var(--solo-basalto); cursor: pointer;
+      transition: background 0.15s;
+    }
+    .filter-option:hover { background: rgba(var(--solo-basalto-rgb), 0.04); }
+    .filter-option.selected {
+      font-weight: 600; color: var(--solo-terracota);
+    }
+
+    .filter-clear {
+      font-family: var(--font); font-size: 13px; font-weight: 500;
+      background: none; border: none; color: var(--solo-terracota);
+      cursor: pointer; padding: 10px 16px;
+      transition: opacity 0.2s;
+    }
+    .filter-clear:hover { opacity: 0.7; }
+
+    .filter-count {
+      margin-left: auto;
+      font-size: 14px; font-weight: 400; color: var(--solo-argila);
+    }
+
+    /* ─── Product Grid ─── */
+    .catalog-content {
+      max-width: 1344px; margin: 0 auto;
+      padding: 40px clamp(24px, 5vw, 72px) 120px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .product-card {
+      cursor: pointer;
+      transition: transform 0.3s var(--ease);
+    }
+    .product-card:hover { transform: translateY(-4px); }
+
+    .product-card-img {
+      position: relative;
+      aspect-ratio: 1;
+      overflow: hidden;
+      background: rgba(var(--solo-basalto-rgb), 0.04);
+    }
+    .product-card-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.6s var(--ease);
+    }
+    .product-card:hover .product-card-img img { transform: scale(1.06); }
+
+    .product-card-badge {
+      position: absolute; top: 16px; left: 16px;
+      padding: 6px 12px;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      background: var(--solo-basalto);
+      color: var(--solo-calcario);
+    }
+
+    .product-card-quick {
+      position: absolute; bottom: 16px; right: 16px;
+      width: 44px; height: 44px;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--solo-calcario);
+      opacity: 0; transform: translateY(8px);
+      transition: all 0.3s var(--ease);
+    }
+    .product-card:hover .product-card-quick {
+      opacity: 1; transform: translateY(0);
+    }
+
+    .product-card-info { padding: 16px 0; }
+
+    .product-card-category {
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--solo-terracota);
+      margin-bottom: 6px;
+    }
+
+    .product-card-name {
+      font-size: 17px; font-weight: 600;
+      letter-spacing: 0.01em;
+      line-height: 1.3;
+    }
+
+    .product-card-meta {
+      font-size: 14px; font-weight: 400;
+      color: var(--solo-argila);
+      margin-top: 4px;
+    }
+
+    /* ─── CTA Strip ─── */
+    .cta-strip {
+      grid-column: 1 / -1;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 40px 48px;
+      background: var(--solo-basalto);
+      color: var(--solo-calcario);
+      margin: 16px 0;
+    }
+    .cta-strip-text h3 {
+      font-size: 24px; font-weight: 600; margin-bottom: 4px;
+    }
+    .cta-strip-text p {
+      font-size: 15px; font-weight: 400;
+      color: rgba(var(--solo-calcario-rgb), 0.6);
+    }
+    .cta-strip .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 52px; padding: 14px 32px;
+      font-family: var(--font); font-size: 13px; font-weight: 600;
+      letter-spacing: 0.05em; text-transform: uppercase;
+      background: var(--solo-calcario); color: var(--solo-basalto);
+      border: 1px solid var(--solo-calcario);
+      transition: all 0.28s var(--ease);
+    }
+    .cta-strip .btn:hover {
+      background: var(--solo-terracota); color: var(--solo-calcario);
+      border-color: var(--solo-terracota);
+    }
+
+    /* ─── Footer (compact) ─── */
+    .footer {
+      padding: 40px clamp(24px, 5vw, 72px);
+      background: var(--solo-basalto);
+      color: rgba(var(--solo-calcario-rgb), 0.4);
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 13px;
+      border-top: 1px solid rgba(var(--solo-calcario-rgb), 0.06);
+    }
+    .footer img { height: 24px; opacity: 0.4; }
+
+    /* WhatsApp Float */
+    .whatsapp-float {
+      position: fixed; bottom: 24px; right: 24px; z-index: 90;
+      width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+      transition: transform 0.3s var(--ease);
+    }
+    .whatsapp-float:hover { transform: scale(1.08); }
+    .whatsapp-float svg { width: 28px; height: 28px; fill: #fff; }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 1024px) {
+      .product-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .header nav { display: none; }
+      .filter-bar { top: 72px; overflow-x: auto; flex-wrap: nowrap; }
+      .filter-count { display: none; }
+      .product-grid { grid-template-columns: 1fr; gap: 32px; }
+      .cta-strip { flex-direction: column; gap: 24px; text-align: center; padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <a href="home-completa.html"><img src="assets/SOLO_Logotipo-H_Calcario.svg" alt="Solo Revestimentos"></a>
+    <nav>
+      <a href="home-completa.html#ambientes">Ambientes</a>
+      <a href="catalogo.html">Catálogo</a>
+      <a href="arquitetos.html">Arquitetos</a>
+      <a href="showroom.html">Showroom</a>
+      <a href="https://wa.me/5519989133662?text=Oi!%20Gostaria%20de%20agendar%20uma%20visita." class="header-cta">Agendar Visita</a>
+    </nav>
+  </header>
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <a href="home-completa.html">Home</a>
+    <span>/</span>
+    <strong>Catálogo</strong>
+  </nav>
+
+  <!-- Page Hero -->
+  <div class="page-hero">
+    <h1>Catálogo Curado</h1>
+    <p>Revestimentos, louças e metais selecionados com critério. Explore por categoria, ambiente, efeito ou marca.</p>
+  </div>
+
+  <!-- Filter Bar -->
+  <div class="filter-bar" id="filterBar">
+    <div class="filter-group" data-filter="categoria">
+      <button class="filter-btn" onclick="toggleFilter(this)">
+        Categoria
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="filter-dropdown">
+        <button class="filter-option" onclick="selectFilter(this)">Porcelanatos</button>
+        <button class="filter-option" onclick="selectFilter(this)">Revestimentos Decorativos</button>
+        <button class="filter-option" onclick="selectFilter(this)">Cimentícios</button>
+        <button class="filter-option" onclick="selectFilter(this)">Cerâmica Rústica</button>
+        <button class="filter-option" onclick="selectFilter(this)">Pastilhas</button>
+        <button class="filter-option" onclick="selectFilter(this)">Pedra Natural</button>
+        <button class="filter-option" onclick="selectFilter(this)">Vinílicos</button>
+        <button class="filter-option" onclick="selectFilter(this)">Louças e Cubas</button>
+        <button class="filter-option" onclick="selectFilter(this)">Metais</button>
+        <button class="filter-option" onclick="selectFilter(this)">Rodapé e Boiserie</button>
+        <button class="filter-option" onclick="selectFilter(this)">Grandes Formatos</button>
+      </div>
+    </div>
+
+    <div class="filter-group" data-filter="efeito">
+      <button class="filter-btn" onclick="toggleFilter(this)">
+        Efeito
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="filter-dropdown">
+        <button class="filter-option" onclick="selectFilter(this)">Mármore</button>
+        <button class="filter-option" onclick="selectFilter(this)">Cimento</button>
+        <button class="filter-option" onclick="selectFilter(this)">Madeira</button>
+        <button class="filter-option" onclick="selectFilter(this)">Pedra</button>
+        <button class="filter-option" onclick="selectFilter(this)">Monocolor</button>
+        <button class="filter-option" onclick="selectFilter(this)">Artesanal</button>
+        <button class="filter-option" onclick="selectFilter(this)">3D</button>
+        <button class="filter-option" onclick="selectFilter(this)">Metalizado</button>
+      </div>
+    </div>
+
+    <div class="filter-group" data-filter="ambiente">
+      <button class="filter-btn" onclick="toggleFilter(this)">
+        Ambiente
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="filter-dropdown">
+        <button class="filter-option" onclick="selectFilter(this)">Banheiros</button>
+        <button class="filter-option" onclick="selectFilter(this)">Cozinhas</button>
+        <button class="filter-option" onclick="selectFilter(this)">Salas</button>
+        <button class="filter-option" onclick="selectFilter(this)">Áreas Gourmet</button>
+        <button class="filter-option" onclick="selectFilter(this)">Fachadas</button>
+        <button class="filter-option" onclick="selectFilter(this)">Piscinas</button>
+        <button class="filter-option" onclick="selectFilter(this)">Lavabos</button>
+        <button class="filter-option" onclick="selectFilter(this)">Varandas</button>
+      </div>
+    </div>
+
+    <div class="filter-group" data-filter="marca">
+      <button class="filter-btn" onclick="toggleFilter(this)">
+        Marca
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="filter-dropdown">
+        <button class="filter-option" onclick="selectFilter(this)">Villagres</button>
+        <button class="filter-option" onclick="selectFilter(this)">Portobello</button>
+        <button class="filter-option" onclick="selectFilter(this)">Porcelanosa</button>
+        <button class="filter-option" onclick="selectFilter(this)">Portinari</button>
+        <button class="filter-option" onclick="selectFilter(this)">Docol</button>
+        <button class="filter-option" onclick="selectFilter(this)">Ceusa</button>
+        <button class="filter-option" onclick="selectFilter(this)">Castelatto</button>
+        <button class="filter-option" onclick="selectFilter(this)">Tarkett</button>
+        <button class="filter-option" onclick="selectFilter(this)">Dune</button>
+      </div>
+    </div>
+
+    <div class="filter-group" data-filter="formato">
+      <button class="filter-btn" onclick="toggleFilter(this)">
+        Formato
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="filter-dropdown">
+        <button class="filter-option" onclick="selectFilter(this)">Grandes Formatos</button>
+        <button class="filter-option" onclick="selectFilter(this)">Externo / Antiderrapante</button>
+        <button class="filter-option" onclick="selectFilter(this)">Retificado</button>
+        <button class="filter-option" onclick="selectFilter(this)">Slim / Ultracompacto</button>
+      </div>
+    </div>
+
+    <button class="filter-clear" onclick="clearFilters()" style="display:none" id="clearBtn">Limpar filtros</button>
+    <span class="filter-count"><span id="resultCount">24</span> produtos</span>
+  </div>
+
+  <!-- Product Grid -->
+  <div class="catalog-content">
+    <div class="product-grid">
+
+      <a class="product-card" href="#">
+        <div class="product-card-img">
+          <img src="assets/villagres/Chronos-Petra.jpg" alt="Chronos Petra — Villagres" loading="lazy">
+          <span class="product-card-badge">Villagres</span>
+          <span class="product-card-quick">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2F2E2C" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-category">Porcelanato</p>
+          <p class="product-card-name">Chronos Petra</p>
+          <p class="product-card-meta">Efeito pedra &middot; 90x90cm</p>
+        </div>
+      </a>
+
+      <a class="product-card" href="#">
+        <div class="product-card-img">
+          <img src="assets/villagres/Elysium.jpg" alt="Elysium — Villagres" loading="lazy">
+          <span class="product-card-badge">Villagres</span>
+          <span class="product-card-quick">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2F2E2C" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-category">Porcelanato</p>
+          <p class="product-card-name">Elysium</p>
+          <p class="product-card-meta">Efeito mármore &middot; Grande formato</p>
+        </div>
+      </a>
+
+      <a class="product-card" href="#">
+        <div class="product-card-img">
+          <img src="assets/villagres/Chronos-Petra.jpg" alt="Chronos Petra — Villagres" loading="lazy">
+          <span class="product-card-badge">Villagres</span>
+          <span class="product-card-quick">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2F2E2C" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-category">Porcelanato</p>
+          <p class="product-card-name">Chronos Petra</p>
+          <p class="product-card-meta">Efeito pedra &middot; 90x90cm</p>
+        </div>
+      </a>
+
+      <a class="product-card" href="#">
+        <div class="product-card-img">
+          <img src="assets/villagres/Hannover.jpg" alt="Hannover — Villagres" loading="lazy">
+          <span class="product-card-badge">Villagres</span>
+          <span class="product-card-quick">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2F2E2C" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-category">Porcelanato</p>
+          <p class="product-card-name">Hannover</p>
+          <p class="product-card-meta">Efeito cimento &middot; 80x80cm</p>
+        </div>
+      </a>
+
+      <a class="product-card" href="#">
+        <div class="product-card-img">
+          <img src="assets/villagres/Pantheon.jpg" alt="Pantheon — Villagres" loading="lazy">
+          <span class="product-card-badge">Villagres</span>
+          <span class="product-card-quick">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2F2E2C" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-category">Porcelanato</p>
+          <p class="product-card-name">Pantheon</p>
+          <p class="product-card-meta">Efeito mármore &middot; 120x120cm</p>
+        </div>
+      </a>
+
+      <a class="product-card" href="#">
+        <div class="product-card-img">
+          <img src="assets/villagres/Spazio.jpg" alt="Spazio — Villagres" loading="lazy">
+          <span class="product-card-badge">Villagres</span>
+          <span class="product-card-quick">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2F2E2C" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-category">Porcelanato</p>
+          <p class="product-card-name">Spazio</p>
+          <p class="product-card-meta">Efeito cimento &middot; Grande formato</p>
+        </div>
+      </a>
+
+      <!-- CTA Strip after 6 products -->
+      <div class="cta-strip">
+        <div class="cta-strip-text">
+          <h3>Precisa de ajuda para especificar?</h3>
+          <p>Nossa equipe orienta a escolha do material ideal para cada ambiente.</p>
+        </div>
+        <a class="btn" href="https://wa.me/5519989133662?text=Oi!%20Estou%20vendo%20o%20catálogo%20e%20gostaria%20de%20ajuda%20para%20especificar.">Falar com especialista</a>
+      </div>
+
+      <a class="product-card" href="#">
+        <div class="product-card-img">
+          <img src="assets/villagres/Montserrat-Terra.jpg" alt="Montserrat Terra — Villagres" loading="lazy">
+          <span class="product-card-badge">Villagres</span>
+          <span class="product-card-quick">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2F2E2C" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-category">Revestimento</p>
+          <p class="product-card-name">Montserrat Terra</p>
+          <p class="product-card-meta">Efeito pedra natural &middot; Fachada</p>
+        </div>
+      </a>
+
+      <a class="product-card" href="#">
+        <div class="product-card-img">
+          <img src="assets/villagres/Paraíso-ambeiente.jpg" alt="Paraíso Ambiente — Villagres" loading="lazy">
+          <span class="product-card-badge">Villagres</span>
+          <span class="product-card-quick">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2F2E2C" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-category">Revestimento</p>
+          <p class="product-card-name">Paraíso</p>
+          <p class="product-card-meta">Revestimento vidrado &middot; Cozinha</p>
+        </div>
+      </a>
+
+      <a class="product-card" href="#">
+        <div class="product-card-img">
+          <img src="assets/villagres/Serenità-Decor.jpg" alt="Serenità Decor" loading="lazy">
+          <span class="product-card-badge">Villagres</span>
+          <span class="product-card-quick">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2F2E2C" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-category">Porcelanato</p>
+          <p class="product-card-name">Serenità Decor</p>
+          <p class="product-card-meta">Efeito mármore &middot; Polido</p>
+        </div>
+      </a>
+
+      <a class="product-card" href="#">
+        <div class="product-card-img">
+          <img src="assets/villagres/Living-Off-White.jpg" alt="Living Off White" loading="lazy">
+          <span class="product-card-badge">Villagres</span>
+          <span class="product-card-quick">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2F2E2C" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-category">Porcelanato</p>
+          <p class="product-card-name">Living Off White</p>
+          <p class="product-card-meta">Monocolor &middot; 80x80cm</p>
+        </div>
+      </a>
+
+      <a class="product-card" href="#">
+        <div class="product-card-img">
+          <img src="assets/villagres/Living-Silver.jpg" alt="Living Silver" loading="lazy">
+          <span class="product-card-badge">Villagres</span>
+          <span class="product-card-quick">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2F2E2C" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-category">Porcelanato</p>
+          <p class="product-card-name">Living Silver</p>
+          <p class="product-card-meta">Monocolor &middot; 80x80cm</p>
+        </div>
+      </a>
+
+      <a class="product-card" href="#">
+        <div class="product-card-img">
+          <img src="assets/villagres/lillejatobá-ste.jpg" alt="Lillejatobá — Villagres" loading="lazy">
+          <span class="product-card-badge">Villagres</span>
+          <span class="product-card-quick">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2F2E2C" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-category">Porcelanato</p>
+          <p class="product-card-name">Lillejatobá</p>
+          <p class="product-card-meta">Efeito madeira &middot; 20x120cm</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <img src="assets/SOLO_Logotipo-H_Calcario.svg" alt="Solo Revestimentos">
+    <span>&copy; 2026 Solo Revestimentos</span>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a class="whatsapp-float" href="https://wa.me/5519989133662?text=Oi!%20Estou%20no%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista." aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script>
+    function toggleFilter(btn) {
+      const group = btn.closest('.filter-group');
+      const wasOpen = group.classList.contains('open');
+      document.querySelectorAll('.filter-group').forEach(g => g.classList.remove('open'));
+      if (!wasOpen) group.classList.add('open');
+    }
+
+    function selectFilter(option) {
+      option.classList.toggle('selected');
+      const btn = option.closest('.filter-group').querySelector('.filter-btn');
+      const selected = option.closest('.filter-dropdown').querySelectorAll('.selected');
+      if (selected.length > 0) {
+        btn.classList.add('active');
+        btn.childNodes[0].textContent = Array.from(selected).map(s => s.textContent).join(', ') + ' ';
+      } else {
+        btn.classList.remove('active');
+        btn.childNodes[0].textContent = option.closest('.filter-group').dataset.filter.charAt(0).toUpperCase() + option.closest('.filter-group').dataset.filter.slice(1) + ' ';
+      }
+      document.getElementById('clearBtn').style.display = document.querySelectorAll('.filter-option.selected').length ? 'block' : 'none';
+    }
+
+    function clearFilters() {
+      document.querySelectorAll('.filter-option.selected').forEach(o => o.classList.remove('selected'));
+      document.querySelectorAll('.filter-btn.active').forEach(b => {
+        b.classList.remove('active');
+        b.childNodes[0].textContent = b.closest('.filter-group').dataset.filter.charAt(0).toUpperCase() + b.closest('.filter-group').dataset.filter.slice(1) + ' ';
+      });
+      document.getElementById('clearBtn').style.display = 'none';
+    }
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.filter-group')) {
+        document.querySelectorAll('.filter-group').forEach(g => g.classList.remove('open'));
+      }
+    });
+  </script>
+</body>
+</html>

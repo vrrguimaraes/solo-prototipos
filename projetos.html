@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projetos e Cases — Solo Revestimentos</title>
+  <meta name="description" content="Veja projetos reais realizados com os materiais da Solo Revestimentos. Fotos, produtos utilizados e arquitetos responsáveis.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--solo-calcario:#E7DED2;--solo-basalto:#2F2E2C;--solo-argila:#C1B6A7;--solo-terracota:#8F3B14;--solo-ocre:#EBA253;--solo-verde:#718A71;--solo-calcario-rgb:231,222,210;--solo-basalto-rgb:47,46,44;--font:"Work Sans",Arial,sans-serif;--ease:cubic-bezier(0.22,1,0.36,1)}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+    body{font-family:var(--font);color:var(--solo-basalto);background:var(--solo-calcario);overflow-x:hidden}
+    img{display:block;max-width:100%;height:auto}a{color:inherit;text-decoration:none}
+    .header{position:sticky;top:0;z-index:100;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(24px,5vw,72px);background:rgba(var(--solo-calcario-rgb),0.94);backdrop-filter:blur(16px);border-bottom:1px solid rgba(var(--solo-basalto-rgb),0.06)}
+    .header img{height:32px;filter:brightness(0.2)}.header nav{display:flex;gap:28px;align-items:center}
+    .header nav a{font-size:13px;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;transition:color 0.2s}.header nav a:hover{color:var(--solo-terracota)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:16px 40px;font-family:var(--font);font-size:13px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;border:1px solid;transition:all 0.28s var(--ease);cursor:pointer}
+    .btn-primary{background:var(--solo-basalto);color:var(--solo-calcario);border-color:var(--solo-basalto)}.btn-primary:hover{background:var(--solo-terracota);border-color:var(--solo-terracota)}
+    .btn-light{background:var(--solo-calcario);color:var(--solo-basalto);border-color:var(--solo-calcario)}.btn-light:hover{background:var(--solo-terracota);color:var(--solo-calcario);border-color:var(--solo-terracota)}
+    .btn-ghost{background:transparent;color:var(--solo-calcario);border-color:rgba(var(--solo-calcario-rgb),0.3)}.btn-ghost:hover{background:rgba(var(--solo-calcario-rgb),0.1);border-color:var(--solo-calcario)}
+    .reveal{opacity:0;transform:translateY(32px);transition:opacity 0.7s var(--ease),transform 0.7s var(--ease)}.reveal.visible{opacity:1;transform:translateY(0)}
+
+    /* Page Hero */
+    .page-hero{padding:64px clamp(24px,5vw,72px) 40px;max-width:1344px;margin:0 auto}
+    .page-hero-eyebrow{font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--solo-terracota);margin-bottom:16px}
+    .page-hero h1{font-size:clamp(36px,5vw,64px);font-weight:600;line-height:1.06;letter-spacing:-0.01em;max-width:780px}
+    .page-hero p{font-size:18px;font-weight:400;line-height:1.6;color:var(--solo-argila);max-width:600px;margin-top:16px}
+
+    /* Projects Grid */
+    .projects{padding:40px clamp(24px,5vw,72px) 120px;max-width:1344px;margin:0 auto}
+
+    .project-card{display:grid;grid-template-columns:1.2fr 1fr;gap:0;margin-bottom:4px;overflow:hidden;cursor:pointer;background:var(--solo-basalto)}
+    .project-card:nth-child(even){direction:rtl}
+    .project-card:nth-child(even)>*{direction:ltr}
+
+    .project-card-image{position:relative;aspect-ratio:16/10;overflow:hidden;min-height:400px}
+    .project-card-image img{width:100%;height:100%;object-fit:cover;transition:transform 0.7s var(--ease)}
+    .project-card:hover .project-card-image img{transform:scale(1.04)}
+
+    .project-card-content{display:flex;flex-direction:column;justify-content:center;padding:48px clamp(32px,4vw,64px);color:var(--solo-calcario)}
+    .project-card-eyebrow{font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--solo-ocre);margin-bottom:16px}
+    .project-card-title{font-size:clamp(24px,3vw,36px);font-weight:600;line-height:1.1;margin-bottom:16px}
+    .project-card-desc{font-size:16px;font-weight:400;line-height:1.6;color:rgba(var(--solo-calcario-rgb),0.65);margin-bottom:24px}
+
+    .project-card-meta{display:flex;flex-direction:column;gap:12px;margin-bottom:32px}
+    .project-card-meta-item{display:flex;gap:8px;font-size:14px;color:rgba(var(--solo-calcario-rgb),0.5)}
+    .project-card-meta-item strong{color:rgba(var(--solo-calcario-rgb),0.8);font-weight:600}
+
+    .project-card-products{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+    .project-card-tag{padding:6px 14px;font-size:12px;font-weight:500;letter-spacing:0.04em;border:1px solid rgba(var(--solo-calcario-rgb),0.15);color:rgba(var(--solo-calcario-rgb),0.7);transition:border-color 0.2s}
+    .project-card:hover .project-card-tag{border-color:rgba(var(--solo-calcario-rgb),0.3)}
+
+    /* CTA */
+    .cta-final{padding:120px clamp(24px,5vw,72px);background:var(--solo-basalto);color:var(--solo-calcario);text-align:center}
+    .cta-final h2{font-size:clamp(32px,4vw,52px);font-weight:600;line-height:1.06;max-width:680px;margin:0 auto 16px}
+    .cta-final p{font-size:18px;font-weight:400;line-height:1.6;color:rgba(var(--solo-calcario-rgb),0.6);max-width:520px;margin:0 auto 40px}
+    .cta-final-actions{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+
+    .footer{padding:40px clamp(24px,5vw,72px);background:var(--solo-basalto);color:rgba(var(--solo-calcario-rgb),0.4);display:flex;justify-content:space-between;align-items:center;font-size:13px;border-top:1px solid rgba(var(--solo-calcario-rgb),0.06)}
+    .footer img{height:24px;opacity:0.4}
+    .whatsapp-float{position:fixed;bottom:24px;right:24px;z-index:90;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(0,0,0,0.18);transition:transform 0.3s var(--ease)}.whatsapp-float:hover{transform:scale(1.08)}.whatsapp-float svg{width:28px;height:28px;fill:#fff}
+
+    @media(max-width:768px){.header nav{display:none}.project-card{grid-template-columns:1fr}.project-card:nth-child(even){direction:ltr}.project-card-image{min-height:280px;aspect-ratio:16/9}}
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <a href="home-completa.html"><img src="assets/SOLO_Logotipo-H_Calcario.svg" alt="Solo Revestimentos"></a>
+    <nav>
+      <a href="home-completa.html#ambientes">Ambientes</a>
+      <a href="catalogo.html">Catálogo</a>
+      <a href="arquitetos.html">Arquitetos</a>
+      <a href="showroom.html">Showroom</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <div class="page-hero">
+      <p class="page-hero-eyebrow reveal">Projetos</p>
+      <h1 class="reveal">Obras reais com materiais da Solo</h1>
+      <p class="reveal">Conheça projetos residenciais e comerciais realizados com nossa curadoria. Cada case mostra os produtos utilizados e o resultado final.</p>
+    </div>
+
+    <div class="projects">
+
+      <article class="project-card reveal">
+        <div class="project-card-image">
+          <img src="assets/villagres/Spazio.jpg" alt="Projeto Residencial — Bairro Cambuí" loading="lazy">
+        </div>
+        <div class="project-card-content">
+          <p class="project-card-eyebrow">Residencial</p>
+          <h2 class="project-card-title">Residência Cambuí</h2>
+          <p class="project-card-desc">Reforma completa de apartamento de 180m2 com especificação de porcelanatos para áreas sociais e louças/metais para banheiros.</p>
+          <div class="project-card-meta">
+            <div class="project-card-meta-item"><strong>Arquiteta:</strong> Fernanda Lopes</div>
+            <div class="project-card-meta-item"><strong>Local:</strong> Campinas, SP</div>
+            <div class="project-card-meta-item"><strong>Área:</strong> 180m2</div>
+          </div>
+          <div class="project-card-products">
+            <span class="project-card-tag">Spazio — Villagres</span>
+            <span class="project-card-tag">Docol Metais</span>
+            <span class="project-card-tag">Doka Louças</span>
+          </div>
+          <a class="btn btn-light" href="https://wa.me/5519989133662?text=Oi!%20Vi%20o%20projeto%20Residência%20Cambuí%20no%20site%20e%20gostaria%20de%20saber%20mais.">Quero algo assim</a>
+        </div>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-card-image">
+          <img src="assets/villagres/Elysium.jpg" alt="Projeto Residencial — Condomínio Alphaville" loading="lazy">
+        </div>
+        <div class="project-card-content">
+          <p class="project-card-eyebrow">Residencial</p>
+          <h2 class="project-card-title">Casa Alphaville</h2>
+          <p class="project-card-desc">Construção nova com curadoria completa de revestimentos. Grandes formatos nas áreas sociais e porcelanatos efeito madeira na varanda.</p>
+          <div class="project-card-meta">
+            <div class="project-card-meta-item"><strong>Arquiteto:</strong> Ricardo Mendes</div>
+            <div class="project-card-meta-item"><strong>Local:</strong> Campinas, SP</div>
+            <div class="project-card-meta-item"><strong>Área:</strong> 320m2</div>
+          </div>
+          <div class="project-card-products">
+            <span class="project-card-tag">Elysium — Villagres</span>
+            <span class="project-card-tag">Paraíso — Villagres</span>
+            <span class="project-card-tag">Kromma Metais</span>
+          </div>
+          <a class="btn btn-light" href="https://wa.me/5519989133662?text=Oi!%20Vi%20o%20projeto%20Casa%20Alphaville%20e%20gostaria%20de%20saber%20mais.">Quero algo assim</a>
+        </div>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-card-image">
+          <img src="assets/villagres/Montserrat-Terra.jpg" alt="Projeto Comercial — Clínica" loading="lazy">
+        </div>
+        <div class="project-card-content">
+          <p class="project-card-eyebrow">Comercial</p>
+          <h2 class="project-card-title">Clínica Dermatológica</h2>
+          <p class="project-card-desc">Projeto de interiores para clínica com foco em sofisticação e higienização. Revestimentos de fácil limpeza e metais assépticos.</p>
+          <div class="project-card-meta">
+            <div class="project-card-meta-item"><strong>Arquiteta:</strong> Ana Paula Souza</div>
+            <div class="project-card-meta-item"><strong>Local:</strong> Rio Claro, SP</div>
+            <div class="project-card-meta-item"><strong>Área:</strong> 120m2</div>
+          </div>
+          <div class="project-card-products">
+            <span class="project-card-tag">Montserrat — Villagres</span>
+            <span class="project-card-tag">Docol Metais</span>
+            <span class="project-card-tag">Immersi Louças</span>
+          </div>
+          <a class="btn btn-light" href="https://wa.me/5519989133662?text=Oi!%20Vi%20o%20projeto%20da%20Clínica%20e%20gostaria%20de%20saber%20mais.">Quero algo assim</a>
+        </div>
+      </article>
+
+    </div>
+
+    <section class="cta-final">
+      <h2 class="reveal">Quer ver seu projeto aqui?</h2>
+      <p class="reveal">Fale com nossa equipe e comece a especificar os materiais para sua obra.</p>
+      <div class="cta-final-actions reveal">
+        <a class="btn btn-light" href="https://wa.me/5519989133662?text=Oi!%20Vi%20os%20projetos%20no%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista.">Falar com especialista</a>
+        <a class="btn btn-ghost" href="catalogo.html">Explorar catálogo</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer"><img src="assets/SOLO_Logotipo-H_Calcario.svg" alt="Solo"><span>&copy; 2026 Solo Revestimentos</span></footer>
+  <a class="whatsapp-float" href="https://wa.me/5519989133662?text=Oi!%20Estou%20no%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista." aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+  <script>const reveals=document.querySelectorAll('.reveal');const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});reveals.forEach(el=>obs.observe(el));</script>
+</body>
+</html>

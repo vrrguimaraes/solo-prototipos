@@ -1,0 +1,1532 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Solo Revestimentos — Curadoria em Revestimentos, Louças e Metais</title>
+  <meta name="description" content="Revestimentos escolhidos com critério para o seu projeto. Showrooms em Campinas e Rio Claro. Atendimento consultivo para projetos de médio-alto padrão.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* ═══════════════════════════════════════════
+       SOLO REVESTIMENTOS — Design System
+       Conceito: "Mineral Contemporâneo"
+       ═══════════════════════════════════════════ */
+
+    :root {
+      --solo-calcario: #E7DED2;
+      --solo-basalto: #2F2E2C;
+      --solo-argila: #C1B6A7;
+      --solo-terracota: #8F3B14;
+      --solo-ocre: #EBA253;
+      --solo-verde: #718A71;
+
+      --solo-calcario-rgb: 231, 222, 210;
+      --solo-basalto-rgb: 47, 46, 44;
+
+      --font: "Work Sans", Arial, sans-serif;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+      --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font);
+      color: var(--solo-basalto);
+      background: var(--solo-calcario);
+      overflow-x: hidden;
+    }
+
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ─── Utility ─── */
+    .container {
+      width: min(1200px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--solo-terracota);
+      margin-bottom: 16px;
+    }
+
+    .section-heading {
+      font-size: clamp(32px, 4.5vw, 56px);
+      font-weight: 600;
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      max-width: 780px;
+    }
+
+    .section-sub {
+      font-size: clamp(16px, 1.8vw, 20px);
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--solo-argila);
+      max-width: 640px;
+      margin-top: 16px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 56px;
+      padding: 16px 40px;
+      font-family: var(--font);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid;
+      transition: all 280ms var(--ease);
+      cursor: pointer;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background: var(--solo-basalto);
+      color: var(--solo-calcario);
+      border-color: var(--solo-basalto);
+    }
+    .btn-primary:hover {
+      background: var(--solo-terracota);
+      border-color: var(--solo-terracota);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--solo-basalto);
+      border-color: var(--solo-argila);
+    }
+    .btn-secondary:hover {
+      background: var(--solo-basalto);
+      color: var(--solo-calcario);
+      border-color: var(--solo-basalto);
+    }
+
+    .btn-light {
+      background: var(--solo-calcario);
+      color: var(--solo-basalto);
+      border-color: var(--solo-calcario);
+    }
+    .btn-light:hover {
+      background: var(--solo-terracota);
+      color: var(--solo-calcario);
+      border-color: var(--solo-terracota);
+    }
+
+    .btn-hero-cta {
+      background: var(--solo-terracota);
+      color: var(--solo-calcario);
+      border-color: var(--solo-terracota);
+      font-size: 15px;
+      padding: 20px 48px;
+      min-height: 64px;
+      position: relative;
+      box-shadow: 0 4px 24px rgba(143, 59, 20, 0.35);
+    }
+    .btn-hero-cta:hover {
+      background: var(--solo-calcario);
+      color: var(--solo-basalto);
+      border-color: var(--solo-calcario);
+      box-shadow: 0 4px 32px rgba(var(--solo-calcario-rgb), 0.3);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--solo-calcario);
+      border-color: rgba(var(--solo-calcario-rgb), 0.4);
+    }
+    .btn-ghost:hover {
+      background: rgba(var(--solo-calcario-rgb), 0.12);
+      border-color: var(--solo-calcario);
+    }
+
+    /* ─── Reveal Animation ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ═══════════════════════════════════════════
+       HEADER — Fixed, translucent
+       ═══════════════════════════════════════════ */
+    .header {
+      position: fixed;
+      z-index: 100;
+      top: 0; left: 0; right: 0;
+      padding: 0 clamp(24px, 5vw, 72px);
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 400ms var(--ease), box-shadow 400ms var(--ease);
+    }
+
+    .header.scrolled {
+      background: rgba(var(--solo-calcario-rgb), 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 1px 0 rgba(var(--solo-basalto-rgb), 0.06);
+    }
+
+    .header.scrolled .header-logo-light { display: none; }
+    .header.scrolled .header-logo-dark { display: block; }
+    .header.scrolled .nav a { color: var(--solo-basalto); }
+    .header.scrolled .nav a:hover { color: var(--solo-terracota); }
+    .header.scrolled .header-cta {
+      background: var(--solo-terracota);
+      color: var(--solo-calcario);
+      border-color: var(--solo-terracota);
+    }
+    .header.scrolled .header-cta:hover {
+      background: var(--solo-basalto);
+      color: var(--solo-calcario);
+      border-color: var(--solo-basalto);
+    }
+
+    .header-logo-light { height: 36px; }
+    .header-logo-dark { height: 36px; display: none; }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav a {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--solo-calcario);
+      transition: color 200ms;
+      position: relative;
+    }
+    .nav a:hover { color: var(--solo-ocre); }
+
+    .nav a::after {
+      content: "";
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 1px;
+      background: currentColor;
+      transition: width 300ms var(--ease);
+    }
+    .nav a:hover::after { width: 100%; }
+
+    .header-cta {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 12px 24px;
+      background: rgba(var(--solo-calcario-rgb), 0.15);
+      border: 1px solid rgba(var(--solo-calcario-rgb), 0.3);
+      color: var(--solo-calcario);
+      transition: all 280ms var(--ease);
+    }
+    .header-cta:hover {
+      background: var(--solo-terracota);
+      border-color: var(--solo-terracota);
+    }
+
+    /* Mobile menu */
+    .menu-toggle {
+      display: none;
+      background: none; border: none;
+      cursor: pointer; padding: 8px;
+    }
+    .menu-toggle span {
+      display: block; width: 24px; height: 2px;
+      background: var(--solo-calcario);
+      margin: 6px 0;
+      transition: all 300ms var(--ease);
+    }
+    .header.scrolled .menu-toggle span { background: var(--solo-basalto); }
+
+    /* ═══════════════════════════════════════════
+       HERO
+       ═══════════════════════════════════════════ */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: url("assets/Geral-Projeto-Lunar-Cerrado.jpg") center/cover no-repeat;
+    }
+
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(var(--solo-basalto-rgb), 0.78) 0%,
+        rgba(var(--solo-basalto-rgb), 0.58) 50%,
+        rgba(var(--solo-basalto-rgb), 0.42) 100%
+      );
+    }
+
+    .hero-fade {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 30vh;
+      background: linear-gradient(
+        180deg,
+        transparent 0%,
+        rgba(var(--solo-calcario-rgb), 0.9) 100%
+      );
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative; z-index: 2;
+      width: min(1200px, calc(100% - 48px));
+      margin: 0 auto;
+      padding-top: 120px;
+    }
+
+    .hero-copy { max-width: 740px; color: var(--solo-calcario); }
+
+    .hero-eyebrow {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--solo-argila);
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeUp 0.8s var(--ease) 0.2s forwards;
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 6vw, 80px);
+      font-weight: 600;
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      color: var(--solo-calcario);
+      opacity: 0;
+      animation: fadeUp 0.8s var(--ease) 0.4s forwards;
+    }
+
+    .hero-sub {
+      max-width: 620px;
+      margin-top: 24px;
+      font-size: clamp(17px, 2vw, 22px);
+      font-weight: 400;
+      line-height: 1.5;
+      color: rgba(var(--solo-calcario-rgb), 0.85);
+      opacity: 0;
+      animation: fadeUp 0.8s var(--ease) 0.6s forwards;
+    }
+
+    .hero-actions {
+      display: flex; flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 40px;
+      opacity: 0;
+      animation: fadeUp 0.8s var(--ease) 0.8s forwards;
+    }
+
+    .hero-micro {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 32px;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--solo-calcario);
+      opacity: 0;
+      animation: fadeUp 0.8s var(--ease) 1s forwards;
+    }
+    .hero-micro::before {
+      content: "";
+      flex: 0 0 40px;
+      height: 1px;
+      background: var(--solo-calcario);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ═══════════════════════════════════════════
+       POR QUE A SOLO — Value Proposition
+       ═══════════════════════════════════════════ */
+    .why {
+      padding: 120px 0;
+      background: var(--solo-calcario);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      margin-top: 64px;
+    }
+
+    .why-image {
+      position: relative;
+      aspect-ratio: 4/5;
+      overflow: hidden;
+    }
+    .why-image img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s var(--ease);
+    }
+    .why-image:hover img { transform: scale(1.03); }
+
+    .why-image::after {
+      content: "";
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 40%;
+      background: linear-gradient(transparent, rgba(var(--solo-basalto-rgb), 0.2));
+    }
+
+    .why-pillars { display: grid; gap: 48px; }
+
+    .pillar {
+      padding-left: 24px;
+      border-left: 2px solid var(--solo-terracota);
+    }
+
+    .pillar-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .pillar-text {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--solo-argila);
+    }
+
+    /* ═══════════════════════════════════════════
+       AMBIENTES — Inspirational Grid
+       ═══════════════════════════════════════════ */
+    .ambientes {
+      padding: 120px 0;
+      background: var(--solo-basalto);
+      color: var(--solo-calcario);
+    }
+
+    .ambientes .eyebrow { color: var(--solo-ocre); }
+    .ambientes .section-sub { color: rgba(var(--solo-calcario-rgb), 0.6); }
+
+    .ambientes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px;
+      margin-top: 56px;
+    }
+
+    .ambiente-card {
+      position: relative;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .ambiente-card:first-child {
+      grid-row: span 2;
+      aspect-ratio: auto;
+    }
+
+    .ambiente-card img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s var(--ease);
+    }
+    .ambiente-card:hover img { transform: scale(1.06); }
+
+    .ambiente-card-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        180deg,
+        transparent 40%,
+        rgba(var(--solo-basalto-rgb), 0.72) 100%
+      );
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 32px;
+      transition: background 0.4s;
+    }
+    .ambiente-card:hover .ambiente-card-overlay {
+      background: linear-gradient(
+        180deg,
+        transparent 20%,
+        rgba(var(--solo-basalto-rgb), 0.8) 100%
+      );
+    }
+
+    .ambiente-card-name {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: var(--solo-calcario);
+      transform: translateY(8px);
+      transition: transform 0.4s var(--ease);
+    }
+    .ambiente-card:hover .ambiente-card-name { transform: translateY(0); }
+
+    .ambiente-card-count {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--solo-argila);
+      margin-top: 4px;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: all 0.4s var(--ease) 0.05s;
+    }
+    .ambiente-card:hover .ambiente-card-count {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .ambientes-cta {
+      margin-top: 48px;
+      text-align: center;
+    }
+
+    /* ═══════════════════════════════════════════
+       MARCAS — Brand Partners
+       ═══════════════════════════════════════════ */
+    .marcas {
+      padding: 96px 0;
+      background: var(--solo-calcario);
+    }
+
+    .marcas-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 56px;
+    }
+
+    .marcas-carousel-wrapper {
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid rgba(var(--solo-basalto-rgb), 0.08);
+      border-bottom: 1px solid rgba(var(--solo-basalto-rgb), 0.08);
+      padding: 48px 0;
+    }
+
+    .marcas-track {
+      display: flex;
+      align-items: center;
+      gap: 64px;
+      animation: marcas-scroll 35s linear infinite;
+      width: max-content;
+    }
+
+    .marcas-carousel-wrapper:hover .marcas-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes marcas-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .marca-logo {
+      height: 28px;
+      width: auto;
+      max-width: 120px;
+      object-fit: contain;
+      flex-shrink: 0;
+      filter: grayscale(1) sepia(0.5) saturate(1.4) hue-rotate(-10deg) brightness(1.2) opacity(0.45);
+      transition: filter 0.35s var(--ease);
+    }
+    .marca-logo:hover {
+      filter: grayscale(1) brightness(0.2) opacity(1);
+    }
+
+    /* Villagres section removed */
+
+    /* ═══════════════════════════════════════════
+       CATÁLOGO — Product Categories
+       ═══════════════════════════════════════════ */
+    .catalogo {
+      padding: 120px 0;
+      background: var(--solo-calcario);
+    }
+
+    .catalogo-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 56px;
+    }
+
+    .catalogo-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .catalogo-card {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      background: var(--solo-basalto);
+    }
+
+    .catalogo-card-img {
+      aspect-ratio: 1;
+      overflow: hidden;
+    }
+    .catalogo-card-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s var(--ease), opacity 0.4s;
+    }
+    .catalogo-card:hover .catalogo-card-img img {
+      transform: scale(1.08);
+      opacity: 0.85;
+    }
+
+    .catalogo-card-info {
+      padding: 20px 24px;
+      background: var(--solo-basalto);
+      color: var(--solo-calcario);
+    }
+
+    .catalogo-card-name {
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .catalogo-card-count {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--solo-argila);
+      margin-top: 4px;
+    }
+
+    .catalogo-card-arrow {
+      position: absolute;
+      top: 16px; right: 16px;
+      width: 40px; height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(var(--solo-calcario-rgb), 0);
+      border-radius: 50%;
+      transition: all 0.3s var(--ease);
+      opacity: 0;
+      transform: translateX(-8px);
+    }
+    .catalogo-card:hover .catalogo-card-arrow {
+      opacity: 1;
+      transform: translateX(0);
+      background: rgba(var(--solo-calcario-rgb), 0.15);
+    }
+
+    /* ═══════════════════════════════════════════
+       ARQUITETOS — CTA Section
+       ═══════════════════════════════════════════ */
+    .arquitetos {
+      padding: 120px 0;
+      background: rgba(var(--solo-basalto-rgb), 0.03);
+    }
+
+    .arquitetos-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .arquitetos-content { max-width: 520px; }
+
+    .arquitetos-list {
+      display: grid;
+      gap: 24px;
+      margin: 32px 0 40px;
+    }
+
+    .arquitetos-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .arquitetos-icon {
+      flex: 0 0 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(var(--solo-basalto-rgb), 0.04);
+      border: 1px solid rgba(var(--solo-basalto-rgb), 0.08);
+    }
+
+    .arquitetos-item-text h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .arquitetos-item-text p {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--solo-argila);
+    }
+
+    .arquitetos-image {
+      position: relative;
+      aspect-ratio: 4/5;
+      overflow: hidden;
+    }
+    .arquitetos-image img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+
+    .arquitetos-image-badge {
+      position: absolute;
+      bottom: 32px; left: 32px;
+      background: var(--solo-basalto);
+      color: var(--solo-calcario);
+      padding: 16px 24px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.4;
+      max-width: 260px;
+    }
+    .arquitetos-image-badge strong {
+      display: block;
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 1;
+      margin-bottom: 4px;
+      color: var(--solo-ocre);
+    }
+
+    /* ═══════════════════════════════════════════
+       SHOWROOM — Visit CTA
+       ═══════════════════════════════════════════ */
+    .showroom {
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 640px;
+      background: var(--solo-basalto);
+      color: var(--solo-calcario);
+    }
+
+    .showroom-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px clamp(40px, 5vw, 96px);
+    }
+
+    .showroom .eyebrow { color: var(--solo-verde); }
+
+    .showroom-title {
+      font-size: clamp(32px, 3.5vw, 48px);
+      font-weight: 600;
+      line-height: 1.08;
+      margin-bottom: 24px;
+    }
+
+    .showroom-text {
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.6;
+      color: rgba(var(--solo-calcario-rgb), 0.7);
+      max-width: 440px;
+      margin-bottom: 32px;
+    }
+
+    .showroom-locations {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .showroom-loc {
+      padding: 24px;
+      border: 1px solid rgba(var(--solo-calcario-rgb), 0.1);
+    }
+
+    .showroom-loc-city {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .showroom-loc-address {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: rgba(var(--solo-calcario-rgb), 0.6);
+    }
+
+    .showroom-image {
+      position: relative;
+      overflow: hidden;
+    }
+    .showroom-image img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+
+    /* ═══════════════════════════════════════════
+       AVALIACOES — Social Proof
+       ═══════════════════════════════════════════ */
+    .avaliacoes {
+      padding: 96px 0;
+      background: var(--solo-calcario);
+    }
+
+    .avaliacoes-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .avaliacoes-header .section-heading,
+    .avaliacoes-header .section-sub { margin-inline: auto; }
+
+    .avaliacoes-stars {
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+      margin-bottom: 16px;
+    }
+
+    .avaliacoes-stars svg {
+      width: 24px; height: 24px;
+      fill: var(--solo-ocre);
+    }
+
+    .avaliacoes-score {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--solo-argila);
+      margin-bottom: 8px;
+    }
+
+    .avaliacoes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .avaliacao-card {
+      padding: 40px 32px;
+      border: 1px solid rgba(var(--solo-basalto-rgb), 0.06);
+      background: rgba(var(--solo-basalto-rgb), 0.015);
+      transition: border-color 0.3s;
+    }
+    .avaliacao-card:hover { border-color: var(--solo-argila); }
+
+    .avaliacao-quote {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.65;
+      font-style: italic;
+      color: var(--solo-basalto);
+      margin-bottom: 24px;
+    }
+
+    .avaliacao-author {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .avaliacao-role {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--solo-argila);
+      margin-top: 2px;
+    }
+
+    /* ═══════════════════════════════════════════
+       CTA FINAL
+       ═══════════════════════════════════════════ */
+    .cta-final {
+      padding: 120px 0;
+      background: var(--solo-basalto);
+      color: var(--solo-calcario);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-final::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("assets/patterns/SOLO_Pattern-S-4_Base.png") center/480px repeat;
+      opacity: 0.04;
+      pointer-events: none;
+    }
+
+    .cta-final .container { position: relative; z-index: 1; }
+
+    .cta-final .eyebrow { color: var(--solo-ocre); }
+
+    .cta-final .section-heading {
+      margin-inline: auto;
+      max-width: 680px;
+    }
+
+    .cta-final .section-sub {
+      margin-inline: auto;
+      color: rgba(var(--solo-calcario-rgb), 0.6);
+    }
+
+    .cta-final-actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .cta-final-micro {
+      margin-top: 24px;
+      font-size: 14px;
+      color: var(--solo-argila);
+    }
+
+    /* ═══════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════ */
+    .footer {
+      padding: 80px 0 40px;
+      background: var(--solo-basalto);
+      color: rgba(var(--solo-calcario-rgb), 0.5);
+      border-top: 1px solid rgba(var(--solo-calcario-rgb), 0.06);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.2fr 1.2fr;
+      gap: 40px;
+      margin-bottom: 64px;
+    }
+
+    .footer-brand-text {
+      font-size: 15px;
+      line-height: 1.6;
+      margin-top: 24px;
+      max-width: 320px;
+    }
+
+    .footer-col-title {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--solo-argila);
+      margin-bottom: 24px;
+    }
+
+    .footer-links { list-style: none; display: grid; gap: 12px; }
+
+    .footer-links a {
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--solo-calcario); }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 32px;
+      border-top: 1px solid rgba(var(--solo-calcario-rgb), 0.06);
+      font-size: 13px;
+    }
+
+    /* ═══════════════════════════════════════════
+       WhatsApp Floating Button
+       ═══════════════════════════════════════════ */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px; right: 24px;
+      z-index: 90;
+      width: 56px; height: 56px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+      transition: transform 0.3s var(--ease), box-shadow 0.3s;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 32px rgba(0,0,0,0.24);
+    }
+    .whatsapp-float svg { width: 28px; height: 28px; fill: #fff; }
+
+    /* ═══════════════════════════════════════════
+       RESPONSIVE
+       ═══════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .catalogo-grid { grid-template-columns: repeat(2, 1fr); }
+      .villagres { grid-template-columns: 1fr; }
+      .villagres-image img { min-height: 400px; }
+      .showroom { grid-template-columns: 1fr; }
+      .showroom-image { min-height: 400px; }
+      .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .header { height: 64px; }
+      .nav { display: none; }
+      .menu-toggle { display: block; }
+
+      .hero-inner { padding-top: 80px; }
+      .hero h1 { font-size: clamp(32px, 8vw, 48px); }
+      .hero-actions { display: grid; grid-template-columns: 1fr; }
+      .hero-actions .btn { width: 100%; }
+      .btn-hero-cta { font-size: 14px; padding: 18px 32px; min-height: 56px; }
+
+      .why-grid { grid-template-columns: 1fr; gap: 48px; }
+      .why-image { aspect-ratio: 16/10; }
+
+      .ambientes-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .ambiente-card:first-child { grid-row: auto; }
+      .ambiente-card { aspect-ratio: 1; }
+
+      .catalogo-grid { grid-template-columns: 1fr; }
+
+      .arquitetos-grid { grid-template-columns: 1fr; }
+      .arquitetos-image { order: -1; aspect-ratio: 16/10; }
+
+      .showroom-locations { grid-template-columns: 1fr; }
+
+      .avaliacoes-grid { grid-template-columns: 1fr; }
+
+      .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+      .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+    }
+
+    @media (max-width: 480px) {
+      .container { width: calc(100% - 40px); }
+      .villagres-lines { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="header" id="header">
+    <a href="/">
+      <img class="header-logo-light" src="assets/SOLO_Logotipo-H_Calcario.svg" alt="Solo Revestimentos">
+      <img class="header-logo-dark" src="assets/SOLO_Logotipo-H_Calcario.svg" alt="Solo Revestimentos" style="filter: brightness(0.2);">
+    </a>
+    <nav class="nav">
+      <a href="sobre.html">Sobre</a>
+      <a href="#ambientes">Ambientes</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#arquitetos">Arquitetos</a>
+      <a href="#showroom">Showroom</a>
+      <a href="https://wa.me/5519989133662?text=Oi!%20Estou%20no%20site%20e%20gostaria%20de%20agendar%20uma%20visita." class="header-cta">Agendar Visita</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-fade"></div>
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="hero-eyebrow">Curadoria em revestimentos, louças e metais</p>
+          <h1>Revestimentos escolhidos com critério para o seu projeto</h1>
+          <p class="hero-sub">A Solo apoia clientes e arquitetos na escolha de revestimentos, louças e metais com curadoria, atendimento especializado e segurança para cada etapa da obra.</p>
+          <div class="hero-actions">
+            <a class="btn btn-hero-cta" href="https://wa.me/5519989133662?text=Oi!%20Estou%20no%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista.">Falar com um especialista</a>
+            <a class="btn btn-ghost" href="#catalogo">Conhecer os produtos</a>
+          </div>
+          <p class="hero-micro">Showrooms em Campinas e Rio Claro. Atendimento consultivo para projetos residenciais de médio-alto padrão.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ POR QUE A SOLO ═══ -->
+    <section class="why" id="porque">
+      <div class="container">
+        <p class="eyebrow reveal">Por que a Solo</p>
+        <h2 class="section-heading reveal">Mais do que vender revestimentos, a Solo orienta escolhas.</h2>
+        <div class="why-grid">
+          <div class="why-image reveal">
+            <img src="assets/villagres/Spazio.jpg" alt="Showroom Solo Revestimentos — ambiente com revestimentos de alto padrão" loading="lazy">
+          </div>
+          <div class="why-pillars">
+            <div class="pillar reveal">
+              <h3 class="pillar-title">Curadoria criteriosa</h3>
+              <p class="pillar-text">Selecionamos marcas e linhas com critério estético e técnico. Cada produto no showroom passou por avaliação de qualidade, tendência e aplicabilidade.</p>
+            </div>
+            <div class="pillar reveal">
+              <h3 class="pillar-title">Atendimento consultivo</h3>
+              <p class="pillar-text">Nossa equipe orienta a escolha de materiais com base no seu projeto — combinando estética, desempenho e orçamento para cada ambiente.</p>
+            </div>
+            <div class="pillar reveal">
+              <h3 class="pillar-title">Apoio ao especificador</h3>
+              <p class="pillar-text">Arquitetos e designers contam com suporte técnico, amostras, catálogos e um showroom preparado para receber seus clientes.</p>
+            </div>
+            <div class="pillar reveal">
+              <h3 class="pillar-title">Segurança na obra</h3>
+              <p class="pillar-text">Acompanhamos prazos, disponibilidade e logística para que os materiais cheguem certos, no momento certo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ AMBIENTES ═══ -->
+    <section class="ambientes" id="ambientes">
+      <div class="container">
+        <p class="eyebrow reveal">Ambientes</p>
+        <h2 class="section-heading reveal">Inspiração por ambiente</h2>
+        <p class="section-sub reveal">Explore projetos reais e descubra como cada revestimento transforma um espaço.</p>
+        <div class="ambientes-grid reveal">
+          <a class="ambiente-card" href="ambientes.html#banheiros">
+            <img src="assets/villagres/Living-Off-White.jpg" alt="Banheiros" loading="lazy">
+            <div class="ambiente-card-overlay">
+              <span class="ambiente-card-name">Banheiros</span>
+              <span class="ambiente-card-count">Porcelanatos, revestimentos, louças e metais</span>
+            </div>
+          </a>
+          <a class="ambiente-card" href="ambientes.html#cozinhas">
+            <img src="assets/villagres/Hannover.jpg" alt="Cozinhas" loading="lazy">
+            <div class="ambiente-card-overlay">
+              <span class="ambiente-card-name">Cozinhas</span>
+              <span class="ambiente-card-count">Revestimentos e bancadas</span>
+            </div>
+          </a>
+          <a class="ambiente-card" href="ambientes.html#salas">
+            <img src="assets/villagres/Pantheon.jpg" alt="Salas" loading="lazy">
+            <div class="ambiente-card-overlay">
+              <span class="ambiente-card-name">Salas</span>
+              <span class="ambiente-card-count">Pisos e paredes</span>
+            </div>
+          </a>
+          <a class="ambiente-card" href="ambientes.html#areas-gourmet">
+            <img src="assets/villagres/Chronos-Petra.jpg" alt="Áreas Gourmet" loading="lazy">
+            <div class="ambiente-card-overlay">
+              <span class="ambiente-card-name">Áreas Gourmet</span>
+              <span class="ambiente-card-count">Pisos, paredes e bancadas</span>
+            </div>
+          </a>
+          <a class="ambiente-card" href="ambientes.html#fachadas">
+            <img src="assets/villagres/Montserrat-Terra.jpg" alt="Fachadas" loading="lazy">
+            <div class="ambiente-card-overlay">
+              <span class="ambiente-card-name">Fachadas</span>
+              <span class="ambiente-card-count">Revestimentos externos</span>
+            </div>
+          </a>
+        </div>
+        <div class="ambientes-cta reveal">
+          <a class="btn btn-ghost" href="ambientes.html">Ver todos os ambientes</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ MARCAS ═══ -->
+    <section class="marcas" id="marcas">
+      <div class="container">
+        <div class="marcas-header">
+          <div>
+            <p class="eyebrow reveal">Marcas Parceiras</p>
+            <h2 class="section-heading reveal">Curadoria de marcas nacionais e importadas</h2>
+          </div>
+        </div>
+        <div class="marcas-carousel-wrapper reveal">
+          <div class="marcas-track">
+            <!-- Set 1 -->
+            <img class="marca-logo" src="assets/marcas/novos/villagres.png" alt="Villagres">
+            <img class="marca-logo" src="assets/marcas/novos/porcelanosa-logo-png_seeklogo-190228.png" alt="Porcelanosa">
+            <img class="marca-logo" src="assets/marcas/docol_logo.png" alt="Docol">
+            <img class="marca-logo" src="assets/marcas/novos/deca.png" alt="Deca">
+            <img class="marca-logo" src="assets/marcas/novos/tarkett.png" alt="Tarkett">
+            <img class="marca-logo" src="assets/marcas/logo-gauss.png" alt="Gauss">
+            <img class="marca-logo" src="assets/marcas/logo-santaluzia-2.png" alt="Santa Luzia">
+            <img class="marca-logo" src="assets/marcas/logo-colormix.png" alt="Colormix">
+            <img class="marca-logo" src="assets/marcas/adama.png" alt="Adama">
+            <img class="marca-logo" src="assets/marcas/scirocco.png" alt="Scirocco">
+            <img class="marca-logo" src="assets/marcas/immersi.svg" alt="Immersi">
+            <img class="marca-logo" src="assets/marcas/logo-ceramica-atlas.png" alt="Atlas">
+            <img class="marca-logo" src="assets/marcas/Logo-final-konkre(2).avif" alt="Konkre">
+            <img class="marca-logo" src="assets/marcas/logo_asper.png" alt="Asper">
+            <img class="marca-logo" src="assets/marcas/logo-ritallio.png" alt="Ritallio">
+            <img class="marca-logo" src="assets/marcas/gart.jpg" alt="Gart">
+            <img class="marca-logo" src="assets/marcas/header-ceramfix_Prancheta-1-1.svg" alt="Ceramfix">
+            <img class="marca-logo" src="assets/marcas/arquitech.png" alt="Arquitech">
+            <img class="marca-logo" src="assets/marcas/manufatti.png" alt="Manufatti">
+            <img class="marca-logo" src="assets/marcas/strufaldi.logo.preto.svg" alt="Strufaldi">
+            <img class="marca-logo" src="assets/marcas/Tetto.png" alt="Tetto">
+            <img class="marca-logo" src="assets/marcas/logo-vivarte.jpg" alt="Vivarte">
+            <img class="marca-logo" src="assets/marcas/nina martinelli.png" alt="Nina Martinelli">
+            <img class="marca-logo" src="assets/marcas/taipal.png" alt="Taipal">
+            <img class="marca-logo" src="assets/marcas/new-logo-quartzolit_0.png" alt="Quartzolit">
+            <img class="marca-logo" src="assets/marcas/logo-styllo-design-site-1024x315.jpg" alt="Styllo Design">
+            <!-- Set 2 (duplicado para loop infinito) -->
+            <img class="marca-logo" src="assets/marcas/novos/villagres.png" alt="Villagres">
+            <img class="marca-logo" src="assets/marcas/novos/porcelanosa-logo-png_seeklogo-190228.png" alt="Porcelanosa">
+            <img class="marca-logo" src="assets/marcas/docol_logo.png" alt="Docol">
+            <img class="marca-logo" src="assets/marcas/novos/deca.png" alt="Deca">
+            <img class="marca-logo" src="assets/marcas/novos/tarkett.png" alt="Tarkett">
+            <img class="marca-logo" src="assets/marcas/logo-gauss.png" alt="Gauss">
+            <img class="marca-logo" src="assets/marcas/logo-santaluzia-2.png" alt="Santa Luzia">
+            <img class="marca-logo" src="assets/marcas/logo-colormix.png" alt="Colormix">
+            <img class="marca-logo" src="assets/marcas/adama.png" alt="Adama">
+            <img class="marca-logo" src="assets/marcas/scirocco.png" alt="Scirocco">
+            <img class="marca-logo" src="assets/marcas/immersi.svg" alt="Immersi">
+            <img class="marca-logo" src="assets/marcas/logo-ceramica-atlas.png" alt="Atlas">
+            <img class="marca-logo" src="assets/marcas/Logo-final-konkre(2).avif" alt="Konkre">
+            <img class="marca-logo" src="assets/marcas/logo_asper.png" alt="Asper">
+            <img class="marca-logo" src="assets/marcas/logo-ritallio.png" alt="Ritallio">
+            <img class="marca-logo" src="assets/marcas/gart.jpg" alt="Gart">
+            <img class="marca-logo" src="assets/marcas/header-ceramfix_Prancheta-1-1.svg" alt="Ceramfix">
+            <img class="marca-logo" src="assets/marcas/arquitech.png" alt="Arquitech">
+            <img class="marca-logo" src="assets/marcas/manufatti.png" alt="Manufatti">
+            <img class="marca-logo" src="assets/marcas/strufaldi.logo.preto.svg" alt="Strufaldi">
+            <img class="marca-logo" src="assets/marcas/Tetto.png" alt="Tetto">
+            <img class="marca-logo" src="assets/marcas/logo-vivarte.jpg" alt="Vivarte">
+            <img class="marca-logo" src="assets/marcas/nina martinelli.png" alt="Nina Martinelli">
+            <img class="marca-logo" src="assets/marcas/taipal.png" alt="Taipal">
+            <img class="marca-logo" src="assets/marcas/new-logo-quartzolit_0.png" alt="Quartzolit">
+            <img class="marca-logo" src="assets/marcas/logo-styllo-design-site-1024x315.jpg" alt="Styllo Design">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Villagres section removed -->
+
+    <!-- ═══ CATÁLOGO ═══ -->
+    <section class="catalogo" id="catalogo">
+      <div class="container">
+        <div class="catalogo-header">
+          <div>
+            <p class="eyebrow reveal">Catálogo</p>
+            <h2 class="section-heading reveal">Explore por categoria</h2>
+            <p class="section-sub reveal">Revestimentos, louças e metais organizados para facilitar sua especificação.</p>
+          </div>
+          <a class="btn btn-secondary reveal" href="catalogo.html">Ver catálogo completo</a>
+        </div>
+        <div class="catalogo-grid">
+          <a class="catalogo-card reveal" href="catalogo.html?cat=porcelanato">
+            <div class="catalogo-card-img">
+              <img src="assets/villagres/Chronos-Petra.jpg" alt="Porcelanatos" loading="lazy">
+            </div>
+            <div class="catalogo-card-info">
+              <p class="catalogo-card-name">Porcelanatos</p>
+              <p class="catalogo-card-count">+30 linhas</p>
+            </div>
+            <span class="catalogo-card-arrow">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E7DED2" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+          <a class="catalogo-card reveal" href="catalogo.html?cat=revestimento">
+            <div class="catalogo-card-img">
+              <img src="assets/villagres/Paraíso-ambiente2.jpg" alt="Revestimentos Decorativos" loading="lazy">
+            </div>
+            <div class="catalogo-card-info">
+              <p class="catalogo-card-name">Revestimentos</p>
+              <p class="catalogo-card-count">+40 marcas</p>
+            </div>
+            <span class="catalogo-card-arrow">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E7DED2" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+          <a class="catalogo-card reveal" href="catalogo.html?cat=loucas">
+            <div class="catalogo-card-img">
+              <img src="assets/villagres/Serenità-Decor.jpg" alt="Louças e Cubas" loading="lazy">
+            </div>
+            <div class="catalogo-card-info">
+              <p class="catalogo-card-name">Louças e Cubas</p>
+              <p class="catalogo-card-count">Docol, Doka, Immersi</p>
+            </div>
+            <span class="catalogo-card-arrow">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E7DED2" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+          <a class="catalogo-card reveal" href="catalogo.html?cat=metais">
+            <div class="catalogo-card-img">
+              <img src="assets/villagres/Maytrea-ambient2.jpg" alt="Metais" loading="lazy">
+            </div>
+            <div class="catalogo-card-info">
+              <p class="catalogo-card-name">Metais</p>
+              <p class="catalogo-card-count">Docol, Fani, Kromma</p>
+            </div>
+            <span class="catalogo-card-arrow">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E7DED2" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ ARQUITETOS ═══ -->
+    <section class="arquitetos" id="arquitetos">
+      <div class="container">
+        <div class="arquitetos-grid">
+          <div class="arquitetos-content reveal">
+            <p class="eyebrow">Para Arquitetos</p>
+            <h2 class="section-heading">Um showroom preparado para seus projetos</h2>
+            <p class="section-sub">Atendimento dedicado para especificação, amostras, catálogos e suporte técnico.</p>
+            <div class="arquitetos-list">
+              <div class="arquitetos-item">
+                <div class="arquitetos-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                </div>
+                <div class="arquitetos-item-text">
+                  <h4>Amostras e separação</h4>
+                  <p>Solicite amostras para aprovação do cliente diretamente no showroom.</p>
+                </div>
+              </div>
+              <div class="arquitetos-item">
+                <div class="arquitetos-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                </div>
+                <div class="arquitetos-item-text">
+                  <h4>Catálogos e fichas técnicas</h4>
+                  <p>Acesso a materiais de apoio para especificação e apresentação.</p>
+                </div>
+              </div>
+              <div class="arquitetos-item">
+                <div class="arquitetos-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </div>
+                <div class="arquitetos-item-text">
+                  <h4>Atendimento dedicado</h4>
+                  <p>Equipe preparada para atender arquitetos e especificadores com agilidade.</p>
+                </div>
+              </div>
+            </div>
+            <div style="display:flex; gap:16px; flex-wrap:wrap;">
+              <a class="btn btn-primary" href="arquitetos.html">Área do Arquiteto</a>
+              <a class="btn btn-secondary" href="https://wa.me/5519989133662?text=Oi!%20Sou%20arquiteto(a)%20e%20gostaria%20de%20falar%20com%20a%20Solo.">Falar com a equipe</a>
+            </div>
+          </div>
+          <div class="arquitetos-image reveal">
+            <img src="assets/villagres/Maytrea-ambiente.jpg" alt="Ambiente de showroom com revestimentos premium" loading="lazy">
+            <div class="arquitetos-image-badge">
+              <strong>10+</strong>
+              anos apoiando arquitetos e especificadores na região de Campinas
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ SHOWROOM ═══ -->
+    <section class="showroom" id="showroom">
+      <div class="showroom-content">
+        <p class="eyebrow">Showroom</p>
+        <h2 class="showroom-title">Ver, tocar, comparar e decidir com segurança</h2>
+        <p class="showroom-text">Visite nossos showrooms para conhecer materiais de perto. Agende sua visita e receba atendimento consultivo personalizado.</p>
+        <div class="showroom-locations">
+          <div class="showroom-loc">
+            <p class="showroom-loc-city">Campinas</p>
+            <p class="showroom-loc-address">R. Cel. Quirino, 1609 — Cambuí<br>(19) 2511.0502<br>Seg a Sex: 9h–18h · Sáb: 9h–12h</p>
+          </div>
+          <div class="showroom-loc">
+            <p class="showroom-loc-city">Rio Claro</p>
+            <p class="showroom-loc-address">Rua 14, 433 — Consolação<br>(19) 3597.4635<br>Seg a Sex: 9h–18h · Sáb: 9h–12h</p>
+          </div>
+        </div>
+        <a class="btn btn-light" href="https://wa.me/5519989133662?text=Oi!%20Gostaria%20de%20agendar%20uma%20visita%20ao%20showroom.">Agendar visita</a>
+      </div>
+      <div class="showroom-image">
+        <img src="assets/loja/Fachada-Solo.jpg" alt="Fachada do Showroom Solo Revestimentos" loading="lazy">
+      </div>
+    </section>
+
+    <!-- ═══ AVALIAÇÕES ═══ -->
+    <section class="avaliacoes" id="avaliacoes">
+      <div class="container">
+        <div class="avaliacoes-header">
+          <div class="avaliacoes-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="avaliacoes-score reveal">4.9 no Google — mais de 200 avaliações</p>
+          <h2 class="section-heading reveal">O que dizem nossos clientes</h2>
+        </div>
+        <div class="avaliacoes-grid">
+          <div class="avaliacao-card reveal">
+            <p class="avaliacao-quote">"Atendimento impecável do começo ao fim. A equipe nos ajudou a escolher cada revestimento com paciência e conhecimento técnico. O resultado ficou lindo."</p>
+            <p class="avaliacao-author">Carolina M.</p>
+            <p class="avaliacao-role">Cliente — reforma residencial</p>
+          </div>
+          <div class="avaliacao-card reveal">
+            <p class="avaliacao-quote">"Indico a Solo para todos os meus clientes. O showroom é completo, o atendimento para arquitetos é diferenciado e a equipe entende de projeto."</p>
+            <p class="avaliacao-author">Arq. Fernanda L.</p>
+            <p class="avaliacao-role">Arquiteta — projetos residenciais</p>
+          </div>
+          <div class="avaliacao-card reveal">
+            <p class="avaliacao-quote">"A Solo não vende só material — orienta. Nos ajudaram com combinações que não teríamos imaginado. Voltaremos com certeza na próxima obra."</p>
+            <p class="avaliacao-author">Ricardo e Ana Paula</p>
+            <p class="avaliacao-role">Clientes — construção</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CTA FINAL ═══ -->
+    <section class="cta-final">
+      <div class="container">
+        <p class="eyebrow reveal">Comece seu projeto</p>
+        <h2 class="section-heading reveal">Pronto para escolher os revestimentos do seu projeto?</h2>
+        <p class="section-sub reveal">Fale com nossa equipe pelo WhatsApp e receba atendimento consultivo personalizado.</p>
+        <div class="cta-final-actions reveal">
+          <a class="btn btn-light" href="https://wa.me/5519989133662?text=Oi!%20Estou%20no%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista.">Falar com um especialista</a>
+          <a class="btn btn-ghost" href="https://wa.me/5519989133662?text=Oi!%20Gostaria%20de%20agendar%20uma%20visita%20ao%20showroom.">Agendar visita ao showroom</a>
+        </div>
+        <p class="cta-final-micro reveal">WhatsApp oficial — atendimento de segunda a sexta, 9h às 18h.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <img src="assets/SOLO_Logotipo-H_Calcario.svg" alt="Solo Revestimentos" style="height:32px; opacity:0.6;">
+          <p class="footer-brand-text">Curadoria em revestimentos, louças e metais para projetos residenciais e comerciais de médio-alto padrão. Showrooms em Campinas e Rio Claro.</p>
+        </div>
+        <div>
+          <p class="footer-col-title">Navegação</p>
+          <ul class="footer-links">
+            <li><a href="#ambientes">Ambientes</a></li>
+            <li><a href="catalogo.html">Catálogo</a></li>
+            <li><a href="arquitetos.html">Para Arquitetos</a></li>
+            <li><a href="villagres.html">Villagres</a></li>
+            <li><a href="projetos.html">Projetos</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-col-title">Institucional</p>
+          <ul class="footer-links">
+            <li><a href="showroom.html">Showroom</a></li>
+            <li><a href="grandes-formatos.html">Grandes Formatos</a></li>
+            <li><a href="/sobre/">Sobre</a></li>
+            <li><a href="/contato/">Contato</a></li>
+            <li><a href="/downloads/">Downloads</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-col-title">Campinas</p>
+          <ul class="footer-links">
+            <li>Rua Coronel Quirino, 1609 — Cambuí</li>
+            <li>CEP 13025-002 — Campinas/SP</li>
+            <li><a href="tel:+551925110502">(19) 2511.0502</a></li>
+            <li><a href="mailto:contato@solorevestimentos.com.br">contato@solorevestimentos.com.br</a></li>
+            <li><a href="https://instagram.com/solorevestimentos"><svg style="width:14px;height:14px;vertical-align:-2px;margin-right:4px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>@solorevestimentos</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-col-title">Rio Claro</p>
+          <ul class="footer-links">
+            <li>Rua 14, 433 — Consolação</li>
+            <li>CEP 13.500-130 — Rio Claro/SP</li>
+            <li><a href="tel:+551935974635">(19) 3597.4635</a></li>
+            <li><a href="mailto:atendimento@solorevestimentos.com.br">atendimento@solorevestimentos.com.br</a></li>
+            <li><a href="https://instagram.com/solorevestimentosrc"><svg style="width:14px;height:14px;vertical-align:-2px;margin-right:4px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>@solorevestimentosrc</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Solo Revestimentos. Todos os direitos reservados.</span>
+        <span><a href="https://wa.me/5519989133662">WhatsApp (19) 98913-3662</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══ WhatsApp Float ═══ -->
+  <a class="whatsapp-float" href="https://wa.me/5519989133662?text=Oi!%20Estou%20no%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista." aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script>
+    /* ─── Header scroll effect ─── */
+    const header = document.getElementById('header');
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    /* ─── Reveal on scroll ─── */
+    const reveals = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(el => revealObserver.observe(el));
+
+    /* ─── Smooth scroll for anchor links ─── */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

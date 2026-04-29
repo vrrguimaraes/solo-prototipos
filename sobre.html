@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sobre — Solo Revestimentos</title>
+  <meta name="description" content="A Solo Revestimentos nasceu em 2015 como uma boutique de revestimentos voltada a arquitetos e projetos de médio-alto padrão em Campinas e Rio Claro.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root{--solo-calcario:#E7DED2;--solo-basalto:#2F2E2C;--solo-argila:#C1B6A7;--solo-terracota:#8F3B14;--solo-ocre:#EBA253;--solo-verde:#718A71;--solo-calcario-rgb:231,222,210;--solo-basalto-rgb:47,46,44;--font:"Work Sans",Arial,sans-serif;--ease:cubic-bezier(0.22,1,0.36,1)}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+    body{font-family:var(--font);color:var(--solo-basalto);background:var(--solo-calcario);overflow-x:hidden}
+    img{display:block;max-width:100%;height:auto}a{color:inherit;text-decoration:none}
+
+    .header{position:sticky;top:0;z-index:100;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(24px,5vw,72px);background:rgba(var(--solo-calcario-rgb),0.94);backdrop-filter:blur(16px);border-bottom:1px solid rgba(var(--solo-basalto-rgb),0.06)}
+    .header img{height:32px;filter:brightness(0.2)}.header nav{display:flex;gap:28px;align-items:center}
+    .header nav a{font-size:13px;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;transition:color 0.2s}.header nav a:hover{color:var(--solo-terracota)}
+    .header-cta{font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:10px 20px;background:var(--solo-basalto);color:var(--solo-calcario);border:1px solid var(--solo-basalto);transition:all 0.28s var(--ease)}.header-cta:hover{background:var(--solo-terracota);border-color:var(--solo-terracota)}
+
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:16px 40px;font-family:var(--font);font-size:13px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;border:1px solid;transition:all 0.28s var(--ease);cursor:pointer}
+    .btn-primary{background:var(--solo-basalto);color:var(--solo-calcario);border-color:var(--solo-basalto)}.btn-primary:hover{background:var(--solo-terracota);border-color:var(--solo-terracota)}
+    .btn-light{background:var(--solo-calcario);color:var(--solo-basalto);border-color:var(--solo-calcario)}.btn-light:hover{background:var(--solo-terracota);color:var(--solo-calcario);border-color:var(--solo-terracota)}
+    .btn-ghost{background:transparent;color:var(--solo-calcario);border-color:rgba(var(--solo-calcario-rgb),0.3)}.btn-ghost:hover{background:rgba(var(--solo-calcario-rgb),0.1);border-color:var(--solo-calcario)}
+    .btn-secondary{background:transparent;color:var(--solo-basalto);border-color:var(--solo-argila)}.btn-secondary:hover{background:var(--solo-basalto);color:var(--solo-calcario);border-color:var(--solo-basalto)}
+
+    .reveal{opacity:0;transform:translateY(32px);transition:opacity 0.7s var(--ease),transform 0.7s var(--ease)}.reveal.visible{opacity:1;transform:translateY(0)}
+
+    /* ─── Hero Split ─── */
+    .sobre-hero{display:grid;grid-template-columns:1fr 1fr;min-height:70vh}
+    .sobre-hero-content{display:flex;flex-direction:column;justify-content:center;padding:80px clamp(40px,5vw,96px);position:relative;overflow:hidden}
+    .sobre-hero-eyebrow{font-size:13px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--solo-terracota);margin-bottom:24px}
+    .sobre-hero h1{font-size:clamp(32px,4vw,52px);font-weight:600;line-height:1.06;letter-spacing:-0.01em;margin-bottom:24px}
+    .sobre-hero-sub{font-size:18px;font-weight:400;line-height:1.65;color:var(--solo-basalto);opacity:0.75;max-width:480px}
+    .sobre-hero-image{overflow:hidden}
+    .sobre-hero-image img{width:100%;height:100%;object-fit:cover;min-height:500px}
+
+    /* ─── Brand Idea (full-width quote) ─── */
+    .brand-idea{padding:96px clamp(24px,5vw,72px);background:var(--solo-basalto);color:var(--solo-calcario);text-align:center;position:relative;overflow:hidden}
+    .brand-idea::before{content:"";position:absolute;inset:0;background:url("assets/patterns/SOLO_Pattern-S-3_Base.png") center/500px repeat;opacity:0.04;pointer-events:none}
+    .brand-idea-inner{position:relative;z-index:1;max-width:800px;margin:0 auto}
+    .brand-idea blockquote{font-size:clamp(24px,3.5vw,40px);font-weight:300;font-style:italic;line-height:1.35;letter-spacing:0.01em;margin-bottom:24px}
+    .brand-idea cite{font-size:14px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;font-style:normal;opacity:0.7}
+
+    /* ─── Story ─── */
+    .story{padding:120px 0;max-width:1200px;margin:0 auto;padding-left:clamp(24px,5vw,72px);padding-right:clamp(24px,5vw,72px)}
+    .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+    .story-eyebrow{font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--solo-terracota);margin-bottom:16px}
+    .story h2{font-size:clamp(28px,3.5vw,44px);font-weight:600;line-height:1.1;margin-bottom:32px;color:var(--solo-terracota)}
+    .story-text{font-size:17px;font-weight:400;line-height:1.7;color:var(--solo-basalto);opacity:0.8}
+    .story-text p+p{margin-top:24px}
+    .story-highlight{padding:40px;background:rgba(var(--solo-basalto-rgb),0.03);border-left:3px solid var(--solo-terracota);margin-top:40px}
+    .story-highlight p{font-size:18px;font-weight:500;line-height:1.5;color:var(--solo-basalto)}
+
+    .story-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;margin-top:64px}
+    .stat-card{padding:32px;border:1px solid rgba(var(--solo-basalto-rgb),0.06);text-align:center}
+    .stat-card-number{font-size:48px;font-weight:600;line-height:1;color:var(--solo-terracota)}
+    .stat-card-label{font-size:14px;font-weight:400;color:var(--solo-basalto);opacity:0.7;margin-top:8px}
+
+    /* ─── Territories / How we work ─── */
+    .territories{padding:120px 0;background:var(--solo-basalto);color:var(--solo-calcario)}
+    .territories-inner{max-width:1200px;margin:0 auto;padding:0 clamp(24px,5vw,72px)}
+    .territories-eyebrow{font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--solo-ocre);margin-bottom:16px}
+    .territories h2{font-size:clamp(28px,3.5vw,44px);font-weight:600;line-height:1.1;margin-bottom:16px}
+    .territories-sub{font-size:17px;font-weight:400;line-height:1.6;color:var(--solo-calcario);opacity:0.85;max-width:600px;margin-bottom:64px}
+    .territories-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(var(--solo-calcario-rgb),0.06)}
+    .territory-card{padding:48px 32px;background:var(--solo-basalto)}
+    .territory-card-number{font-size:14px;font-weight:600;color:var(--solo-ocre);letter-spacing:0.06em;margin-bottom:16px}
+    .territory-card h3{font-size:20px;font-weight:600;margin-bottom:12px;line-height:1.2}
+    .territory-card p{font-size:15px;font-weight:400;line-height:1.6;color:var(--solo-calcario);opacity:0.8}
+
+    /* ─── Pillars ─── */
+    .pillars{padding:120px 0;max-width:1200px;margin:0 auto;padding-left:clamp(24px,5vw,72px);padding-right:clamp(24px,5vw,72px);position:relative;overflow:hidden}
+    .pillars::after{content:"";position:absolute;bottom:-100px;right:-100px;width:500px;height:500px;background:url("assets/patterns/SOLO_Pattern-S-3_Base.png") center/cover no-repeat;opacity:0.03;pointer-events:none}
+    .pillars-eyebrow{font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--solo-terracota);margin-bottom:16px}
+    .pillars h2{font-size:clamp(28px,3.5vw,44px);font-weight:600;line-height:1.1;margin-bottom:64px;max-width:500px;color:var(--solo-terracota)}
+    .pillars-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:32px}
+    .pillar-card{text-align:center}
+    .pillar-icon{width:64px;height:64px;margin:0 auto 20px;border:1px solid rgba(var(--solo-basalto-rgb),0.08);display:flex;align-items:center;justify-content:center;background:rgba(var(--solo-basalto-rgb),0.02)}
+    .pillar-icon svg{width:28px;height:28px;stroke:var(--solo-terracota);fill:none;stroke-width:1.5}
+    .pillar-card h4{font-size:16px;font-weight:600;margin-bottom:8px;color:var(--solo-basalto)}
+    .pillar-card p{font-size:14px;font-weight:400;line-height:1.5;color:var(--solo-basalto);opacity:0.75}
+
+    /* ─── Mission ─── */
+    .mission{padding:96px clamp(24px,5vw,72px);background:rgba(var(--solo-basalto-rgb),0.03)}
+    .mission-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
+    .mission-card{padding:48px 40px;border:1px solid rgba(var(--solo-basalto-rgb),0.06)}
+    .mission-card-label{font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--solo-terracota);margin-bottom:16px}
+    .mission-card p{font-size:16px;font-weight:400;line-height:1.65;color:var(--solo-basalto);opacity:0.8}
+
+    /* ─── Showroom CTA ─── */
+    .sobre-showroom{display:grid;grid-template-columns:1fr 1fr;min-height:500px;background:var(--solo-basalto);color:var(--solo-calcario)}
+    .sobre-showroom-content{display:flex;flex-direction:column;justify-content:center;padding:64px clamp(40px,5vw,80px)}
+    .sobre-showroom-eyebrow{font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--solo-verde);margin-bottom:16px}
+    .sobre-showroom h2{font-size:clamp(28px,3vw,40px);font-weight:600;line-height:1.1;margin-bottom:16px}
+    .sobre-showroom p{font-size:17px;font-weight:400;line-height:1.6;color:var(--solo-calcario);max-width:440px;margin-bottom:32px}
+    .sobre-showroom-locations{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:40px}
+    .sobre-loc{padding:20px;border:1px solid rgba(var(--solo-calcario-rgb),0.1)}
+    .sobre-loc h4{font-size:14px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:6px}
+    .sobre-loc p{font-size:13px;line-height:1.5;color:var(--solo-calcario);opacity:0.85}
+    .sobre-showroom-image{overflow:hidden}
+    .sobre-showroom-image img{width:100%;height:100%;object-fit:cover}
+
+    /* ─── CTA Final ─── */
+    .cta-final{padding:120px clamp(24px,5vw,72px);background:var(--solo-basalto);color:var(--solo-calcario);text-align:center;position:relative;overflow:hidden}
+    .cta-final::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(143,59,20,0.1) 0%,transparent 70%)}
+    .cta-final .inner{position:relative;z-index:1}
+    .cta-final h2{font-size:clamp(28px,3.5vw,48px);font-weight:600;line-height:1.08;max-width:640px;margin:0 auto 16px}
+    .cta-final p{font-size:18px;font-weight:400;line-height:1.6;color:var(--solo-calcario);max-width:480px;margin:0 auto 40px}
+    .cta-final-actions{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+
+    .footer{padding:40px clamp(24px,5vw,72px);background:var(--solo-basalto);color:rgba(var(--solo-calcario-rgb),0.4);display:flex;justify-content:space-between;align-items:center;font-size:13px;border-top:1px solid rgba(var(--solo-calcario-rgb),0.06)}
+    .footer img{height:24px;opacity:0.4}
+
+    .whatsapp-float{position:fixed;bottom:24px;right:24px;z-index:90;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(0,0,0,0.18);transition:transform 0.3s var(--ease)}.whatsapp-float:hover{transform:scale(1.08)}.whatsapp-float svg{width:28px;height:28px;fill:#fff}
+
+    @media(max-width:1024px){.territories-grid{grid-template-columns:repeat(2,1fr)}.pillars-grid{grid-template-columns:repeat(3,1fr)}}
+    @media(max-width:768px){.header nav{display:none}.sobre-hero{grid-template-columns:1fr}.sobre-hero-image{min-height:300px}.sobre-hero-image img{min-height:300px}.story-grid{grid-template-columns:1fr;gap:48px}.territories-grid{grid-template-columns:1fr}.pillars-grid{grid-template-columns:1fr 1fr}.mission-inner{grid-template-columns:1fr}.sobre-showroom{grid-template-columns:1fr}.sobre-showroom-locations{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <a href="home-completa.html"><img src="assets/SOLO_Logotipo-H_Calcario.svg" alt="Solo Revestimentos"></a>
+    <nav>
+      <a href="home-completa.html#ambientes">Ambientes</a>
+      <a href="catalogo.html">Catalogo</a>
+      <a href="arquitetos.html">Arquitetos</a>
+      <a href="showroom.html">Showroom</a>
+      <a href="https://wa.me/5519989133662?text=Oi!%20Estou%20no%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista." class="header-cta">Falar com especialista</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="sobre-hero">
+      <div class="sobre-hero-content">
+        <p class="sobre-hero-eyebrow">Sobre a Solo</p>
+        <h1>Da matéria ao espaço. Cada escolha, pensada como parte do todo.</h1>
+        <p class="sobre-hero-sub">A Solo Revestimentos é uma boutique de revestimentos voltada a arquitetos que buscam segurança, parceria e coerência na especificação de materiais para projetos de médio-alto padrão.</p>
+      </div>
+      <div class="sobre-hero-image">
+        <img src="assets/villagres/Montserrat-Terra.jpg" alt="Ambiente Solo Revestimentos — pedra terracota com luz natural" loading="lazy">
+      </div>
+    </section>
+
+    <!-- ═══ BRAND IDEA ═══ -->
+    <section class="brand-idea">
+      <div class="brand-idea-inner reveal">
+        <blockquote>O fazer a partir da base. Da matéria ao espaço. É o entendimento profundo do revestimento como fundamento do viver.</blockquote>
+        <cite>Brand Idea — Solo Revestimentos</cite>
+      </div>
+    </section>
+
+    <!-- ═══ STORY ═══ -->
+    <section class="story">
+      <div class="story-grid">
+        <div class="reveal">
+          <p class="story-eyebrow">Nossa história</p>
+          <h2>Nascemos em 2015 para fazer diferente</h2>
+          <div class="story-text">
+            <p>A Solo Revestimentos nasceu com a missão de proporcionar beleza, inovação e qualidade em revestimentos — tornando cada ambiente e projeto único e exclusivo como cada um de nossos clientes.</p>
+            <p>Não competimos por ostentação nem por volume. Competimos por confiança e proximidade qualificada com o público que atendemos. Somos a marca que precisa ser reconhecida por ser a mais próxima do arquiteto.</p>
+            <p>Hoje, com showrooms em Campinas e Rio Claro, contamos com uma equipe que inclui arquitetos qualificados — profissionais que entendem de projeto, não apenas de produto.</p>
+          </div>
+          <div class="story-highlight">
+            <p>A Solo ajuda arquitetos a fazer escolhas mais seguras, coerentes e bem resolvidas para seus projetos.</p>
+          </div>
+        </div>
+        <div>
+          <div class="story-stats reveal">
+            <div class="stat-card">
+              <p class="stat-card-number">2015</p>
+              <p class="stat-card-label">Fundação</p>
+            </div>
+            <div class="stat-card">
+              <p class="stat-card-number">2</p>
+              <p class="stat-card-label">Showrooms</p>
+            </div>
+            <div class="stat-card">
+              <p class="stat-card-number">6mil+</p>
+              <p class="stat-card-label">Projetos atendidos</p>
+            </div>
+            <div class="stat-card">
+              <p class="stat-card-number">4.9</p>
+              <p class="stat-card-label">Google (200+ avaliações)</p>
+            </div>
+          </div>
+          <div style="margin-top:48px" class="reveal">
+            <img src="assets/loja/Fachada-Solo.jpg" alt="Fachada da Solo Revestimentos em Campinas" style="width:100%;" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ TERRITORIES ═══ -->
+    <section class="territories">
+      <div class="territories-inner">
+        <p class="territories-eyebrow reveal">Como atuamos</p>
+        <h2 class="reveal">Quatro territórios que orientam tudo que fazemos</h2>
+        <p class="territories-sub reveal">Esses atributos orientam decisões, comunicação e comportamento do time. Não são slogans — são princípios de trabalho.</p>
+        <div class="territories-grid">
+          <div class="territory-card reveal">
+            <p class="territory-card-number">01</p>
+            <h3>Proximidade com estrutura</h3>
+            <p>A Solo acolhe e aproxima, mas com processo e organização. A relação é pessoal, porém sustentada por método.</p>
+          </div>
+          <div class="territory-card reveal">
+            <p class="territory-card-number">02</p>
+            <h3>Técnica sem soberba</h3>
+            <p>Dominamos aspectos técnicos, mas aplicamos conhecimento ao contexto de cada projeto, sem impor soluções.</p>
+          </div>
+          <div class="territory-card reveal">
+            <p class="territory-card-number">03</p>
+            <h3>Inspiracional sem excessos</h3>
+            <p>Estimulamos repertório e novas possibilidades, mas dentro da realidade do projeto e do perfil do cliente.</p>
+          </div>
+          <div class="territory-card reveal">
+            <p class="territory-card-number">04</p>
+            <h3>Consultiva acima de transacional</h3>
+            <p>O atendimento envolve escuta, orientação e acompanhamento. A venda é consequência do suporte.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ PILLARS ═══ -->
+    <section class="pillars">
+      <p class="pillars-eyebrow reveal">Nossos pilares</p>
+      <h2 class="reveal">O que sustenta a marca Solo</h2>
+      <div class="pillars-grid">
+        <div class="pillar-card reveal">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h4>Solidez</h4>
+          <p>Digna de confiança, segura e fundamentada em algo duradouro.</p>
+        </div>
+        <div class="pillar-card reveal">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h4>Proximidade</h4>
+          <p>Relação pessoal, com escuta genuína e parceria de longo prazo.</p>
+        </div>
+        <div class="pillar-card reveal">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <h4>Elegância</h4>
+          <p>Estética refinada sem ostentação. Composição limpa com intenção.</p>
+        </div>
+        <div class="pillar-card reveal">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h4>Conforto</h4>
+          <p>Apoiar com leveza e criar uma experiência memorável.</p>
+        </div>
+        <div class="pillar-card reveal">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          </div>
+          <h4>Exclusividade</h4>
+          <p>Curadoria que seleciona com critério. Não vendemos tudo — escolhemos o melhor.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ MISSION / CONCEPT ═══ -->
+    <section class="mission">
+      <div class="mission-inner">
+        <div class="mission-card reveal">
+          <p class="mission-card-label">Missão</p>
+          <p>Proporcionar beleza, inovação e qualidade, tornando cada ambiente e projeto único e exclusivo como cada um de nossos clientes.</p>
+        </div>
+        <div class="mission-card reveal">
+          <p class="mission-card-label">Conceito</p>
+          <p><strong>Harmônica</strong> — concordância e equilíbrio entre as partes.<br><strong>Sólida</strong> — digna de confiança e duradoura.<br><strong>Modular</strong> — adapta-se sem perder a base.</p>
+        </div>
+        <div class="mission-card reveal">
+          <p class="mission-card-label">Equipe</p>
+          <p>Profissionais capacitados, incluindo arquitetos qualificados que atendem profissionais da área e consumidores finais com suporte personalizado.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ SHOWROOM ═══ -->
+    <section class="sobre-showroom">
+      <div class="sobre-showroom-content">
+        <p class="sobre-showroom-eyebrow reveal">Nossos showrooms</p>
+        <h2 class="reveal">Ver, tocar e decidir com segurança</h2>
+        <p class="reveal">Visite um de nossos showrooms para conhecer materiais de perto com atendimento consultivo personalizado.</p>
+        <div class="sobre-showroom-locations reveal">
+          <div class="sobre-loc">
+            <h4>Campinas</h4>
+            <p>R. Cel. Quirino, 1609 — Cambuí<br>CEP 13025-002<br>(19) 2511.0502<br>contato@solorevestimentos.com.br</p>
+          </div>
+          <div class="sobre-loc">
+            <h4>Rio Claro</h4>
+            <p>Rua 14, 433 — Consolação<br>CEP 13.500-130<br>(19) 3597.4635<br>atendimento@solorevestimentos.com.br</p>
+          </div>
+        </div>
+        <a class="btn btn-light reveal" href="https://wa.me/5519989133662?text=Oi!%20Gostaria%20de%20agendar%20uma%20visita%20ao%20showroom.">Agendar visita</a>
+      </div>
+      <div class="sobre-showroom-image">
+        <img src="assets/villagres/Spazio.jpg" alt="Interior do showroom com revestimentos de alto padrão" loading="lazy">
+      </div>
+    </section>
+
+    <!-- ═══ CTA FINAL ═══ -->
+    <section class="cta-final">
+      <div class="inner">
+        <h2 class="reveal">Pronto para conhecer a Solo de perto?</h2>
+        <p class="reveal">Fale com nossa equipe ou visite um de nossos showrooms em Campinas e Rio Claro.</p>
+        <div class="cta-final-actions reveal">
+          <a class="btn btn-light" href="https://wa.me/5519989133662?text=Oi!%20Estou%20no%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista.">Falar com especialista</a>
+          <a class="btn btn-ghost" href="showroom.html">Conhecer o showroom</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer"><img src="assets/SOLO_Logotipo-H_Calcario.svg" alt="Solo"><span>&copy; 2026 Solo Revestimentos</span></footer>
+
+  <a class="whatsapp-float" href="https://wa.me/5519989133662?text=Oi!%20Estou%20no%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista." aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+
+  <script>const reveals=document.querySelectorAll('.reveal');const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});reveals.forEach(el=>obs.observe(el));</script>
+</body>
+</html>

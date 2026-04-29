@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Ladrilho" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1920 1920">
+  <!-- Generator: Adobe Illustrator 30.0.0, SVG Export Plug-In . SVG Version: 2.1.1 Build 123)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <polygon points="320 1280 0 960 0 1280 320 1280"/>
+  <polygon points="320 1280 640 960 640 1280 320 1280"/>
+  <polygon points="960 1280 640 960 640 1280 960 1280"/>
+  <polygon points="960 1280 1280 960 1280 1280 960 1280"/>
+  <polygon points="1600 1280 1280 960 1280 1280 1600 1280"/>
+  <polygon points="1600 1280 1920 960 1920 1280 1600 1280"/>
+  <polygon points="320 1920 0 1600 0 1920 320 1920"/>
+  <polygon points="320 1920 640 1600 640 1920 320 1920"/>
+  <polygon points="960 1920 640 1600 640 1920 960 1920"/>
+  <polygon points="960 1920 1280 1600 1280 1920 960 1920"/>
+  <polygon points="1600 1920 1280 1600 1280 1920 1600 1920"/>
+  <polygon points="1600 1920 1920 1600 1920 1920 1600 1920"/>
+  <polygon points="0 1280 320 1600 320 1280 0 1280"/>
+  <polygon points="640 1280 320 1600 320 1280 640 1280"/>
+  <polygon points="640 1280 960 1600 960 1280 640 1280"/>
+  <polygon points="1280 1280 960 1600 960 1280 1280 1280"/>
+  <polygon points="1280 1280 1600 1600 1600 1280 1280 1280"/>
+  <polygon points="1920 1280 1600 1600 1600 1280 1920 1280"/>
+  <polygon points="320 640 0 320 0 640 320 640"/>
+  <polygon points="320 640 640 320 640 640 320 640"/>
+  <polygon points="960 640 640 320 640 640 960 640"/>
+  <polygon points="960 640 1280 320 1280 640 960 640"/>
+  <polygon points="1600 640 1280 320 1280 640 1600 640"/>
+  <polygon points="1600 640 1920 320 1920 640 1600 640"/>
+  <polygon points="0 640 320 960 320 640 0 640"/>
+  <polygon points="640 640 320 960 320 640 640 640"/>
+  <polygon points="640 640 960 960 960 640 640 640"/>
+  <polygon points="1280 640 960 960 960 640 1280 640"/>
+  <polygon points="1280 640 1600 960 1600 640 1280 640"/>
+  <polygon points="1920 640 1600 960 1600 640 1920 640"/>
+  <polygon points="0 0 320 320 320 0 0 0"/>
+  <polygon points="640 0 320 320 320 0 640 0"/>
+  <polygon points="640 0 960 320 960 0 640 0"/>
+  <polygon points="1280 0 960 320 960 0 1280 0"/>
+  <polygon points="1280 0 1600 320 1600 0 1280 0"/>
+  <g>
+    <polygon class="st0" points="0 960 320 1280 320 960 0 960"/>
+    <polygon class="st0" points="640 960 320 1280 320 960 640 960"/>
+    <polygon class="st0" points="640 960 960 1280 960 960 640 960"/>
+    <polygon class="st0" points="1280 960 960 1280 960 960 1280 960"/>
+    <polygon class="st0" points="1280 960 1600 1280 1600 960 1280 960"/>
+    <polygon class="st0" points="1920 960 1600 1280 1600 960 1920 960"/>
+    <polygon class="st0" points="0 1600 320 1920 320 1600 0 1600"/>
+    <polygon class="st0" points="640 1600 320 1920 320 1600 640 1600"/>
+    <polygon class="st0" points="640 1600 960 1920 960 1600 640 1600"/>
+    <polygon class="st0" points="1280 1600 960 1920 960 1600 1280 1600"/>
+    <polygon class="st0" points="1280 1600 1600 1920 1600 1600 1280 1600"/>
+    <polygon class="st0" points="1920 1600 1600 1920 1600 1600 1920 1600"/>
+    <polygon class="st0" points="320 1600 0 1280 0 1600 320 1600"/>
+    <polygon class="st0" points="320 1600 640 1280 640 1600 320 1600"/>
+    <polygon class="st0" points="960 1600 640 1280 640 1600 960 1600"/>
+    <polygon class="st0" points="960 1600 1280 1280 1280 1600 960 1600"/>
+    <polygon class="st0" points="1600 1600 1280 1280 1280 1600 1600 1600"/>
+    <polygon class="st0" points="1600 1600 1920 1280 1920 1600 1600 1600"/>
+    <polygon class="st0" points="0 320 320 640 320 320 0 320"/>
+    <polygon class="st0" points="640 320 320 640 320 320 640 320"/>
+    <polygon class="st0" points="640 320 960 640 960 320 640 320"/>
+    <polygon class="st0" points="1280 320 960 640 960 320 1280 320"/>
+    <polygon class="st0" points="1280 320 1600 640 1600 320 1280 320"/>
+    <polygon class="st0" points="1920 320 1600 640 1600 320 1920 320"/>
+    <polygon class="st0" points="320 960 0 640 0 960 320 960"/>
+    <polygon class="st0" points="320 960 640 640 640 960 320 960"/>
+    <polygon class="st0" points="960 960 640 640 640 960 960 960"/>
+    <polygon class="st0" points="960 960 1280 640 1280 960 960 960"/>
+    <polygon class="st0" points="1600 960 1280 640 1280 960 1600 960"/>
+    <polygon class="st0" points="1600 960 1920 640 1920 960 1600 960"/>
+    <polygon class="st0" points="320 320 0 0 0 320 320 320"/>
+    <polygon class="st0" points="320 320 640 0 640 320 320 320"/>
+    <polygon class="st0" points="960 320 640 0 640 320 960 320"/>
+    <polygon class="st0" points="960 320 1280 0 1280 320 960 320"/>
+    <polygon class="st0" points="1600 320 1280 0 1280 320 1600 320"/>
+    <polygon class="st0" points="1600 320 1920 0 1920 320 1600 320"/>
+  </g>
+  <polygon points="1920 0 1600 320 1600 0 1920 0"/>
+</svg>

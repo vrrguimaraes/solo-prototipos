@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Para Arquitetos — Solo Revestimentos</title>
+  <meta name="description" content="Atendimento dedicado para arquitetos e especificadores. Amostras, catálogos, fichas técnicas e suporte para seus projetos.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --solo-calcario: #E7DED2; --solo-basalto: #2F2E2C; --solo-argila: #C1B6A7;
+      --solo-terracota: #8F3B14; --solo-ocre: #EBA253; --solo-verde: #718A71;
+      --solo-calcario-rgb: 231,222,210; --solo-basalto-rgb: 47,46,44;
+      --font: "Work Sans", Arial, sans-serif; --ease: cubic-bezier(0.22,1,0.36,1);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+    body{font-family:var(--font);color:var(--solo-basalto);background:var(--solo-calcario);overflow-x:hidden}
+    img{display:block;max-width:100%;height:auto}
+    a{color:inherit;text-decoration:none}
+
+    .header{position:sticky;top:0;z-index:100;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(24px,5vw,72px);background:rgba(var(--solo-calcario-rgb),0.94);backdrop-filter:blur(16px);border-bottom:1px solid rgba(var(--solo-basalto-rgb),0.06)}
+    .header img{height:32px;filter:brightness(0.2)}
+    .header nav{display:flex;gap:28px;align-items:center}
+    .header nav a{font-size:13px;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;transition:color 0.2s}
+    .header nav a:hover{color:var(--solo-terracota)}
+    .header-cta{font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:10px 20px;background:var(--solo-basalto);color:var(--solo-calcario);border:1px solid var(--solo-basalto);transition:all 0.28s var(--ease)}
+    .header-cta:hover{background:var(--solo-terracota);border-color:var(--solo-terracota)}
+
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:16px 40px;font-family:var(--font);font-size:13px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;border:1px solid;transition:all 0.28s var(--ease);cursor:pointer;gap:8px}
+    .btn-primary{background:var(--solo-basalto);color:var(--solo-calcario);border-color:var(--solo-basalto)}
+    .btn-primary:hover{background:var(--solo-terracota);border-color:var(--solo-terracota)}
+    .btn-secondary{background:transparent;color:var(--solo-basalto);border-color:var(--solo-argila)}
+    .btn-secondary:hover{background:var(--solo-basalto);color:var(--solo-calcario);border-color:var(--solo-basalto)}
+    .btn-light{background:var(--solo-calcario);color:var(--solo-basalto);border-color:var(--solo-calcario)}
+    .btn-light:hover{background:var(--solo-terracota);color:var(--solo-calcario);border-color:var(--solo-terracota)}
+    .btn-ghost{background:transparent;color:var(--solo-calcario);border-color:rgba(var(--solo-calcario-rgb),0.3)}
+    .btn-ghost:hover{background:rgba(var(--solo-calcario-rgb),0.1);border-color:var(--solo-calcario)}
+
+    .reveal{opacity:0;transform:translateY(32px);transition:opacity 0.7s var(--ease),transform 0.7s var(--ease)}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+
+    /* ─── Architect Hero ─── */
+    .arq-hero{display:grid;grid-template-columns:1fr 1fr;min-height:80vh}
+    .arq-hero-content{display:flex;flex-direction:column;justify-content:center;padding:80px clamp(40px,5vw,96px);background:var(--solo-basalto);color:var(--solo-calcario)}
+    .arq-hero-eyebrow{font-size:13px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--solo-ocre);margin-bottom:24px}
+    .arq-hero h1{font-size:clamp(36px,4.5vw,60px);font-weight:600;line-height:1.04;letter-spacing:-0.01em;margin-bottom:24px}
+    .arq-hero-sub{font-size:18px;font-weight:400;line-height:1.6;color:rgba(var(--solo-calcario-rgb),0.7);max-width:480px;margin-bottom:40px}
+    .arq-hero-actions{display:flex;gap:16px;flex-wrap:wrap}
+    .arq-hero-image{overflow:hidden}
+    .arq-hero-image img{width:100%;height:100%;object-fit:cover;min-height:600px}
+
+    /* ─── Services Grid ─── */
+    .services{padding:120px clamp(24px,5vw,72px);max-width:1344px;margin:0 auto}
+    .services-eyebrow{font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--solo-terracota);margin-bottom:16px}
+    .services h2{font-size:clamp(32px,4vw,48px);font-weight:600;line-height:1.08;max-width:640px;margin-bottom:64px}
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+
+    .service-card{padding:48px 40px;border:1px solid rgba(var(--solo-basalto-rgb),0.06);background:rgba(var(--solo-basalto-rgb),0.015);transition:all 0.3s var(--ease)}
+    .service-card:hover{border-color:var(--solo-terracota);transform:translateY(-4px)}
+    .service-icon{width:56px;height:56px;display:flex;align-items:center;justify-content:center;background:rgba(var(--solo-basalto-rgb),0.04);border:1px solid rgba(var(--solo-basalto-rgb),0.08);margin-bottom:24px}
+    .service-icon svg{width:28px;height:28px;stroke:var(--solo-terracota);fill:none;stroke-width:1.5}
+    .service-card h3{font-size:20px;font-weight:600;margin-bottom:12px}
+    .service-card p{font-size:15px;font-weight:400;line-height:1.6;color:var(--solo-argila)}
+
+    /* ─── How it Works ─── */
+    .how{padding:120px clamp(24px,5vw,72px);max-width:1344px;margin:0 auto}
+    .how-eyebrow{font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--solo-terracota);margin-bottom:16px}
+    .how h2{font-size:clamp(32px,4vw,48px);font-weight:600;line-height:1.08;max-width:640px;margin-bottom:64px}
+    .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+    .how-step{position:relative;padding-left:0}
+    .how-step-number{font-size:48px;font-weight:600;color:rgba(var(--solo-basalto-rgb),0.06);line-height:1;margin-bottom:16px}
+    .how-step h4{font-size:17px;font-weight:600;margin-bottom:8px}
+    .how-step p{font-size:15px;font-weight:400;line-height:1.6;color:var(--solo-argila)}
+    .how-step::after{content:"";position:absolute;top:24px;right:-16px;width:32px;height:1px;background:var(--solo-argila);opacity:0.3}
+    .how-step:last-child::after{display:none}
+
+    /* ─── Samples CTA ─── */
+    .samples{padding:0;display:grid;grid-template-columns:1fr 1fr;min-height:560px;background:rgba(var(--solo-basalto-rgb),0.03)}
+    .samples-image{overflow:hidden}
+    .samples-image img{width:100%;height:100%;object-fit:cover}
+    .samples-content{display:flex;flex-direction:column;justify-content:center;padding:80px clamp(40px,5vw,80px)}
+    .samples-eyebrow{font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--solo-verde);margin-bottom:16px}
+    .samples h2{font-size:clamp(28px,3vw,40px);font-weight:600;line-height:1.1;margin-bottom:16px;max-width:440px}
+    .samples p{font-size:17px;font-weight:400;line-height:1.6;color:var(--solo-argila);max-width:420px;margin-bottom:32px}
+
+    /* ─── Commission Campaign ─── */
+    .campaign{padding:96px clamp(24px,5vw,72px);background:var(--solo-basalto);color:var(--solo-calcario);text-align:center}
+    .campaign-inner{max-width:720px;margin:0 auto}
+    .campaign-eyebrow{font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--solo-ocre);margin-bottom:16px}
+    .campaign h2{font-size:clamp(28px,3.5vw,44px);font-weight:600;line-height:1.1;margin-bottom:16px}
+    .campaign p{font-size:17px;font-weight:400;line-height:1.6;color:rgba(var(--solo-calcario-rgb),0.6);margin-bottom:40px}
+    .campaign-actions{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+
+    /* ─── Downloads Preview ─── */
+    .downloads{padding:96px clamp(24px,5vw,72px);max-width:1344px;margin:0 auto}
+    .downloads-eyebrow{font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--solo-terracota);margin-bottom:16px}
+    .downloads h2{font-size:clamp(28px,3.5vw,40px);font-weight:600;line-height:1.1;margin-bottom:48px}
+    .downloads-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+    .download-card{padding:32px;border:1px solid rgba(var(--solo-basalto-rgb),0.08);transition:all 0.3s var(--ease);cursor:pointer}
+    .download-card:hover{border-color:var(--solo-basalto);transform:translateY(-2px)}
+    .download-card svg{width:32px;height:32px;stroke:var(--solo-terracota);fill:none;stroke-width:1.5;margin-bottom:16px}
+    .download-card h4{font-size:16px;font-weight:600;margin-bottom:8px}
+    .download-card p{font-size:14px;font-weight:400;line-height:1.5;color:var(--solo-argila)}
+
+    /* ─── CTA Final ─── */
+    .cta-final{padding:120px clamp(24px,5vw,72px);background:var(--solo-basalto);color:var(--solo-calcario);text-align:center}
+    .cta-final h2{font-size:clamp(32px,4vw,52px);font-weight:600;line-height:1.06;max-width:680px;margin:0 auto 16px}
+    .cta-final p{font-size:18px;font-weight:400;line-height:1.6;color:rgba(var(--solo-calcario-rgb),0.6);max-width:520px;margin:0 auto 40px}
+    .cta-final-actions{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+
+    .footer{padding:40px clamp(24px,5vw,72px);background:var(--solo-basalto);color:rgba(var(--solo-calcario-rgb),0.4);display:flex;justify-content:space-between;align-items:center;font-size:13px;border-top:1px solid rgba(var(--solo-calcario-rgb),0.06)}
+    .footer img{height:24px;opacity:0.4}
+
+    .whatsapp-float{position:fixed;bottom:24px;right:24px;z-index:90;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(0,0,0,0.18);transition:transform 0.3s var(--ease)}
+    .whatsapp-float:hover{transform:scale(1.08)}
+    .whatsapp-float svg{width:28px;height:28px;fill:#fff}
+
+    @media(max-width:1024px){
+      .services-grid{grid-template-columns:repeat(2,1fr)}
+      .how-steps{grid-template-columns:repeat(2,1fr)}
+      .how-step::after{display:none}
+      .downloads-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:768px){
+      .header nav{display:none}
+      .arq-hero{grid-template-columns:1fr}
+      .arq-hero-image{min-height:300px}
+      .arq-hero-image img{min-height:300px}
+      .services-grid{grid-template-columns:1fr}
+      .how-steps{grid-template-columns:1fr}
+      .samples{grid-template-columns:1fr}
+      .samples-image{min-height:300px}
+      .downloads-grid{grid-template-columns:1fr}
+      .arq-hero-actions{display:grid;grid-template-columns:1fr}
+      .arq-hero-actions .btn{width:100%}
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <a href="home-completa.html"><img src="assets/SOLO_Logotipo-H_Calcario.svg" alt="Solo Revestimentos"></a>
+    <nav>
+      <a href="home-completa.html#ambientes">Ambientes</a>
+      <a href="catalogo.html">Catálogo</a>
+      <a href="arquitetos.html" style="color:var(--solo-terracota)">Arquitetos</a>
+      <a href="showroom.html">Showroom</a>
+      <a href="https://wa.me/5519989133662?text=Oi!%20Sou%20arquiteto(a)%20e%20gostaria%20de%20falar%20com%20a%20Solo." class="header-cta">Falar com a equipe</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="arq-hero">
+      <div class="arq-hero-content">
+        <p class="arq-hero-eyebrow">Para Arquitetos e Especificadores</p>
+        <h1>Um parceiro para seus projetos de revestimento</h1>
+        <p class="arq-hero-sub">Atendimento dedicado, curadoria de materiais, amostras sob demanda e um showroom preparado para receber seus clientes.</p>
+        <div class="arq-hero-actions">
+          <a class="btn btn-light" href="https://wa.me/5519989133662?text=Oi!%20Sou%20arquiteto(a)%20e%20gostaria%20de%20falar%20com%20a%20Solo.">Sou arquiteto</a>
+          <a class="btn btn-ghost" href="#servicos">Conhecer benefícios</a>
+        </div>
+      </div>
+      <div class="arq-hero-image">
+        <img src="assets/villagres/Maytrea-ambiente.jpg" alt="Ambiente de showroom com revestimentos selecionados" loading="lazy">
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="servicos">
+      <p class="services-eyebrow reveal">O que oferecemos</p>
+      <h2 class="reveal">Suporte completo para especificação e acompanhamento</h2>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          </div>
+          <h3>Amostras sob demanda</h3>
+          <p>Solicite a separação de amostras para aprovação com seu cliente. Entregamos no showroom ou preparamos para retirada.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          <h3>Catálogos e fichas técnicas</h3>
+          <p>Acesse materiais de apoio para apresentação e especificação. Catálogos físicos e digitais das principais marcas.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <h3>Atendimento dedicado</h3>
+          <p>Nossa equipe conhece as linhas, sabe combinar materiais e entende as necessidades de quem especifica profissionalmente.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3>Showroom para clientes</h3>
+          <p>Traga seus clientes para ver e tocar os materiais. Ambiente preparado para apresentações de projeto.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>Curadoria por projeto</h3>
+          <p>Montamos seleções personalizadas com base no briefing do seu projeto: estilo, orçamento e funcionalidade.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>Agilidade em prazos</h3>
+          <p>Acompanhamento de disponibilidade, entregas e logística para que os materiais cheguem no tempo certo da obra.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it Works -->
+    <section class="how reveal">
+      <p class="how-eyebrow">Como funciona</p>
+      <h2>Do primeiro contato à entrega na obra</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <p class="how-step-number">01</p>
+          <h4>Contato inicial</h4>
+          <p>Entre em contato pelo WhatsApp ou visite o showroom. Apresente seu projeto e necessidades.</p>
+        </div>
+        <div class="how-step">
+          <p class="how-step-number">02</p>
+          <h4>Curadoria personalizada</h4>
+          <p>Nossa equipe monta uma seleção de materiais alinhada ao estilo, orçamento e funcionalidade do projeto.</p>
+        </div>
+        <div class="how-step">
+          <p class="how-step-number">03</p>
+          <h4>Aprovação com o cliente</h4>
+          <p>Leve seu cliente ao showroom para ver e tocar os materiais. Separamos amostras para aprovação.</p>
+        </div>
+        <div class="how-step">
+          <p class="how-step-number">04</p>
+          <h4>Pedido e acompanhamento</h4>
+          <p>Fechamos o pedido, acompanhamos prazos e garantimos que tudo chegue no momento certo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Samples CTA -->
+    <section class="samples">
+      <div class="samples-image">
+        <img src="assets/villagres/Paraíso-ambeiente.jpg" alt="Amostras de revestimentos no showroom" loading="lazy">
+      </div>
+      <div class="samples-content">
+        <p class="samples-eyebrow reveal">Amostras</p>
+        <h2 class="reveal">Solicite a separação de amostras para seus projetos</h2>
+        <p class="reveal">Envie o briefing do projeto e montamos um kit de amostras para aprovação com seu cliente — no showroom ou para retirada.</p>
+        <a class="btn btn-primary reveal" href="https://wa.me/5519989133662?text=Oi!%20Sou%20arquiteto(a)%20e%20gostaria%20de%20solicitar%20amostras%20para%20um%20projeto.">Solicitar amostras</a>
+      </div>
+    </section>
+
+    <!-- Commission Campaign -->
+    <section class="campaign">
+      <div class="campaign-inner">
+        <p class="campaign-eyebrow reveal">Campanha 2026</p>
+        <h2 class="reveal">Programa de comissionamento para arquitetos</h2>
+        <p class="reveal">Arquitetos e designers cadastrados participam do programa de comissionamento da Solo. Fale com nossa equipe para conhecer as condições.</p>
+        <div class="campaign-actions reveal">
+          <a class="btn btn-light" href="https://wa.me/5519989133662?text=Oi!%20Sou%20arquiteto(a)%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20programa%20de%20comissionamento.">Quero participar</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Downloads -->
+    <section class="downloads reveal">
+      <p class="downloads-eyebrow">Materiais de apoio</p>
+      <h2>Catálogos e recursos técnicos</h2>
+      <div class="downloads-grid">
+        <a class="download-card" href="#">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          <h4>Catálogos digitais</h4>
+          <p>PDFs das principais marcas para consulta e apresentação.</p>
+        </a>
+        <a class="download-card" href="#">
+          <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+          <h4>Arquivos SketchUp</h4>
+          <p>Blocos 3D para especificação em projeto.</p>
+        </a>
+        <a class="download-card" href="#">
+          <svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+          <h4>Vídeos técnicos</h4>
+          <p>Aplicações, instalação e acabamentos em vídeo.</p>
+        </a>
+        <a class="download-card" href="#">
+          <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+          <h4>Manuais de instalação</h4>
+          <p>Guias técnicos para instalação e manutenção.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-final">
+      <h2 class="reveal">Comece a especificar com a Solo</h2>
+      <p class="reveal">Fale com nossa equipe pelo WhatsApp e receba atendimento dedicado para seus projetos.</p>
+      <div class="cta-final-actions reveal">
+        <a class="btn btn-light" href="https://wa.me/5519989133662?text=Oi!%20Sou%20arquiteto(a)%20e%20gostaria%20de%20falar%20com%20a%20Solo.">Sou arquiteto</a>
+        <a class="btn btn-ghost" href="https://wa.me/5519989133662?text=Oi!%20Gostaria%20de%20agendar%20uma%20visita%20ao%20showroom%20com%20meu%20cliente.">Agendar visita com cliente</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <img src="assets/SOLO_Logotipo-H_Calcario.svg" alt="Solo Revestimentos">
+    <span>&copy; 2026 Solo Revestimentos</span>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/5519989133662?text=Oi!%20Sou%20arquiteto(a)%20e%20gostaria%20de%20falar%20com%20a%20Solo." aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)} });
+    }, {threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+    reveals.forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

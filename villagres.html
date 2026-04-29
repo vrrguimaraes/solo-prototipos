@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Villagres na Solo — Solo Revestimentos</title>
+  <meta name="description" content="Curadoria exclusiva das linhas Villagres. Porcelanatos de alto padrão com atendimento especializado na Solo Revestimentos.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--solo-calcario:#E7DED2;--solo-basalto:#2F2E2C;--solo-argila:#C1B6A7;--solo-terracota:#8F3B14;--solo-ocre:#EBA253;--solo-verde:#718A71;--solo-calcario-rgb:231,222,210;--solo-basalto-rgb:47,46,44;--font:"Work Sans",Arial,sans-serif;--ease:cubic-bezier(0.22,1,0.36,1)}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+    body{font-family:var(--font);color:var(--solo-basalto);background:var(--solo-calcario);overflow-x:hidden}
+    img{display:block;max-width:100%;height:auto}a{color:inherit;text-decoration:none}
+    .header{position:sticky;top:0;z-index:100;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(24px,5vw,72px);background:rgba(var(--solo-calcario-rgb),0.94);backdrop-filter:blur(16px);border-bottom:1px solid rgba(var(--solo-basalto-rgb),0.06)}
+    .header img{height:32px;filter:brightness(0.2)}.header nav{display:flex;gap:28px;align-items:center}
+    .header nav a{font-size:13px;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;transition:color 0.2s}.header nav a:hover{color:var(--solo-terracota)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:16px 40px;font-family:var(--font);font-size:13px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;border:1px solid;transition:all 0.28s var(--ease);cursor:pointer}
+    .btn-primary{background:var(--solo-basalto);color:var(--solo-calcario);border-color:var(--solo-basalto)}.btn-primary:hover{background:var(--solo-terracota);border-color:var(--solo-terracota)}
+    .btn-light{background:var(--solo-calcario);color:var(--solo-basalto);border-color:var(--solo-calcario)}.btn-light:hover{background:var(--solo-terracota);color:var(--solo-calcario);border-color:var(--solo-terracota)}
+    .btn-ghost{background:transparent;color:var(--solo-calcario);border-color:rgba(var(--solo-calcario-rgb),0.3)}.btn-ghost:hover{background:rgba(var(--solo-calcario-rgb),0.1);border-color:var(--solo-calcario)}
+    .btn-secondary{background:transparent;color:var(--solo-basalto);border-color:var(--solo-argila)}.btn-secondary:hover{background:var(--solo-basalto);color:var(--solo-calcario);border-color:var(--solo-basalto)}
+    .reveal{opacity:0;transform:translateY(32px);transition:opacity 0.7s var(--ease),transform 0.7s var(--ease)}.reveal.visible{opacity:1;transform:translateY(0)}
+
+    /* Hero — full-width dramatic */
+    .vill-hero{position:relative;min-height:85vh;display:flex;align-items:flex-end;overflow:hidden}
+    .vill-hero-bg{position:absolute;inset:0;background:url("assets/villagres/Elysium.jpg") center/cover no-repeat}
+    .vill-hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(var(--solo-basalto-rgb),0.2) 0%,rgba(var(--solo-basalto-rgb),0.75) 100%)}
+    .vill-hero-content{position:relative;z-index:2;width:min(1200px,calc(100% - 48px));margin:0 auto;padding:0 0 80px;color:var(--solo-calcario)}
+    .vill-hero-eyebrow{font-size:13px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--solo-ocre);margin-bottom:24px}
+    .vill-hero h1{font-size:clamp(40px,6vw,80px);font-weight:600;line-height:1.02;letter-spacing:-0.02em;max-width:800px;margin-bottom:24px}
+    .vill-hero-sub{font-size:clamp(17px,2vw,22px);font-weight:400;line-height:1.5;color:rgba(var(--solo-calcario-rgb),0.8);max-width:580px;margin-bottom:40px}
+    .vill-hero-actions{display:flex;gap:16px;flex-wrap:wrap}
+
+    /* Lines Grid */
+    .lines{padding:120px 0;max-width:1344px;margin:0 auto;padding-left:clamp(24px,5vw,72px);padding-right:clamp(24px,5vw,72px)}
+    .lines-eyebrow{font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--solo-terracota);margin-bottom:16px}
+    .lines h2{font-size:clamp(32px,4vw,48px);font-weight:600;line-height:1.08;margin-bottom:56px;max-width:640px}
+    .lines-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+    .line-card{position:relative;aspect-ratio:4/5;overflow:hidden;cursor:pointer}
+    .line-card img{width:100%;height:100%;object-fit:cover;transition:transform 0.7s var(--ease)}
+    .line-card:hover img{transform:scale(1.06)}
+    .line-card-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(var(--solo-basalto-rgb),0.7) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:32px;transition:background 0.4s}
+    .line-card:hover .line-card-overlay{background:linear-gradient(180deg,transparent 30%,rgba(var(--solo-basalto-rgb),0.8) 100%)}
+    .line-card-name{font-size:24px;font-weight:600;color:var(--solo-calcario);margin-bottom:4px}
+    .line-card-desc{font-size:14px;font-weight:400;color:var(--solo-argila);opacity:0;transform:translateY(8px);transition:all 0.4s var(--ease)}
+    .line-card:hover .line-card-desc{opacity:1;transform:translateY(0)}
+
+    /* Feature Split */
+    .feature{display:grid;grid-template-columns:1fr 1fr;min-height:600px}
+    .feature-image{overflow:hidden}.feature-image img{width:100%;height:100%;object-fit:cover;min-height:500px}
+    .feature-content{display:flex;flex-direction:column;justify-content:center;padding:80px clamp(40px,5vw,96px);background:var(--solo-basalto);color:var(--solo-calcario)}
+    .feature-eyebrow{font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--solo-ocre);margin-bottom:16px}
+    .feature h3{font-size:clamp(28px,3vw,40px);font-weight:600;line-height:1.1;margin-bottom:16px}
+    .feature p{font-size:17px;font-weight:400;line-height:1.65;color:rgba(var(--solo-calcario-rgb),0.7);max-width:460px;margin-bottom:32px}
+    .feature.reversed{direction:rtl}.feature.reversed>*{direction:ltr}
+
+    /* CTA */
+    .cta-final{padding:120px clamp(24px,5vw,72px);background:var(--solo-basalto);color:var(--solo-calcario);text-align:center}
+    .cta-final h2{font-size:clamp(32px,4vw,52px);font-weight:600;line-height:1.06;max-width:680px;margin:0 auto 16px}
+    .cta-final p{font-size:18px;font-weight:400;line-height:1.6;color:rgba(var(--solo-calcario-rgb),0.6);max-width:520px;margin:0 auto 40px}
+    .cta-final-actions{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+
+    .footer{padding:40px clamp(24px,5vw,72px);background:var(--solo-basalto);color:rgba(var(--solo-calcario-rgb),0.4);display:flex;justify-content:space-between;align-items:center;font-size:13px;border-top:1px solid rgba(var(--solo-calcario-rgb),0.06)}
+    .footer img{height:24px;opacity:0.4}
+    .whatsapp-float{position:fixed;bottom:24px;right:24px;z-index:90;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(0,0,0,0.18);transition:transform 0.3s var(--ease)}.whatsapp-float:hover{transform:scale(1.08)}.whatsapp-float svg{width:28px;height:28px;fill:#fff}
+
+    @media(max-width:1024px){.lines-grid{grid-template-columns:repeat(2,1fr)}.feature{grid-template-columns:1fr}}
+    @media(max-width:768px){.header nav{display:none}.lines-grid{grid-template-columns:1fr}.feature{grid-template-columns:1fr}.feature.reversed{direction:ltr}.vill-hero-actions{display:grid;grid-template-columns:1fr}.vill-hero-actions .btn{width:100%}}
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <a href="home-completa.html"><img src="assets/SOLO_Logotipo-H_Calcario.svg" alt="Solo Revestimentos"></a>
+    <nav>
+      <a href="home-completa.html#ambientes">Ambientes</a>
+      <a href="catalogo.html">Catálogo</a>
+      <a href="arquitetos.html">Arquitetos</a>
+      <a href="showroom.html">Showroom</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="vill-hero">
+      <div class="vill-hero-bg"></div>
+      <div class="vill-hero-overlay"></div>
+      <div class="vill-hero-content">
+        <p class="vill-hero-eyebrow">Villagres na Solo</p>
+        <h1>A maior curadoria Villagres da região de Campinas</h1>
+        <p class="vill-hero-sub">Linhas selecionadas com exclusividade para projetos que pedem personalidade, sofisticação e desempenho técnico.</p>
+        <div class="vill-hero-actions">
+          <a class="btn btn-light" href="https://wa.me/5519989133662?text=Oi!%20Gostaria%20de%20saber%20mais%20sobre%20as%20linhas%20Villagres%20na%20Solo.">Falar com especialista</a>
+          <a class="btn btn-ghost" href="#linhas">Ver linhas</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="lines" id="linhas">
+      <p class="lines-eyebrow reveal">Linhas em destaque</p>
+      <h2 class="reveal">Porcelanatos com personalidade para cada projeto</h2>
+      <div class="lines-grid">
+        <a class="line-card reveal" href="#">
+          <img src="assets/villagres/LunarDecor_.jpg" alt="Lunar" loading="lazy">
+          <div class="line-card-overlay">
+            <span class="line-card-name">Lunar</span>
+            <span class="line-card-desc">Efeito mármore com veios suaves e luminosidade.</span>
+          </div>
+        </a>
+        <a class="line-card reveal" href="#">
+          <img src="assets/Anticatto.jpg" alt="Anticatto" loading="lazy">
+          <div class="line-card-overlay">
+            <span class="line-card-name">Anticatto</span>
+            <span class="line-card-desc">Textura rústica com alma contemporânea.</span>
+          </div>
+        </a>
+        <a class="line-card reveal" href="#">
+          <img src="assets/villagres/Elysium.jpg" alt="Elysium" loading="lazy">
+          <div class="line-card-overlay">
+            <span class="line-card-name">Elysium</span>
+            <span class="line-card-desc">Grande formato com efeito mármore sofisticado.</span>
+          </div>
+        </a>
+        <a class="line-card reveal" href="#">
+          <img src="assets/villagres/Spazio.jpg" alt="Spazio" loading="lazy">
+          <div class="line-card-overlay">
+            <span class="line-card-name">Spazio</span>
+            <span class="line-card-desc">Cimento contemporâneo em grande formato.</span>
+          </div>
+        </a>
+        <a class="line-card reveal" href="#">
+          <img src="assets/villagres/Hannover.jpg" alt="Hannover" loading="lazy">
+          <div class="line-card-overlay">
+            <span class="line-card-name">Hannover</span>
+            <span class="line-card-desc">Cimento industrial com refinamento.</span>
+          </div>
+        </a>
+        <a class="line-card reveal" href="#">
+          <img src="assets/villagres/Pantheon.jpg" alt="Pantheon" loading="lazy">
+          <div class="line-card-overlay">
+            <span class="line-card-name">Pantheon</span>
+            <span class="line-card-desc">Mármore clássico com escala monumental.</span>
+          </div>
+        </a>
+        <a class="line-card reveal" href="#">
+          <img src="assets/villagres/Maytrea-ambient2.jpg" alt="Chronus" loading="lazy">
+          <div class="line-card-overlay">
+            <span class="line-card-name">Chronus</span>
+            <span class="line-card-desc">Pedra atemporal com força mineral.</span>
+          </div>
+        </a>
+        <a class="line-card reveal" href="#">
+          <img src="assets/villagres/Paraíso.jpg" alt="Paraíso" loading="lazy">
+          <div class="line-card-overlay">
+            <span class="line-card-name">Paraíso</span>
+            <span class="line-card-desc">Madeira natural com calor e elegância.</span>
+          </div>
+        </a>
+        <a class="line-card reveal" href="#">
+          <img src="assets/villagres/Serenità-Decor.jpg" alt="Serenità" loading="lazy">
+          <div class="line-card-overlay">
+            <span class="line-card-name">Serenità</span>
+            <span class="line-card-desc">Mármore polido com serenidade luminosa.</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="feature">
+      <div class="feature-image">
+        <img src="assets/villagres/Montserrat-Terra.jpg" alt="Villagres em fachada externa" loading="lazy">
+      </div>
+      <div class="feature-content">
+        <p class="feature-eyebrow reveal">Grandes Formatos</p>
+        <h3 class="reveal">Lastras e porcelanatos de grande formato</h3>
+        <p class="reveal">Peças de até 120x240cm para projetos que pedem continuidade visual e impacto. Menos juntas, mais presença.</p>
+        <a class="btn btn-light reveal" href="grandes-formatos.html">Ver grandes formatos</a>
+      </div>
+    </section>
+
+    <section class="feature reversed">
+      <div class="feature-image">
+        <img src="assets/villagres/Maytrea-ambiente.jpg" alt="Showroom Solo com Villagres" loading="lazy">
+      </div>
+      <div class="feature-content">
+        <p class="feature-eyebrow reveal">No Showroom</p>
+        <h3 class="reveal">Veja as linhas Villagres de perto</h3>
+        <p class="reveal">Visite o showroom da Solo para conhecer texturas, cores e formatos em escala real. Agende uma visita com atendimento exclusivo.</p>
+        <a class="btn btn-light reveal" href="https://wa.me/5519989133662?text=Oi!%20Gostaria%20de%20ver%20as%20linhas%20Villagres%20no%20showroom.">Agendar visita</a>
+      </div>
+    </section>
+
+    <section class="cta-final">
+      <h2 class="reveal">Especifique Villagres com a Solo</h2>
+      <p class="reveal">Fale com nosso time para curadoria personalizada das linhas Villagres para o seu projeto.</p>
+      <div class="cta-final-actions reveal">
+        <a class="btn btn-light" href="https://wa.me/5519989133662?text=Oi!%20Gostaria%20de%20especificar%20Villagres%20para%20um%20projeto.">Falar com especialista</a>
+        <a class="btn btn-ghost" href="catalogo.html?marca=Villagres">Ver no catálogo</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer"><img src="assets/SOLO_Logotipo-H_Calcario.svg" alt="Solo"><span>&copy; 2026 Solo Revestimentos</span></footer>
+  <a class="whatsapp-float" href="https://wa.me/5519989133662?text=Oi!%20Gostaria%20de%20saber%20mais%20sobre%20Villagres." aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+
+  <script>
+    const reveals=document.querySelectorAll('.reveal');const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});reveals.forEach(el=>obs.observe(el));
+  </script>
+</body>
+</html>
