@@ -193,12 +193,13 @@
 
     .header.scrolled .header-logo-light { display: none; }
     .header.scrolled .header-logo-dark { display: block; }
-    .header.scrolled .nav a { color: var(--solo-basalto); }
-    .header.scrolled .nav a:hover { color: var(--solo-terracota); }
+    .header.scrolled .nav a:not(.header-cta) { color: var(--solo-basalto); }
+    .header.scrolled .nav a:not(.header-cta):hover { color: var(--solo-terracota); }
     .header.scrolled .header-cta {
       background: var(--solo-terracota);
-      color: var(--solo-calcario);
+      color: var(--solo-calcario) !important;
       border-color: var(--solo-terracota);
+      opacity: 1;
     }
     .header.scrolled .header-cta:hover {
       background: var(--solo-basalto);
