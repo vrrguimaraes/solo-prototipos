@@ -551,11 +551,12 @@
       width: auto;
       max-width: 160px;
       object-fit: contain;
-      opacity: 0.55;
-      transition: opacity 0.35s var(--ease);
+      mix-blend-mode: multiply;
+      filter: contrast(1.2) brightness(0.4);
+      transition: filter 0.35s var(--ease);
     }
     .marca-logo:hover {
-      opacity: 1;
+      filter: contrast(1.4) brightness(0.2);
     }
 
     /* Villagres section removed */
