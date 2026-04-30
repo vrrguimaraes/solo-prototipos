@@ -59,7 +59,8 @@
     .benefit p{font-size:15px;line-height:1.6;color:var(--solo-argila)}
 
     /* CTA */
-    .cta-final{padding:120px clamp(24px,5vw,72px);background:var(--solo-basalto);color:var(--solo-calcario);text-align:center;border-top:1px solid rgba(var(--solo-calcario-rgb),0.06)}
+    .cta-final{padding:120px clamp(24px,5vw,72px);background:var(--solo-basalto);color:var(--solo-calcario);text-align:center;border-top:1px solid rgba(var(--solo-calcario-rgb),0.06);position:relative;overflow:hidden}
+    .cta-final::before{content:"";position:absolute;inset:0;background:url("assets/patterns/SOLO_Pattern-S-4_Base.png") center/480px repeat;opacity:0.04;pointer-events:none}
     .cta-final h2{font-size:clamp(32px,4vw,52px);font-weight:600;line-height:1.06;max-width:680px;margin:0 auto 16px}
     .cta-final p{font-size:18px;font-weight:400;line-height:1.6;color:rgba(var(--solo-calcario-rgb),0.6);max-width:520px;margin:0 auto 40px}
     .cta-final-actions{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
@@ -136,7 +137,7 @@
       </div>
     </section>
 
-    <div class="stats">
+    <div class="stats" style="grid-template-columns:repeat(2,1fr)">
       <div class="stat reveal">
         <p class="stat-number">120x240</p>
         <p class="stat-unit">cm</p>
@@ -146,11 +147,6 @@
         <p class="stat-number">6</p>
         <p class="stat-unit">mm espessura</p>
         <p class="stat-desc">Slim e ultracompacto</p>
-      </div>
-      <div class="stat reveal">
-        <p class="stat-number">2</p>
-        <p class="stat-unit">unidades</p>
-        <p class="stat-desc">Showrooms em Campinas e Rio Claro</p>
       </div>
     </div>
 

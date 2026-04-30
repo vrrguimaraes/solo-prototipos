@@ -87,7 +87,9 @@
     .samples p{font-size:17px;font-weight:400;line-height:1.6;color:var(--solo-basalto);opacity:0.7;max-width:420px;margin-bottom:32px}
 
     /* ─── Commission Campaign ─── */
-    .campaign{padding:96px clamp(24px,5vw,72px);background:var(--solo-basalto);color:var(--solo-calcario);text-align:center}
+    .campaign{padding:96px clamp(24px,5vw,72px);background:var(--solo-basalto);color:var(--solo-calcario);text-align:center;position:relative;overflow:hidden}
+    .campaign::before{content:"";position:absolute;inset:0;background:url("assets/patterns/SOLO_Pattern-S-4_Base.png") center/480px repeat;opacity:0.04;pointer-events:none}
+    .campaign-inner{position:relative;z-index:1}
     .campaign-inner{max-width:720px;margin:0 auto}
     .campaign-eyebrow{font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--solo-ocre);margin-bottom:16px}
     .campaign h2{font-size:clamp(28px,3.5vw,44px);font-weight:600;line-height:1.1;margin-bottom:16px}
@@ -106,7 +108,8 @@
     .download-card p{font-size:14px;font-weight:400;line-height:1.5;color:var(--solo-basalto);opacity:0.7}
 
     /* ─── CTA Final ─── */
-    .cta-final{padding:120px clamp(24px,5vw,72px);background:var(--solo-basalto);color:var(--solo-calcario);text-align:center}
+    .cta-final{padding:120px clamp(24px,5vw,72px);background:var(--solo-basalto);color:var(--solo-calcario);text-align:center;position:relative;overflow:hidden}
+    .cta-final::before{content:"";position:absolute;inset:0;background:url("assets/patterns/SOLO_Pattern-S-4_Base.png") center/480px repeat;opacity:0.04;pointer-events:none}
     .cta-final h2{font-size:clamp(32px,4vw,52px);font-weight:600;line-height:1.06;max-width:680px;margin:0 auto 16px}
     .cta-final p{font-size:18px;font-weight:400;line-height:1.6;color:rgba(var(--solo-calcario-rgb),0.6);max-width:520px;margin:0 auto 40px}
     .cta-final-actions{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
