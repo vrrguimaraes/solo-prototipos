@@ -16,8 +16,8 @@
 
     .header{position:sticky;top:0;z-index:100;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(24px,5vw,72px);background:rgba(var(--solo-calcario-rgb),0.94);backdrop-filter:blur(16px);border-bottom:1px solid rgba(var(--solo-basalto-rgb),0.06)}
     .header img{height:32px;filter:brightness(0.2)}.header nav{display:flex;gap:28px;align-items:center}
-    .header nav a{font-size:13px;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;transition:color 0.2s}.header nav a:hover{color:var(--solo-terracota)}
-    .header-cta{font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:10px 20px;background:var(--solo-basalto);color:var(--solo-calcario);border:1px solid var(--solo-basalto);transition:all 0.28s var(--ease)}.header-cta:hover{background:var(--solo-terracota);border-color:var(--solo-terracota)}
+    .header nav a:not(.header-cta){font-size:13px;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;transition:color 0.2s}.header nav a:not(.header-cta):hover{color:var(--solo-terracota)}
+    .header-cta{font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:10px 20px;background:var(--solo-terracota);color:var(--solo-calcario) !important;border:1px solid var(--solo-terracota);transition:all 0.28s var(--ease)}.header-cta:hover{background:var(--solo-basalto);border-color:var(--solo-basalto)}
 
     .btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:16px 40px;font-family:var(--font);font-size:13px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;border:1px solid;transition:all 0.28s var(--ease);cursor:pointer}
     .btn-primary{background:var(--solo-basalto);color:var(--solo-calcario);border-color:var(--solo-basalto)}.btn-primary:hover{background:var(--solo-terracota);border-color:var(--solo-terracota)}

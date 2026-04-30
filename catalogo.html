@@ -40,19 +40,19 @@
     }
     .header img { height: 32px; filter: brightness(0.2); }
     .header nav { display: flex; gap: 28px; align-items: center; }
-    .header nav a {
+    .header nav a:not(.header-cta) {
       font-size: 13px; font-weight: 500; letter-spacing: 0.04em;
       text-transform: uppercase; color: var(--solo-basalto);
       transition: color 0.2s;
     }
-    .header nav a:hover { color: var(--solo-terracota); }
+    .header nav a:not(.header-cta):hover { color: var(--solo-terracota); }
     .header-cta {
       font-size: 12px; font-weight: 600; letter-spacing: 0.06em;
       text-transform: uppercase; padding: 10px 20px;
-      background: var(--solo-basalto); color: var(--solo-calcario);
-      border: 1px solid var(--solo-basalto); transition: all 0.28s var(--ease);
+      background: var(--solo-terracota); color: var(--solo-calcario) !important;
+      border: 1px solid var(--solo-terracota); transition: all 0.28s var(--ease);
     }
-    .header-cta:hover { background: var(--solo-terracota); border-color: var(--solo-terracota); }
+    .header-cta:hover { background: var(--solo-basalto); border-color: var(--solo-basalto); }
 
     /* ─── Breadcrumb ─── */
     .breadcrumb {
