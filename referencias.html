@@ -1,10 +1,11 @@
+<!-- URL anterior: /projetos/ — configurar redirect 301 para /referencias/ ao subir em produção -->
 <!doctype html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Projetos e Cases — Solo Revestimentos</title>
-  <meta name="description" content="Veja projetos reais realizados com os materiais da Solo Revestimentos. Fotos, produtos utilizados e arquitetos responsáveis.">
+  <title>Referências de Aplicação — Solo Revestimentos</title>
+  <meta name="description" content="Inspiração em projetos publicados pelos fabricantes parceiros. Aplicações reais dos materiais da nossa curadoria, com crédito aos profissionais.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -16,6 +17,7 @@
     .header{position:sticky;top:0;z-index:100;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(24px,5vw,72px);background:rgba(var(--solo-calcario-rgb),0.94);backdrop-filter:blur(16px);border-bottom:1px solid rgba(var(--solo-basalto-rgb),0.06)}
     .header img{height:32px;filter:brightness(0.2)}.header nav{display:flex;gap:28px;align-items:center}
     .header nav a:not(.header-cta){font-size:13px;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;transition:color 0.2s}.header nav a:not(.header-cta):hover{color:var(--solo-terracota)}
+    .header-cta{font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:10px 20px;background:var(--solo-terracota);color:var(--solo-calcario) !important;border:1px solid var(--solo-terracota);transition:all 0.28s var(--ease)}.header-cta:hover{background:var(--solo-basalto);border-color:var(--solo-basalto)}
     .btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:16px 40px;font-family:var(--font);font-size:13px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;border:1px solid;transition:all 0.28s var(--ease);cursor:pointer}
     .btn-primary{background:var(--solo-basalto);color:var(--solo-calcario);border-color:var(--solo-basalto)}.btn-primary:hover{background:var(--solo-terracota);border-color:var(--solo-terracota)}
     .btn-light{background:var(--solo-calcario);color:var(--solo-basalto);border-color:var(--solo-calcario)}.btn-light:hover{background:var(--solo-terracota);color:var(--solo-calcario);border-color:var(--solo-terracota)}
@@ -28,8 +30,13 @@
     .page-hero h1{font-size:clamp(36px,5vw,64px);font-weight:600;line-height:1.06;letter-spacing:-0.01em;max-width:780px}
     .page-hero p{font-size:18px;font-weight:400;line-height:1.6;color:var(--solo-basalto);opacity:0.7;max-width:600px;margin-top:16px}
 
+    /* Transparency Block */
+    .transparency-block{max-width:800px;margin:0 auto 64px;padding:24px 32px;background:rgba(193,182,167,0.15);border-left:3px solid var(--solo-ocre);display:flex;gap:16px;align-items:flex-start}
+    .transparency-block svg{flex-shrink:0;margin-top:2px}
+    .transparency-block p{font-size:14px;font-weight:400;line-height:1.6;color:var(--solo-basalto);opacity:0.75}
+
     /* Projects Grid */
-    .projects{padding:40px clamp(24px,5vw,72px) 120px;max-width:1344px;margin:0 auto}
+    .projects{padding:0 clamp(24px,5vw,72px) 120px;max-width:1344px;margin:0 auto}
 
     .project-card{display:grid;grid-template-columns:1.2fr 1fr;gap:0;margin-bottom:4px;overflow:hidden;cursor:pointer;background:var(--solo-basalto)}
     .project-card:nth-child(even){direction:rtl}
@@ -44,25 +51,29 @@
     .project-card-title{font-size:clamp(24px,3vw,36px);font-weight:600;line-height:1.1;margin-bottom:16px}
     .project-card-desc{font-size:16px;font-weight:400;line-height:1.6;color:rgba(var(--solo-calcario-rgb),0.65);margin-bottom:24px}
 
-    .project-card-meta{display:flex;flex-direction:column;gap:12px;margin-bottom:32px}
+    .project-card-meta{display:flex;flex-direction:column;gap:12px;margin-bottom:16px}
     .project-card-meta-item{display:flex;gap:8px;font-size:14px;color:rgba(var(--solo-calcario-rgb),0.5)}
     .project-card-meta-item strong{color:rgba(var(--solo-calcario-rgb),0.8);font-weight:600}
+
+    .project-card-source{font-size:12px;font-style:italic;color:rgba(var(--solo-calcario-rgb),0.45);margin-bottom:16px;letter-spacing:0.02em}
 
     .project-card-products{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
     .project-card-tag{padding:6px 14px;font-size:12px;font-weight:500;letter-spacing:0.04em;border:1px solid rgba(var(--solo-calcario-rgb),0.15);color:rgba(var(--solo-calcario-rgb),0.7);transition:border-color 0.2s}
     .project-card:hover .project-card-tag{border-color:rgba(var(--solo-calcario-rgb),0.3)}
 
     /* CTA */
-    .cta-final{padding:120px clamp(24px,5vw,72px);background:var(--solo-basalto);color:var(--solo-calcario);text-align:center}
+    .cta-final{padding:120px clamp(24px,5vw,72px);background:var(--solo-basalto);color:var(--solo-calcario);text-align:center;position:relative;overflow:hidden}
+    .cta-final::before{content:"";position:absolute;inset:0;background:url("assets/patterns/SOLO_Pattern-S-4_Base.png") center/480px repeat;opacity:0.04;pointer-events:none}
+    .cta-final .inner{position:relative;z-index:1}
     .cta-final h2{font-size:clamp(32px,4vw,52px);font-weight:600;line-height:1.06;max-width:680px;margin:0 auto 16px}
-    .cta-final p{font-size:18px;font-weight:400;line-height:1.6;color:rgba(var(--solo-calcario-rgb),0.6);max-width:520px;margin:0 auto 40px}
+    .cta-final p{font-size:18px;font-weight:400;line-height:1.6;color:var(--solo-calcario);max-width:520px;margin:0 auto 40px}
     .cta-final-actions{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
 
     .footer{padding:40px clamp(24px,5vw,72px);background:var(--solo-basalto);color:rgba(var(--solo-calcario-rgb),0.4);display:flex;justify-content:space-between;align-items:center;font-size:13px;border-top:1px solid rgba(var(--solo-calcario-rgb),0.06)}
     .footer img{height:24px;opacity:0.4}
     .whatsapp-float{position:fixed;bottom:24px;right:24px;z-index:90;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(0,0,0,0.18);transition:transform 0.3s var(--ease)}.whatsapp-float:hover{transform:scale(1.08)}.whatsapp-float svg{width:28px;height:28px;fill:#fff}
 
-    @media(max-width:768px){.header nav{display:none}.project-card{grid-template-columns:1fr}.project-card:nth-child(even){direction:ltr}.project-card-image{min-height:280px;aspect-ratio:16/9}}
+    @media(max-width:768px){.header nav{display:none}.project-card{grid-template-columns:1fr}.project-card:nth-child(even){direction:ltr}.project-card-image{min-height:280px;aspect-ratio:16/9}.transparency-block{flex-direction:column}}
   </style>
 </head>
 <body>
@@ -74,93 +85,102 @@
       <a href="catalogo.html">Catálogo</a>
       <a href="arquitetos.html">Arquitetos</a>
       <a href="showroom.html">Showroom</a>
+      <a href="https://wa.me/5519989133662?text=Oi!%20Estou%20no%20site%20e%20gostaria%20de%20agendar%20uma%20visita." class="header-cta">Agendar Visita</a>
     </nav>
   </header>
 
   <main>
 
     <div class="page-hero">
-      <p class="page-hero-eyebrow reveal">Projetos</p>
-      <h1 class="reveal">Obras reais com materiais da Solo</h1>
-      <p class="reveal">Conheça projetos residenciais e comerciais realizados com nossa curadoria. Cada case mostra os produtos utilizados e o resultado final.</p>
+      <p class="page-hero-eyebrow reveal">Referências</p>
+      <h1 class="reveal">Inspiração em projetos publicados</h1>
+      <p class="reveal">Reunimos aqui projetos publicados por nossos fornecedores parceiros que demonstram aplicações dos materiais da curadoria Solo. Crédito integral aos profissionais e fontes originais.</p>
+    </div>
+
+    <!-- Bloco de transparência -->
+    <div class="transparency-block reveal">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--solo-ocre)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+      <p>Estes projetos não foram especificados através da Solo. São referências públicas de aplicação dos materiais que fazem parte da nossa curadoria, publicadas pelos fabricantes. Em breve teremos uma seção dedicada a Cases Solo — projetos especificados por arquitetos clientes.</p>
     </div>
 
     <div class="projects">
 
       <article class="project-card reveal">
         <div class="project-card-image">
-          <img src="assets/villagres/Spazio.jpg" alt="Projeto Residencial — Bairro Cambuí" loading="lazy">
+          <img src="assets/villagres/Spazio.jpg" alt="Apartamento contemporâneo — referência Villagres" loading="lazy">
         </div>
         <div class="project-card-content">
-          <p class="project-card-eyebrow">Residencial</p>
-          <h2 class="project-card-title">Residência Cambuí</h2>
-          <p class="project-card-desc">Reforma completa de apartamento de 180m2 com especificação de porcelanatos para áreas sociais e louças/metais para banheiros.</p>
+          <p class="project-card-eyebrow">Referência residencial</p>
+          <h2 class="project-card-title">Apartamento contemporâneo</h2>
+          <p class="project-card-desc">Aplicação de porcelanatos em áreas sociais e composição de louças e metais para banheiros em apartamento de 180m².</p>
           <div class="project-card-meta">
             <div class="project-card-meta-item"><strong>Arquiteta:</strong> Fernanda Lopes</div>
-            <div class="project-card-meta-item"><strong>Local:</strong> Campinas, SP</div>
-            <div class="project-card-meta-item"><strong>Área:</strong> 180m2</div>
+            <div class="project-card-meta-item"><strong>Área:</strong> 180m²</div>
           </div>
+          <p class="project-card-source">Foto: arquivo Villagres</p>
           <div class="project-card-products">
             <span class="project-card-tag">Spazio — Villagres</span>
             <span class="project-card-tag">Docol Metais</span>
             <span class="project-card-tag">Doka Louças</span>
           </div>
-          <a class="btn btn-light" href="https://wa.me/5519989133662?text=Oi!%20Vi%20o%20projeto%20Residência%20Cambuí%20no%20site%20e%20gostaria%20de%20saber%20mais.">Quero algo assim</a>
+          <a class="btn btn-light" href="https://wa.me/5519989133662?text=Oi!%20Vi%20a%20referência%20Apartamento%20contemporâneo%20no%20site%20e%20gostaria%20de%20especificar%20materiais%20semelhantes%20para%20um%20projeto.">Especificar materiais semelhantes</a>
         </div>
       </article>
 
       <article class="project-card reveal">
         <div class="project-card-image">
-          <img src="assets/villagres/Elysium.jpg" alt="Projeto Residencial — Condomínio Alphaville" loading="lazy">
+          <img src="assets/villagres/Elysium.jpg" alt="Casa em condomínio — referência Villagres" loading="lazy">
         </div>
         <div class="project-card-content">
-          <p class="project-card-eyebrow">Residencial</p>
-          <h2 class="project-card-title">Casa Alphaville</h2>
-          <p class="project-card-desc">Construção nova com curadoria completa de revestimentos. Grandes formatos nas áreas sociais e porcelanatos efeito madeira na varanda.</p>
+          <p class="project-card-eyebrow">Referência residencial</p>
+          <h2 class="project-card-title">Casa em condomínio</h2>
+          <p class="project-card-desc">Construção residencial com grandes formatos nas áreas sociais e porcelanatos efeito madeira na varanda. Curadoria de revestimentos integrada ao paisagismo.</p>
           <div class="project-card-meta">
             <div class="project-card-meta-item"><strong>Arquiteto:</strong> Ricardo Mendes</div>
-            <div class="project-card-meta-item"><strong>Local:</strong> Campinas, SP</div>
-            <div class="project-card-meta-item"><strong>Área:</strong> 320m2</div>
+            <div class="project-card-meta-item"><strong>Área:</strong> 320m²</div>
           </div>
+          <p class="project-card-source">Foto: arquivo Villagres</p>
           <div class="project-card-products">
             <span class="project-card-tag">Elysium — Villagres</span>
             <span class="project-card-tag">Paraíso — Villagres</span>
             <span class="project-card-tag">Kromma Metais</span>
           </div>
-          <a class="btn btn-light" href="https://wa.me/5519989133662?text=Oi!%20Vi%20o%20projeto%20Casa%20Alphaville%20e%20gostaria%20de%20saber%20mais.">Quero algo assim</a>
+          <a class="btn btn-light" href="https://wa.me/5519989133662?text=Oi!%20Vi%20a%20referência%20Casa%20em%20condomínio%20no%20site%20e%20gostaria%20de%20especificar%20materiais%20semelhantes%20para%20um%20projeto.">Especificar materiais semelhantes</a>
         </div>
       </article>
 
       <article class="project-card reveal">
         <div class="project-card-image">
-          <img src="assets/villagres/Montserrat-Terra.jpg" alt="Projeto Comercial — Clínica" loading="lazy">
+          <img src="assets/villagres/Montserrat-Terra.jpg" alt="Clínica Dermatológica — referência Villagres" loading="lazy">
         </div>
         <div class="project-card-content">
-          <p class="project-card-eyebrow">Comercial</p>
+          <p class="project-card-eyebrow">Referência comercial</p>
           <h2 class="project-card-title">Clínica Dermatológica</h2>
-          <p class="project-card-desc">Projeto de interiores para clínica com foco em sofisticação e higienização. Revestimentos de fácil limpeza e metais assépticos.</p>
+          <p class="project-card-desc">Projeto de interiores com foco em sofisticação e higienização. Revestimentos de fácil limpeza e metais com acabamento resistente para ambiente clínico.</p>
           <div class="project-card-meta">
             <div class="project-card-meta-item"><strong>Arquiteta:</strong> Ana Paula Souza</div>
-            <div class="project-card-meta-item"><strong>Local:</strong> Rio Claro, SP</div>
-            <div class="project-card-meta-item"><strong>Área:</strong> 120m2</div>
+            <div class="project-card-meta-item"><strong>Área:</strong> 120m²</div>
           </div>
+          <p class="project-card-source">Foto: arquivo Villagres</p>
           <div class="project-card-products">
             <span class="project-card-tag">Montserrat — Villagres</span>
             <span class="project-card-tag">Docol Metais</span>
             <span class="project-card-tag">Immersi Louças</span>
           </div>
-          <a class="btn btn-light" href="https://wa.me/5519989133662?text=Oi!%20Vi%20o%20projeto%20da%20Clínica%20e%20gostaria%20de%20saber%20mais.">Quero algo assim</a>
+          <a class="btn btn-light" href="https://wa.me/5519989133662?text=Oi!%20Vi%20a%20referência%20Clínica%20Dermatológica%20no%20site%20e%20gostaria%20de%20especificar%20materiais%20semelhantes%20para%20um%20projeto.">Especificar materiais semelhantes</a>
         </div>
       </article>
 
     </div>
 
     <section class="cta-final">
-      <h2 class="reveal">Quer ver seu projeto aqui?</h2>
-      <p class="reveal">Fale com nossa equipe e comece a especificar os materiais para sua obra.</p>
-      <div class="cta-final-actions reveal">
-        <a class="btn btn-light" href="https://wa.me/5519989133662?text=Oi!%20Vi%20os%20projetos%20no%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista.">Falar com especialista</a>
-        <a class="btn btn-ghost" href="catalogo.html">Explorar catálogo</a>
+      <div class="inner">
+        <h2 class="reveal">Tem um projeto seu com a Solo?</h2>
+        <p class="reveal">Estamos construindo nossa galeria de cases com clientes reais. Se você é arquiteto e especificou materiais da nossa curadoria em algum projeto, queremos mostrá-lo aqui.</p>
+        <div class="cta-final-actions reveal">
+          <a class="btn btn-light" href="https://wa.me/5519989133662?text=Olá!%20Sou%20arquiteto%20e%20especifiquei%20materiais%20da%20Solo%20em%20um%20projeto.%20Gostaria%20de%20compartilhar%20para%20divulgação%20no%20site%20de%20vocês.">Compartilhar meu projeto</a>
+          <a class="btn btn-ghost" href="https://wa.me/5519989133662?text=Olá!%20Sou%20arquiteto%20e%20gostaria%20de%20conversar%20com%20a%20equipe%20Solo%20sobre%20especificação%20de%20materiais.">Falar com a equipe</a>
+        </div>
       </div>
     </section>
 
