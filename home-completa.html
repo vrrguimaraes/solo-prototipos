@@ -368,6 +368,84 @@
     }
 
     /* ═══════════════════════════════════════════
+       SEGMENTAÇÃO DUPLA
+       ═══════════════════════════════════════════ */
+    .segmentacao {
+      max-width: 1344px;
+      margin: 0 auto;
+      padding: 0 clamp(24px, 5vw, 72px);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px;
+    }
+
+    .seg-card {
+      position: relative;
+      min-height: 480px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 40px;
+      cursor: pointer;
+    }
+
+    .seg-card-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.7s var(--ease);
+    }
+    .seg-card:hover .seg-card-bg { transform: scale(1.04); }
+
+    .seg-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 30%, rgba(var(--solo-basalto-rgb), 0.75) 100%);
+    }
+
+    .seg-card-content {
+      position: relative;
+      z-index: 2;
+      color: var(--solo-calcario);
+    }
+
+    .seg-card-eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--solo-ocre);
+      margin-bottom: 12px;
+    }
+
+    .seg-card-title {
+      font-size: clamp(24px, 3vw, 32px);
+      font-weight: 600;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    .seg-card-desc {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.6;
+      opacity: 0.85;
+      max-width: 400px;
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: 768px) {
+      .segmentacao {
+        grid-template-columns: 1fr;
+      }
+      .seg-card {
+        min-height: 360px;
+      }
+    }
+
+    /* ═══════════════════════════════════════════
        POR QUE A SOLO — Value Proposition
        ═══════════════════════════════════════════ */
     .why {
@@ -1105,16 +1183,40 @@
       <div class="hero-fade"></div>
       <div class="hero-inner">
         <div class="hero-copy">
-          <p class="hero-eyebrow">Curadoria em revestimentos, louças e metais</p>
-          <h1>Revestimentos escolhidos com critério para o seu projeto</h1>
-          <p class="hero-sub">A Solo apoia clientes e arquitetos na escolha de revestimentos, louças e metais com curadoria, atendimento especializado e segurança para cada etapa da obra.</p>
+          <p class="hero-eyebrow">Curadoria de revestimentos · Campinas e Rio Claro</p>
+          <h1>Material certo.<br>Projeto inteiro.</h1>
+          <p class="hero-sub">Boutique de revestimentos com curadoria consultiva — para arquitetos especificando projetos e para quem está construindo ou reformando a própria casa com critério.</p>
           <div class="hero-actions">
-            <a class="btn btn-hero-cta" href="https://wa.me/5519989133662?text=Oi!%20Estou%20no%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista.">Falar com um especialista</a>
-            <a class="btn btn-ghost" href="#catalogo">Conhecer os produtos</a>
+            <a class="btn btn-hero-cta" href="https://wa.me/5519989133662?text=Olá!%20Vim%20pelo%20site%20da%20Solo%20e%20gostaria%20de%20conversar.">Falar com especialista</a>
+            <a class="btn btn-ghost" href="catalogo.html">Ver curadoria</a>
           </div>
-          <p class="hero-micro">Showrooms em Campinas e Rio Claro. Atendimento consultivo para projetos residenciais de médio-alto padrão.</p>
         </div>
       </div>
+    </section>
+
+    <!-- ═══ SEGMENTAÇÃO DUPLA ═══ -->
+    <section class="segmentacao reveal">
+      <a class="seg-card" href="arquitetos.html">
+        <div class="seg-card-bg" style="background-image:url('assets/villagres/Maytrea-ambiente.jpg')"></div>
+        <div class="seg-card-overlay"></div>
+        <div class="seg-card-content">
+          <p class="seg-card-eyebrow">Para profissionais</p>
+          <h2 class="seg-card-title">Para arquitetos e designers</h2>
+          <p class="seg-card-desc">Curadoria de marcas, atendimento técnico próximo, amostras sob demanda e showroom preparado para receber seus clientes.</p>
+          <span class="btn btn-light">Conhecer benefícios</span>
+        </div>
+      </a>
+      <!-- TODO: destino final do caminho cliente final ainda em definição. Provisoriamente apontando para ambientes.html. Pode mudar para /sua-casa/ ou /catalogo/ no futuro. -->
+      <a class="seg-card" href="ambientes.html">
+        <div class="seg-card-bg" style="background-image:url('assets/castelatto/castelatto-living-casacor-arq-nando-nunes-foto-edgard-cesar.jpg')"></div>
+        <div class="seg-card-overlay"></div>
+        <div class="seg-card-content">
+          <p class="seg-card-eyebrow">Para sua casa</p>
+          <h2 class="seg-card-title">Está construindo ou reformando?</h2>
+          <p class="seg-card-desc">Inspiração, orientação técnica e materiais selecionados para sua casa. Atendimento que entende seu projeto, sem pressão.</p>
+          <span class="btn btn-light">Ver ambientes</span>
+        </div>
+      </a>
     </section>
 
     <!-- ═══ POR QUE A SOLO ═══ -->
