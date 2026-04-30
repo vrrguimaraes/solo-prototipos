@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Solo Revestimentos — Curadoria em Revestimentos, Louças e Metais</title>
-  <meta name="description" content="Revestimentos escolhidos com critério para o seu projeto. Showrooms em Campinas e Rio Claro. Atendimento consultivo para projetos de médio-alto padrão.">
+  <meta name="description" content="Boutique de revestimentos com curadoria consultiva para arquitetos e clientes finais. Showroom em Campinas e Rio Claro.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -1136,6 +1136,18 @@
     body.menu-open{overflow:hidden}
     @media(max-width:768px){.menu-toggle{display:flex}.mobile-menu{top:64px}}
 
+      /* Footer */
+    .site-footer{padding:64px 0 32px;background:var(--solo-basalto);color:rgba(var(--solo-calcario-rgb),0.7);position:relative;overflow:hidden}
+    .site-footer::before{content:"";position:absolute;inset:0;background:url("assets/patterns/SOLO_Pattern-S-4_Base.png") center/480px repeat;opacity:0.03;pointer-events:none}
+    .site-footer-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 clamp(24px,5vw,72px)}
+    .site-footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
+    .site-footer-brand p{font-size:14px;line-height:1.6;margin-top:16px;max-width:280px}
+    .site-footer h4{font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--solo-calcario);margin-bottom:12px}
+    .site-footer p{font-size:13px;line-height:1.7}
+    .site-footer a{transition:color 0.2s}.site-footer a:hover{color:var(--solo-calcario)}
+    .site-footer-bottom{display:flex;justify-content:space-between;padding-top:24px;border-top:1px solid rgba(var(--solo-calcario-rgb),0.06);font-size:12px}
+    @media(max-width:768px){.site-footer-grid{grid-template-columns:1fr;gap:32px}.site-footer-bottom{flex-direction:column;gap:8px;text-align:center}}
+
   </style>
 </head>
 <body>
@@ -1463,11 +1475,11 @@
         <div class="showroom-locations">
           <div class="showroom-loc">
             <p class="showroom-loc-city">Campinas</p>
-            <p class="showroom-loc-address">R. Cel. Quirino, 1609 — Cambuí<br>(19) 2511.0502<br>Seg a Sex: 9h–18h · Sáb: 9h–12h</p>
+            <p class="showroom-loc-address">R. Cel. Quirino, 1609 — Cambuí<br>(19) 2511.0502<br>Seg a Sex: 9h–18h · Sáb: 9h–13h</p>
           </div>
           <div class="showroom-loc">
             <p class="showroom-loc-city">Rio Claro</p>
-            <p class="showroom-loc-address">Rua 14, 433 — Consolação<br>(19) 3597.4635<br>Seg a Sex: 9h–18h · Sáb: 9h–12h</p>
+            <p class="showroom-loc-address">Rua 14, 433 — Consolação<br>(19) 3597.4635<br>Seg a Sex: 9h–18h · Sáb: 9h–13h</p>
           </div>
         </div>
         <a class="btn btn-light" href="https://wa.me/5519989133662?text=Oi!%20Gostaria%20de%20agendar%20uma%20visita%20ao%20showroom.">Agendar visita</a>
@@ -1527,61 +1539,35 @@
 
   </main>
 
-  <!-- ═══ FOOTER ═══ -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <img src="assets/SOLO_Logotipo-H_Calcario.svg" alt="Solo Revestimentos" style="height:32px; opacity:0.6;">
-          <p class="footer-brand-text">Curadoria em revestimentos, louças e metais para projetos residenciais e comerciais de médio-alto padrão. Showrooms em Campinas e Rio Claro.</p>
+    <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-grid">
+        <div class="site-footer-brand">
+          <img src="assets/SOLO_Logotipo-H_Calcario.svg" alt="Solo Revestimentos" style="height:32px;opacity:0.7">
+          <p>Curadoria de revestimentos para arquitetos e clientes finais.</p>
         </div>
         <div>
-          <p class="footer-col-title">Navegação</p>
-          <ul class="footer-links">
-            <li><a href="#ambientes">Ambientes</a></li>
-            <li><a href="catalogo.html">Catálogo</a></li>
-            <li><a href="arquitetos.html">Para Arquitetos</a></li>
-            <li><a href="villagres.html">Villagres</a></li>
-            <li><a href="referencias.html">Referências</a></li>
-          </ul>
+          <h4>Campinas</h4>
+          <p>Rua Coronel Quirino, 1609 — Cambuí<br>CEP 13025-002<br><a href="tel:+551925110502">(19) 2511-0502</a><br><a href="mailto:contato@solorevestimentos.com.br">contato@solorevestimentos.com.br</a></p>
         </div>
         <div>
-          <p class="footer-col-title">Institucional</p>
-          <ul class="footer-links">
-            <li><a href="showroom.html">Showroom</a></li>
-            <li><a href="grandes-formatos.html">Grandes Formatos</a></li>
-            <li><a href="/sobre/">Sobre</a></li>
-            <li><a href="/contato/">Contato</a></li>
-            <li><a href="/downloads/">Downloads</a></li>
-          </ul>
+          <h4>Rio Claro</h4>
+          <p>Rua 14, 433 — Consolação<br>CEP 13500-130<br><a href="tel:+551935974635">(19) 3597-4635</a><br><a href="mailto:atendimento@solorevestimentos.com.br">atendimento@solorevestimentos.com.br</a></p>
         </div>
         <div>
-          <p class="footer-col-title">Campinas</p>
-          <ul class="footer-links">
-            <li>Rua Coronel Quirino, 1609 — Cambuí</li>
-            <li>CEP 13025-002 — Campinas/SP</li>
-            <li><a href="tel:+551925110502">(19) 2511.0502</a></li>
-            <li><a href="mailto:contato@solorevestimentos.com.br">contato@solorevestimentos.com.br</a></li>
-            <li><a href="https://instagram.com/solorevestimentos"><svg style="width:14px;height:14px;vertical-align:-2px;margin-right:4px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>@solorevestimentos</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="footer-col-title">Rio Claro</p>
-          <ul class="footer-links">
-            <li>Rua 14, 433 — Consolação</li>
-            <li>CEP 13.500-130 — Rio Claro/SP</li>
-            <li><a href="tel:+551935974635">(19) 3597.4635</a></li>
-            <li><a href="mailto:atendimento@solorevestimentos.com.br">atendimento@solorevestimentos.com.br</a></li>
-            <li><a href="https://instagram.com/solorevestimentosrc"><svg style="width:14px;height:14px;vertical-align:-2px;margin-right:4px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>@solorevestimentosrc</a></li>
-          </ul>
+          <h4>Atendimento</h4>
+          <p>Segunda a sexta: 9h às 18h<br>Sábado: 9h às 13h</p>
+          <h4 style="margin-top:24px">Redes</h4>
+          <p><a href="https://instagram.com/solorevestimentos">@solorevestimentos</a><br><a href="https://instagram.com/solorevestimentosrc">@solorevestimentosrc</a></p>
         </div>
       </div>
-      <div class="footer-bottom">
-        <span>&copy; 2026 Solo Revestimentos. Todos os direitos reservados.</span>
-        <span><a href="https://wa.me/5519989133662">WhatsApp (19) 98913-3662</a></span>
+      <div class="site-footer-bottom">
+        <span>&copy; 2026 Solo Revestimentos</span>
+        <span style="opacity:0.4">Política de privacidade · Termos</span>
       </div>
     </div>
   </footer>
+
 
   <!-- ═══ WhatsApp Float ═══ -->
   <a class="whatsapp-float" href="https://wa.me/5519989133662?text=Oi!%20Estou%20no%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista." aria-label="WhatsApp">

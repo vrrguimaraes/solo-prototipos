@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Catálogo Curado — Solo Revestimentos</title>
-  <meta name="description" content="Explore revestimentos, louças e metais por categoria, ambiente, efeito e marca. Curadoria da Solo Revestimentos.">
+  <meta name="description" content="Catálogo curado de revestimentos, louças e metais. Mais de 70 marcas representadas com parcerias estratégicas selecionadas.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -297,6 +297,18 @@
     .mobile-menu-nav .mobile-menu-cta:hover{background:var(--solo-ocre);color:var(--solo-basalto)}
     body.menu-open{overflow:hidden}
     @media(max-width:768px){.menu-toggle{display:flex}}
+
+      /* Footer */
+    .site-footer{padding:64px 0 32px;background:var(--solo-basalto);color:rgba(var(--solo-calcario-rgb),0.7);position:relative;overflow:hidden}
+    .site-footer::before{content:"";position:absolute;inset:0;background:url("assets/patterns/SOLO_Pattern-S-4_Base.png") center/480px repeat;opacity:0.03;pointer-events:none}
+    .site-footer-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 clamp(24px,5vw,72px)}
+    .site-footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
+    .site-footer-brand p{font-size:14px;line-height:1.6;margin-top:16px;max-width:280px}
+    .site-footer h4{font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--solo-calcario);margin-bottom:12px}
+    .site-footer p{font-size:13px;line-height:1.7}
+    .site-footer a{transition:color 0.2s}.site-footer a:hover{color:var(--solo-calcario)}
+    .site-footer-bottom{display:flex;justify-content:space-between;padding-top:24px;border-top:1px solid rgba(var(--solo-calcario-rgb),0.06);font-size:12px}
+    @media(max-width:768px){.site-footer-grid{grid-template-columns:1fr;gap:32px}.site-footer-bottom{flex-direction:column;gap:8px;text-align:center}}
 
   </style>
 </head>
@@ -631,10 +643,6 @@
   </div>
 
   <!-- Footer -->
-  <footer class="footer">
-    <img src="assets/SOLO_Logotipo-H_Calcario.svg" alt="Solo Revestimentos">
-    <span>&copy; 2026 Solo Revestimentos</span>
-  </footer>
 
   <!-- WhatsApp Float -->
   <a class="whatsapp-float" href="https://wa.me/5519989133662?text=Oi!%20Estou%20no%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista." aria-label="WhatsApp">
@@ -681,5 +689,34 @@
 <script>
 (function(){var t=document.querySelector('.menu-toggle'),m=document.querySelector('.mobile-menu');if(!t||!m)return;function o(){t.setAttribute('aria-expanded','true');t.setAttribute('aria-label','Fechar menu');m.setAttribute('aria-hidden','false');document.body.classList.add('menu-open')}function c(){t.setAttribute('aria-expanded','false');t.setAttribute('aria-label','Abrir menu');m.setAttribute('aria-hidden','true');document.body.classList.remove('menu-open')}t.addEventListener('click',function(){t.getAttribute('aria-expanded')==='true'?c():o()});document.querySelectorAll('.mobile-menu-nav a').forEach(function(l){l.addEventListener('click',c)});document.addEventListener('keydown',function(e){if(e.key==='Escape')c()})})();
 </script>
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-grid">
+        <div class="site-footer-brand">
+          <img src="assets/SOLO_Logotipo-H_Calcario.svg" alt="Solo Revestimentos" style="height:32px;opacity:0.7">
+          <p>Curadoria de revestimentos para arquitetos e clientes finais.</p>
+        </div>
+        <div>
+          <h4>Campinas</h4>
+          <p>Rua Coronel Quirino, 1609 — Cambuí<br>CEP 13025-002<br><a href="tel:+551925110502">(19) 2511-0502</a><br><a href="mailto:contato@solorevestimentos.com.br">contato@solorevestimentos.com.br</a></p>
+        </div>
+        <div>
+          <h4>Rio Claro</h4>
+          <p>Rua 14, 433 — Consolação<br>CEP 13500-130<br><a href="tel:+551935974635">(19) 3597-4635</a><br><a href="mailto:atendimento@solorevestimentos.com.br">atendimento@solorevestimentos.com.br</a></p>
+        </div>
+        <div>
+          <h4>Atendimento</h4>
+          <p>Segunda a sexta: 9h às 18h<br>Sábado: 9h às 13h</p>
+          <h4 style="margin-top:24px">Redes</h4>
+          <p><a href="https://instagram.com/solorevestimentos">@solorevestimentos</a><br><a href="https://instagram.com/solorevestimentosrc">@solorevestimentosrc</a></p>
+        </div>
+      </div>
+      <div class="site-footer-bottom">
+        <span>&copy; 2026 Solo Revestimentos</span>
+        <span style="opacity:0.4">Política de privacidade · Termos</span>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
