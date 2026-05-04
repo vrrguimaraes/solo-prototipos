@@ -117,6 +117,16 @@
     .footer-contact li{display:flex;align-items:flex-start;gap:8px;font-size:13px;line-height:1.5}
     .footer-contact svg{width:14px;height:14px;flex-shrink:0;margin-top:2px;stroke:rgba(var(--solo-calcario-rgb),0.5);fill:none;stroke-width:1.5}
 
+  
+    /* ─── Enhanced Animations ─── */
+    .reveal{opacity:0;transform:translateY(40px);transition:opacity 0.8s var(--ease),transform 0.8s var(--ease)}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    .stagger>.reveal:nth-child(1){transition-delay:0s}.stagger>.reveal:nth-child(2){transition-delay:0.1s}.stagger>.reveal:nth-child(3){transition-delay:0.2s}.stagger>.reveal:nth-child(4){transition-delay:0.3s}.stagger>.reveal:nth-child(5){transition-delay:0.4s}.stagger>.reveal:nth-child(6){transition-delay:0.5s}.stagger>.reveal:nth-child(7){transition-delay:0.6s}.stagger>.reveal:nth-child(8){transition-delay:0.7s}.stagger>.reveal:nth-child(9){transition-delay:0.8s}
+    .reveal-left{opacity:0;transform:translateX(-40px);transition:opacity 0.8s var(--ease),transform 0.8s var(--ease)}.reveal-left.visible{opacity:1;transform:translateX(0)}
+    .reveal-right{opacity:0;transform:translateX(40px);transition:opacity 0.8s var(--ease),transform 0.8s var(--ease)}.reveal-right.visible{opacity:1;transform:translateX(0)}
+    .reveal-scale{opacity:0;transform:scale(0.92);transition:opacity 0.8s var(--ease),transform 0.8s var(--ease)}.reveal-scale.visible{opacity:1;transform:scale(1)}
+    .hover-tilt{transition:transform 0.4s var(--ease),box-shadow 0.4s var(--ease);transform-style:preserve-3d}.hover-tilt:hover{transform:perspective(800px) rotateX(2deg) rotateY(-2deg) translateY(-6px);box-shadow:0 20px 40px rgba(var(--solo-basalto-rgb),0.12)}
+
   </style>
 </head>
 <body>
@@ -183,28 +193,28 @@
       <p class="gf-products-eyebrow reveal">Linhas disponíveis</p>
       <h2 class="reveal">Grandes formatos para projetos de impacto</h2>
       <div class="gf-grid">
-        <a class="gf-card reveal" href="#">
+        <a class="gf-card reveal-scale" href="#">
           <img src="assets/villagres/Elysium.jpg" alt="Elysium" loading="lazy">
           <div class="gf-card-overlay">
             <span class="gf-card-name">Elysium</span>
             <span class="gf-card-meta">120x120cm &middot; Efeito mármore</span>
           </div>
         </a>
-        <a class="gf-card reveal" href="#">
+        <a class="gf-card reveal-scale" href="#">
           <img src="assets/villagres/Pantheon.jpg" alt="Pantheon" loading="lazy">
           <div class="gf-card-overlay">
             <span class="gf-card-name">Pantheon</span>
             <span class="gf-card-meta">120x120cm &middot; Mármore clássico</span>
           </div>
         </a>
-        <a class="gf-card reveal" href="#">
+        <a class="gf-card reveal-scale" href="#">
           <img src="assets/villagres/Spazio.jpg" alt="Spazio" loading="lazy">
           <div class="gf-card-overlay">
             <span class="gf-card-name">Spazio</span>
             <span class="gf-card-meta">120x240cm &middot; Cimento</span>
           </div>
         </a>
-        <a class="gf-card reveal" href="#">
+        <a class="gf-card reveal-scale" href="#">
           <img src="assets/villagres/CHRONUS_02.jpg" alt="Chronus" loading="lazy">
           <div class="gf-card-overlay">
             <span class="gf-card-name">Chronus</span>
@@ -215,17 +225,17 @@
     </section>
 
     <div class="benefits">
-      <div class="benefit reveal">
+      <div class="benefit reveal hover-tilt">
         <div class="benefit-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="12" y1="3" x2="12" y2="21"/></svg></div>
         <h3>Menos juntas</h3>
         <p>Superfícies mais limpas e contínuas. Ideal para ambientes amplos e integrados.</p>
       </div>
-      <div class="benefit reveal">
+      <div class="benefit reveal hover-tilt">
         <div class="benefit-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
         <h3>Impacto visual</h3>
         <p>A escala do material transforma qualquer ambiente em uma declaração arquitetônica.</p>
       </div>
-      <div class="benefit reveal">
+      <div class="benefit reveal hover-tilt">
         <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
         <h3>Resistência superior</h3>
         <p>Porcelanatos técnicos de alta performance para pisos e paredes internos e externos.</p>
@@ -285,7 +295,7 @@
   <a class="whatsapp-float" href="https://wa.me/5519989133662?text=Oi!%20Estou%20no%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista." aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
 
 
-  <script>const reveals=document.querySelectorAll('.reveal');const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});reveals.forEach(el=>obs.observe(el));</script>
+  <script>const allReveals=document.querySelectorAll(".reveal,.reveal-left,.reveal-right,.reveal-scale");const revealObs=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add("visible"),i*80);revealObs.unobserve(e.target)}})},{threshold:0.08,rootMargin:"0px 0px -60px 0px"});allReveals.forEach(el=>revealObs.observe(el));</script>
   <script>(function(){var t=document.querySelector('.menu-toggle'),m=document.querySelector('.mobile-menu');if(!t||!m)return;function o(){t.setAttribute('aria-expanded','true');t.setAttribute('aria-label','Fechar menu');m.setAttribute('aria-hidden','false');document.body.classList.add('menu-open')}function c(){t.setAttribute('aria-expanded','false');t.setAttribute('aria-label','Abrir menu');m.setAttribute('aria-hidden','true');document.body.classList.remove('menu-open')}t.addEventListener('click',function(){t.getAttribute('aria-expanded')==='true'?c():o()});document.querySelectorAll('.mobile-menu-nav a').forEach(function(l){l.addEventListener('click',c)});document.addEventListener('keydown',function(e){if(e.key==='Escape')c()})})();</script>
 
 </body>

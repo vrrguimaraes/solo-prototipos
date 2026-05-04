@@ -328,6 +328,16 @@
     .footer-contact li{display:flex;align-items:flex-start;gap:8px;font-size:13px;line-height:1.5}
     .footer-contact svg{width:14px;height:14px;flex-shrink:0;margin-top:2px;stroke:rgba(var(--solo-calcario-rgb),0.5);fill:none;stroke-width:1.5}
 
+  
+    /* ─── Enhanced Animations ─── */
+    .reveal{opacity:0;transform:translateY(40px);transition:opacity 0.8s var(--ease),transform 0.8s var(--ease)}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    .stagger>.reveal:nth-child(1){transition-delay:0s}.stagger>.reveal:nth-child(2){transition-delay:0.1s}.stagger>.reveal:nth-child(3){transition-delay:0.2s}.stagger>.reveal:nth-child(4){transition-delay:0.3s}.stagger>.reveal:nth-child(5){transition-delay:0.4s}.stagger>.reveal:nth-child(6){transition-delay:0.5s}.stagger>.reveal:nth-child(7){transition-delay:0.6s}.stagger>.reveal:nth-child(8){transition-delay:0.7s}.stagger>.reveal:nth-child(9){transition-delay:0.8s}
+    .reveal-left{opacity:0;transform:translateX(-40px);transition:opacity 0.8s var(--ease),transform 0.8s var(--ease)}.reveal-left.visible{opacity:1;transform:translateX(0)}
+    .reveal-right{opacity:0;transform:translateX(40px);transition:opacity 0.8s var(--ease),transform 0.8s var(--ease)}.reveal-right.visible{opacity:1;transform:translateX(0)}
+    .reveal-scale{opacity:0;transform:scale(0.92);transition:opacity 0.8s var(--ease),transform 0.8s var(--ease)}.reveal-scale.visible{opacity:1;transform:scale(1)}
+    .hover-tilt{transition:transform 0.4s var(--ease),box-shadow 0.4s var(--ease);transform-style:preserve-3d}.hover-tilt:hover{transform:perspective(800px) rotateX(2deg) rotateY(-2deg) translateY(-6px);box-shadow:0 20px 40px rgba(var(--solo-basalto-rgb),0.12)}
+
   </style>
 </head>
 <body>
@@ -481,9 +491,9 @@
 
   <!-- Product Grid -->
   <div class="catalog-content">
-    <div class="product-grid">
+    <div class="product-grid stagger">
 
-      <a class="product-card" href="#">
+      <a class="product-card reveal hover-tilt" href="#">
         <div class="product-card-img">
           <img src="assets/castelatto/castelatto-dorica-etrusco-arq-bia-ferrari-foto-favaro-jr.jpg" alt="Dorica Etrusco — Castelatto" loading="lazy">
           <span class="product-card-badge">Castelatto</span>
@@ -498,7 +508,7 @@
         </div>
       </a>
 
-      <a class="product-card" href="#">
+      <a class="product-card reveal hover-tilt" href="#">
         <div class="product-card-img">
           <img src="assets/villagres/Elysium.jpg" alt="Elysium — Villagres" loading="lazy">
           <span class="product-card-badge">Villagres</span>
@@ -513,7 +523,7 @@
         </div>
       </a>
 
-      <a class="product-card" href="#">
+      <a class="product-card reveal hover-tilt" href="#">
         <div class="product-card-img">
           <img src="assets/villagres/Chronos-Petra.jpg" alt="Chronos Petra — Villagres" loading="lazy">
           <span class="product-card-badge">Villagres</span>
@@ -528,7 +538,7 @@
         </div>
       </a>
 
-      <a class="product-card" href="#">
+      <a class="product-card reveal hover-tilt" href="#">
         <div class="product-card-img">
           <img src="assets/villagres/Hannover.jpg" alt="Hannover — Villagres" loading="lazy">
           <span class="product-card-badge">Villagres</span>
@@ -543,7 +553,7 @@
         </div>
       </a>
 
-      <a class="product-card" href="#">
+      <a class="product-card reveal hover-tilt" href="#">
         <div class="product-card-img">
           <img src="assets/villagres/Pantheon.jpg" alt="Pantheon — Villagres" loading="lazy">
           <span class="product-card-badge">Villagres</span>
@@ -558,7 +568,7 @@
         </div>
       </a>
 
-      <a class="product-card" href="#">
+      <a class="product-card reveal hover-tilt" href="#">
         <div class="product-card-img">
           <img src="assets/villagres/Spazio.jpg" alt="Spazio — Villagres" loading="lazy">
           <span class="product-card-badge">Villagres</span>
@@ -582,7 +592,7 @@
         <a class="btn" href="https://wa.me/5519989133662?text=Oi!%20Estou%20vendo%20o%20catálogo%20e%20gostaria%20de%20ajuda%20para%20especificar.">Falar com especialista</a>
       </div>
 
-      <a class="product-card" href="#">
+      <a class="product-card reveal hover-tilt" href="#">
         <div class="product-card-img">
           <img src="assets/villagres/Montserrat-Terra.jpg" alt="Montserrat Terra — Villagres" loading="lazy">
           <span class="product-card-badge">Villagres</span>
@@ -597,7 +607,7 @@
         </div>
       </a>
 
-      <a class="product-card" href="#">
+      <a class="product-card reveal hover-tilt" href="#">
         <div class="product-card-img">
           <img src="assets/villagres/Paraíso-ambeiente.jpg" alt="Paraíso Ambiente — Villagres" loading="lazy">
           <span class="product-card-badge">Villagres</span>
@@ -612,7 +622,7 @@
         </div>
       </a>
 
-      <a class="product-card" href="#">
+      <a class="product-card reveal hover-tilt" href="#">
         <div class="product-card-img">
           <img src="assets/villagres/Serenità-Decor.jpg" alt="Serenità Decor" loading="lazy">
           <span class="product-card-badge">Villagres</span>
@@ -627,7 +637,7 @@
         </div>
       </a>
 
-      <a class="product-card" href="#">
+      <a class="product-card reveal hover-tilt" href="#">
         <div class="product-card-img">
           <img src="assets/villagres/Living-Silver.jpg" alt="Living Silver" loading="lazy">
           <span class="product-card-badge">Villagres</span>
@@ -642,7 +652,7 @@
         </div>
       </a>
 
-      <a class="product-card" href="#">
+      <a class="product-card reveal hover-tilt" href="#">
         <div class="product-card-img">
           <img src="assets/villagres/lillejatobá-ste.jpg" alt="Lillejatobá — Villagres" loading="lazy">
           <span class="product-card-badge">Villagres</span>
