@@ -171,16 +171,91 @@
       border-color: var(--solo-calcario);
     }
 
-    /* ─── Reveal Animation ─── */
+    /* ─── Reveal Animations (enhanced) ─── */
     .reveal {
       opacity: 0;
-      transform: translateY(32px);
-      transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+      transform: translateY(40px);
+      transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
     }
     .reveal.visible {
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* Stagger: children appear one after another */
+    .stagger > .reveal:nth-child(1) { transition-delay: 0s; }
+    .stagger > .reveal:nth-child(2) { transition-delay: 0.1s; }
+    .stagger > .reveal:nth-child(3) { transition-delay: 0.2s; }
+    .stagger > .reveal:nth-child(4) { transition-delay: 0.3s; }
+    .stagger > .reveal:nth-child(5) { transition-delay: 0.4s; }
+    .stagger > .reveal:nth-child(6) { transition-delay: 0.5s; }
+
+    /* Reveal from left */
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+    }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+
+    /* Reveal from right */
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+    }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+    /* Reveal scale up */
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(0.92);
+      transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+    }
+    .reveal-scale.visible { opacity: 1; transform: scale(1); }
+
+    /* Parallax subtle on scroll */
+    .parallax-slow { will-change: transform; transition: transform 0.1s linear; }
+
+    /* 3D hover tilt on cards */
+    .hover-tilt {
+      transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+      transform-style: preserve-3d;
+    }
+    .hover-tilt:hover {
+      transform: perspective(800px) rotateX(2deg) rotateY(-2deg) translateY(-6px);
+      box-shadow: 0 20px 40px rgba(var(--solo-basalto-rgb), 0.12);
+    }
+
+    /* Smooth image zoom on hover */
+    .hover-zoom img {
+      transition: transform 0.8s var(--ease);
+    }
+    .hover-zoom:hover img {
+      transform: scale(1.06);
+    }
+
+    /* Subtle float animation for badges/highlights */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    .float { animation: float 4s ease-in-out infinite; }
+
+    /* Smooth underline grow on hover */
+    .link-grow {
+      position: relative;
+      display: inline-block;
+    }
+    .link-grow::after {
+      content: "";
+      position: absolute;
+      bottom: -2px; left: 0;
+      width: 0; height: 1px;
+      background: currentColor;
+      transition: width 0.4s var(--ease);
+    }
+    .link-grow:hover::after { width: 100%; }
 
     /* ═══════════════════════════════════════════
        HEADER — Fixed, translucent
@@ -1278,7 +1353,7 @@
 
     <!-- ═══ SEGMENTAÇÃO DUPLA ═══ -->
     <section class="segmentacao reveal">
-      <a class="seg-card" href="arquitetos.html">
+      <a class="seg-card reveal-scale" href="arquitetos.html">
         <div class="seg-card-bg" style="background-image:url('assets/villagres/Maytrea-ambiente.jpg')"></div>
         <div class="seg-card-overlay"></div>
         <div class="seg-card-content">
@@ -1289,7 +1364,7 @@
         </div>
       </a>
       <!-- TODO: destino final do caminho cliente final ainda em definição. Provisoriamente apontando para ambientes.html. Pode mudar para /sua-casa/ ou /catalogo/ no futuro. -->
-      <a class="seg-card" href="ambientes.html">
+      <a class="seg-card reveal-scale" href="ambientes.html">
         <div class="seg-card-bg" style="background-image:url('assets/castelatto/castelatto-living-casacor-arq-nando-nunes-foto-edgard-cesar.jpg')"></div>
         <div class="seg-card-overlay"></div>
         <div class="seg-card-content">
@@ -1307,7 +1382,7 @@
         <p class="eyebrow reveal">Por que a Solo</p>
         <h2 class="section-heading reveal">Mais do que vender revestimentos, a Solo orienta escolhas.</h2>
         <div class="why-grid">
-          <div class="why-image reveal">
+          <div class="why-image reveal-left">
             <img src="assets/villagres/Spazio.jpg" alt="Showroom Solo Revestimentos — ambiente com revestimentos de alto padrão" loading="lazy">
           </div>
           <div class="why-pillars">
@@ -1338,7 +1413,7 @@
         <p class="eyebrow reveal">Ambientes</p>
         <h2 class="section-heading reveal">Inspiração por ambiente</h2>
         <p class="section-sub reveal">Explore projetos reais e descubra como cada revestimento transforma um espaço.</p>
-        <div class="ambientes-grid reveal">
+        <div class="ambientes-grid stagger">
           <a class="ambiente-card" href="ambientes.html#salas">
             <img src="assets/villagres/Living-Off-White.jpg" alt="Salas e Jantar" loading="lazy">
             <div class="ambiente-card-overlay">
@@ -1390,7 +1465,7 @@
             <h2 class="section-heading reveal">Curadoria de marcas nacionais e importadas</h2>
           </div>
         </div>
-        <div class="marcas-grid reveal">
+        <div class="marcas-grid reveal stagger">
           <img class="marca-logo" src="assets/marcas/Villagres.png" alt="Villagres">
           <img class="marca-logo" src="assets/marcas/Decortiles.png" alt="Decortiles">
           <img class="marca-logo" src="assets/marcas/Porcelosa.png" alt="Porcelanosa">
@@ -1444,8 +1519,8 @@
           </div>
           <a class="btn btn-secondary reveal" href="catalogo.html">Ver catálogo completo</a>
         </div>
-        <div class="catalogo-grid">
-          <a class="catalogo-card reveal" href="catalogo.html?cat=porcelanato">
+        <div class="catalogo-grid stagger">
+          <a class="catalogo-card reveal hover-tilt" href="catalogo.html?cat=porcelanato">
             <div class="catalogo-card-img">
               <img src="assets/villagres/Chronos-Petra.jpg" alt="Porcelanatos" loading="lazy">
             </div>
@@ -1457,7 +1532,7 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E7DED2" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </span>
           </a>
-          <a class="catalogo-card reveal" href="catalogo.html?cat=revestimento">
+          <a class="catalogo-card reveal hover-tilt" href="catalogo.html?cat=revestimento">
             <div class="catalogo-card-img">
               <img src="assets/villagres/Paraíso-ambiente2.jpg" alt="Revestimentos Decorativos" loading="lazy">
             </div>
@@ -1525,7 +1600,7 @@
               <a class="btn btn-secondary" href="https://wa.me/5519989133662?text=Oi!%20Sou%20arquiteto(a)%20e%20gostaria%20de%20falar%20com%20a%20Solo.">Falar com a equipe</a>
             </div>
           </div>
-          <div class="arquitetos-image reveal">
+          <div class="arquitetos-image reveal-right">
             <img src="assets/villagres/Maytrea-ambiente.jpg" alt="Ambiente de showroom com revestimentos premium" loading="lazy">
             <div class="arquitetos-image-badge">
               <strong>10+</strong>
@@ -1662,8 +1737,8 @@
       header.classList.toggle('scrolled', window.scrollY > 60);
     }, { passive: true });
 
-    /* ─── Reveal on scroll ─── */
-    const reveals = document.querySelectorAll('.reveal');
+    /* ─── Reveal on scroll (enhanced) ─── */
+    const allReveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
         if (entry.isIntersecting) {
@@ -1671,8 +1746,21 @@
           revealObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    reveals.forEach(el => revealObserver.observe(el));
+    }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+    allReveals.forEach(el => revealObserver.observe(el));
+
+    /* ─── Parallax on scroll ─── */
+    const parallaxElements = document.querySelectorAll('.parallax-slow');
+    if (parallaxElements.length > 0) {
+      window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        parallaxElements.forEach(el => {
+          const speed = 0.15;
+          const offset = (scrollY - el.offsetTop) * speed;
+          el.style.transform = `translateY(${offset}px)`;
+        });
+      }, { passive: true });
+    }
 
     /* ─── Smooth scroll for anchor links ─── */
     document.querySelectorAll('a[href^="#"]').forEach(a => {
