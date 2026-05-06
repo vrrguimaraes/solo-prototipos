@@ -338,7 +338,112 @@
     .reveal-scale{opacity:0;transform:scale(0.92);transition:opacity 0.8s var(--ease),transform 0.8s var(--ease)}.reveal-scale.visible{opacity:1;transform:scale(1)}
     .hover-tilt{transition:transform 0.4s var(--ease),box-shadow 0.4s var(--ease);transform-style:preserve-3d}.hover-tilt:hover{transform:perspective(800px) rotateX(2deg) rotateY(-2deg) translateY(-6px);box-shadow:0 20px 40px rgba(var(--solo-basalto-rgb),0.12)}
 
+    /* ─── Product Modal ─── */
+    .product-modal-overlay {
+      position: fixed; inset: 0; z-index: 200;
+      background: rgba(var(--solo-basalto-rgb), 0.7);
+      backdrop-filter: blur(8px);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.3s var(--ease);
+    }
+    .product-modal-overlay.open { opacity: 1; pointer-events: auto; }
+
+    .product-modal {
+      background: var(--solo-calcario);
+      max-width: 880px; width: calc(100% - 48px);
+      max-height: 90vh;
+      display: grid; grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+      transform: translateY(24px) scale(0.96);
+      transition: transform 0.35s var(--ease);
+    }
+    .product-modal-overlay.open .product-modal {
+      transform: translateY(0) scale(1);
+    }
+
+    .product-modal-img {
+      aspect-ratio: 1; overflow: hidden;
+    }
+    .product-modal-img img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+
+    .product-modal-body {
+      padding: 48px 40px;
+      display: flex; flex-direction: column; justify-content: center;
+      overflow-y: auto;
+    }
+
+    .product-modal-badge {
+      display: inline-block;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--solo-terracota);
+      margin-bottom: 16px;
+    }
+
+    .product-modal-name {
+      font-size: 28px; font-weight: 600;
+      line-height: 1.15; letter-spacing: -0.01em;
+      margin-bottom: 8px;
+    }
+
+    .product-modal-meta {
+      font-size: 15px; color: var(--solo-basalto); opacity: 0.6;
+      line-height: 1.5; margin-bottom: 32px;
+    }
+
+    .product-modal-actions {
+      display: flex; flex-direction: column; gap: 12px;
+    }
+
+    .product-modal-actions .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 52px; padding: 14px 32px;
+      font-family: var(--font); font-size: 13px; font-weight: 600;
+      letter-spacing: 0.05em; text-transform: uppercase;
+      border: 1px solid; transition: all 0.28s var(--ease); cursor: pointer;
+      text-decoration: none;
+    }
+    .product-modal-actions .btn-primary {
+      background: var(--solo-terracota); color: var(--solo-calcario);
+      border-color: var(--solo-terracota);
+    }
+    .product-modal-actions .btn-primary:hover {
+      background: var(--solo-basalto); border-color: var(--solo-basalto);
+    }
+    .product-modal-actions .btn-secondary {
+      background: transparent; color: var(--solo-basalto);
+      border-color: rgba(var(--solo-basalto-rgb), 0.15);
+    }
+    .product-modal-actions .btn-secondary:hover {
+      background: var(--solo-basalto); color: var(--solo-calcario);
+      border-color: var(--solo-basalto);
+    }
+
+    .product-modal-close {
+      position: absolute; top: 16px; right: 16px;
+      width: 44px; height: 44px;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--solo-calcario); border: none; cursor: pointer;
+      transition: background 0.2s;
+    }
+    .product-modal-close:hover { background: var(--solo-argila); }
+    .product-modal-close svg { width: 20px; height: 20px; }
+
+    @media (max-width: 768px) {
+      .product-modal {
+        grid-template-columns: 1fr;
+        max-height: 85vh;
+      }
+      .product-modal-img { aspect-ratio: 4/3; }
+      .product-modal-body { padding: 32px 24px; }
+      .product-modal-name { font-size: 22px; }
+    }
+
   </style>
+  <noscript><style>.reveal,.reveal-left,.reveal-right,.reveal-scale{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
 
@@ -357,6 +462,20 @@
       <span></span><span></span><span></span>
     </button>
   </header>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <nav class="mobile-menu-nav">
+      <a href="home-completa.html">Home</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="ambientes.html">Ambientes</a>
+      <a href="catalogo.html">Catálogo</a>
+      <a href="arquitetos.html">Arquitetos</a>
+      <a href="referencias.html">Referências</a>
+      <a href="showroom.html">Showroom</a>
+      <a href="grandes-formatos.html">Grandes Formatos</a>
+      <a href="https://wa.me/5519989133662?text=Oi!%20Vim%20pelo%20site%20da%20Solo%20e%20gostaria%20de%20conversar." class="mobile-menu-cta">Falar com especialista</a>
+    </nav>
+  </div>
 
   <!-- Breadcrumb -->
   <nav class="breadcrumb">
@@ -670,7 +789,26 @@
     </div>
   </div>
 
-  <!-- Footer -->
+  <!-- Product Modal -->
+  <div class="product-modal-overlay" id="productModal">
+    <button class="product-modal-close" aria-label="Fechar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="product-modal">
+      <div class="product-modal-img">
+        <img id="modalImg" src="" alt="">
+      </div>
+      <div class="product-modal-body">
+        <span class="product-modal-badge" id="modalBrand"></span>
+        <h3 class="product-modal-name" id="modalName"></h3>
+        <p class="product-modal-meta" id="modalMeta"></p>
+        <div class="product-modal-actions">
+          <a id="modalWhatsapp" class="btn btn-primary" href="#" target="_blank">Perguntar sobre este produto</a>
+          <a id="modalVisit" class="btn btn-secondary" href="https://wa.me/5519989133662?text=Oi!%20Gostaria%20de%20agendar%20uma%20visita%20ao%20showroom." target="_blank">Agendar visita ao showroom</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- WhatsApp Float -->
   <a class="whatsapp-float" href="https://wa.me/5519989133662?text=Oi!%20Estou%20no%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista." aria-label="WhatsApp">
@@ -712,6 +850,65 @@
       if (!e.target.closest('.filter-group')) {
         document.querySelectorAll('.filter-group').forEach(g => g.classList.remove('open'));
       }
+    });
+
+    /* ─── Reveal on scroll ─── */
+    const allReveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+    allReveals.forEach(el => revealObserver.observe(el));
+
+    /* ─── Product Modal ─── */
+    const modal = document.getElementById('productModal');
+    const modalImg = document.getElementById('modalImg');
+    const modalBrand = document.getElementById('modalBrand');
+    const modalName = document.getElementById('modalName');
+    const modalMeta = document.getElementById('modalMeta');
+    const modalWhatsapp = document.getElementById('modalWhatsapp');
+
+    function openModal(card) {
+      const img = card.querySelector('.product-card-img img');
+      const brand = card.querySelector('.product-card-badge')?.textContent || '';
+      const name = card.querySelector('.product-card-name')?.textContent || '';
+      const category = card.querySelector('.product-card-category')?.textContent || '';
+      const meta = card.querySelector('.product-card-meta')?.textContent || '';
+
+      modalImg.src = img.src;
+      modalImg.alt = img.alt;
+      modalBrand.textContent = category + (brand ? ' · ' + brand : '');
+      modalName.textContent = name;
+      modalMeta.textContent = meta;
+      modalWhatsapp.href = 'https://wa.me/5519989133662?text=' +
+        encodeURIComponent('Oi! Estou vendo o catálogo e gostaria de saber mais sobre o produto ' + name + (brand ? ' da ' + brand : '') + '.');
+
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.product-card').forEach(card => {
+      card.addEventListener('click', (e) => {
+        e.preventDefault();
+        openModal(card);
+      });
+    });
+
+    modal.querySelector('.product-modal-close').addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
     });
   </script>
 <script>

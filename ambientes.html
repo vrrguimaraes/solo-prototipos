@@ -4,20 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ambientes — Solo Revestimentos</title>
-  <meta name="description" content="Inspiração por ambiente: veja como cada revestimento transforma um espaço. Salas, fachadas, áreas externas e mais.">
-    <!-- Open Graph -->
+  <meta name="description" content="Inspiração por ambiente: veja como cada revestimento transforma um espaço. Salas, cozinhas, banheiros, piscinas, fachadas e mais.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Solo Revestimentos">
   <meta property="og:title" content="Inspiração por Ambiente — Solo Revestimentos">
-  <meta property="og:description" content="Inspiração por ambiente: veja como cada revestimento transforma um espaço. Salas, fachadas, áreas externas e mais.">
-  <meta property="og:image" content="https://solorevestimentos.com.br/assets/villagres/Living-Off-White.jpg">
+  <meta property="og:description" content="Inspiração por ambiente: veja como cada revestimento transforma um espaço. Salas, cozinhas, banheiros, piscinas, fachadas e mais.">
+  <meta property="og:image" content="https://solorevestimentos.com.br/assets/ambientes/villagres/Elysium.jpg">
   <meta property="og:url" content="https://solorevestimentos.com.br/ambientes/">
   <meta property="og:locale" content="pt_BR">
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Inspiração por Ambiente — Solo Revestimentos">
-  <meta name="twitter:description" content="Inspiração por ambiente: veja como cada revestimento transforma um espaço. Salas, fachadas, áreas externas e mais.">
-  <meta name="twitter:image" content="https://solorevestimentos.com.br/assets/villagres/Living-Off-White.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -26,42 +21,99 @@
     *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
     body{font-family:var(--font);color:var(--solo-basalto);background:var(--solo-calcario);overflow-x:hidden}
     img{display:block;max-width:100%;height:auto}a{color:inherit;text-decoration:none}
+    *:focus-visible{outline:2px solid var(--solo-ocre);outline-offset:2px}
+
+    /* Header */
     .header{position:sticky;top:0;z-index:100;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(24px,5vw,72px);background:rgba(var(--solo-calcario-rgb),0.94);backdrop-filter:blur(16px);border-bottom:1px solid rgba(var(--solo-basalto-rgb),0.06)}
     .header img{height:32px;filter:brightness(0.2)}.header nav{display:flex;gap:28px;align-items:center}
     .header nav a:not(.header-cta){font-size:13px;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;transition:color 0.2s}.header nav a:not(.header-cta):hover{color:var(--solo-terracota)}
+
+    /* Buttons */
     .btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:16px 40px;font-family:var(--font);font-size:13px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;border:1px solid;transition:all 0.28s var(--ease);cursor:pointer}
     .btn-primary{background:var(--solo-basalto);color:var(--solo-calcario);border-color:var(--solo-basalto)}.btn-primary:hover{background:var(--solo-terracota);border-color:var(--solo-terracota)}
     .btn-light{background:var(--solo-calcario);color:var(--solo-basalto);border-color:var(--solo-calcario)}.btn-light:hover{background:var(--solo-terracota);color:var(--solo-calcario);border-color:var(--solo-terracota)}
     .btn-ghost{background:transparent;color:var(--solo-calcario);border-color:rgba(var(--solo-calcario-rgb),0.3)}.btn-ghost:hover{background:rgba(var(--solo-calcario-rgb),0.1);border-color:var(--solo-calcario)}
+
+    /* Animations */
     .reveal{opacity:0;transform:translateY(32px);transition:opacity 0.7s var(--ease),transform 0.7s var(--ease)}.reveal.visible{opacity:1;transform:translateY(0)}
 
     /* Page Hero */
-    .page-hero{padding:64px clamp(24px,5vw,72px) 40px;max-width:1344px;margin:0 auto}
+    .page-hero{padding:64px clamp(24px,5vw,72px) 32px;max-width:1344px;margin:0 auto}
     .page-hero-eyebrow{font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--solo-terracota);margin-bottom:16px}
     .page-hero h1{font-size:clamp(36px,5vw,64px);font-weight:600;line-height:1.06;letter-spacing:-0.01em;max-width:780px}
     .page-hero p{font-size:18px;font-weight:400;line-height:1.6;color:var(--solo-basalto);opacity:0.7;max-width:600px;margin-top:16px}
 
-    /* Masonry-like Grid */
-    .ambientes-grid{padding:40px clamp(24px,5vw,72px) 120px;max-width:1344px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+    /* Counter */
+    .gallery-counter{padding:0 clamp(24px,5vw,72px);max-width:1344px;margin:0 auto 8px;font-size:13px;font-weight:500;color:rgba(var(--solo-basalto-rgb),0.4);letter-spacing:0.02em}
 
-    .ambiente-block{position:relative;overflow:hidden;cursor:pointer}
-    .ambiente-block.tall{grid-row:span 2}
-    .ambiente-block.wide{grid-column:span 2}
+    /* Filters */
+    .filters{padding:8px clamp(24px,5vw,72px) 32px;max-width:1344px;margin:0 auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .filter-group{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+    .filter-group::before{content:attr(data-label);font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(var(--solo-basalto-rgb),0.4);margin-right:4px}
+    .filter-sep{width:1px;height:24px;background:rgba(var(--solo-basalto-rgb),0.1);margin:0 12px}
+    .filter-btn{padding:8px 16px;font-family:var(--font);font-size:12px;font-weight:500;letter-spacing:0.03em;border:1px solid rgba(var(--solo-basalto-rgb),0.12);background:transparent;color:var(--solo-basalto);cursor:pointer;transition:all 0.2s var(--ease);white-space:nowrap}
+    .filter-btn:hover{border-color:var(--solo-basalto);background:rgba(var(--solo-basalto-rgb),0.04)}
+    .filter-btn.active{background:var(--solo-basalto);color:var(--solo-calcario);border-color:var(--solo-basalto)}
 
-    .ambiente-block img{width:100%;height:100%;object-fit:cover;min-height:300px;transition:transform 0.7s var(--ease)}
-    .ambiente-block:hover img{transform:scale(1.05)}
+    /* Masonry Grid */
+    .gallery-grid{padding:0 clamp(24px,5vw,72px) 120px;max-width:1344px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
 
-    .ambiente-block-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(var(--solo-basalto-rgb),0.72) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:32px 40px;transition:background 0.4s}
-    .ambiente-block:hover .ambiente-block-overlay{background:linear-gradient(180deg,transparent 20%,rgba(var(--solo-basalto-rgb),0.82) 100%)}
+    .gallery-item{position:relative;overflow:hidden;cursor:pointer;opacity:1;transform:scale(1);transition:opacity 0.4s var(--ease),transform 0.4s var(--ease)}
+    .gallery-item.hidden{display:none}
+    .gallery-item.tall{grid-row:span 2}
+    .gallery-item.wide{grid-column:span 2}
 
-    .ambiente-block-name{font-size:clamp(20px,2.5vw,28px);font-weight:600;color:var(--solo-calcario);margin-bottom:4px}
-    .ambiente-block-desc{font-size:15px;font-weight:400;line-height:1.5;color:rgba(var(--solo-calcario-rgb),0.7);max-width:400px;opacity:0;transform:translateY(12px);transition:all 0.4s var(--ease) 0.05s}
-    .ambiente-block:hover .ambiente-block-desc{opacity:1;transform:translateY(0)}
+    .gallery-item img{width:100%;height:100%;object-fit:cover;min-height:280px;transition:transform 0.7s var(--ease)}
+    .gallery-item:hover img{transform:scale(1.04)}
+    .gallery-item.tall img{min-height:580px}
+    .gallery-item.wide img{min-height:320px}
 
-    .ambiente-block-products{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;opacity:0;transform:translateY(8px);transition:all 0.4s var(--ease) 0.1s}
-    .ambiente-block:hover .ambiente-block-products{opacity:1;transform:translateY(0)}
-    .ambiente-block-tag{padding:4px 10px;font-size:11px;font-weight:500;letter-spacing:0.04em;border:1px solid rgba(var(--solo-calcario-rgb),0.25);color:rgba(var(--solo-calcario-rgb),0.8)}
-    .ambiente-block-credit{font-size:10px;font-weight:400;color:rgba(var(--solo-calcario-rgb),0.65);margin-top:8px;letter-spacing:0.02em}
+    .gallery-item-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(var(--solo-basalto-rgb),0.7) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:28px 32px;transition:background 0.4s}
+    .gallery-item:hover .gallery-item-overlay{background:linear-gradient(180deg,transparent 25%,rgba(var(--solo-basalto-rgb),0.8) 100%)}
+
+    .gallery-item-name{font-size:clamp(18px,2vw,24px);font-weight:600;color:var(--solo-calcario);margin-bottom:2px}
+    .gallery-item-desc{font-size:14px;font-weight:400;line-height:1.5;color:rgba(var(--solo-calcario-rgb),0.7);max-width:380px;opacity:0;transform:translateY(10px);transition:all 0.35s var(--ease) 0.05s}
+    .gallery-item:hover .gallery-item-desc{opacity:1;transform:translateY(0)}
+
+    .gallery-item-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;opacity:0;transform:translateY(8px);transition:all 0.35s var(--ease) 0.1s}
+    .gallery-item:hover .gallery-item-meta{opacity:1;transform:translateY(0)}
+    .gallery-item-tag{padding:3px 10px;font-size:10px;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;border:1px solid rgba(var(--solo-calcario-rgb),0.25);color:rgba(var(--solo-calcario-rgb),0.8)}
+    .gallery-item-credit{font-size:10px;font-weight:400;color:rgba(var(--solo-calcario-rgb),0.5);margin-top:6px;letter-spacing:0.02em}
+    .gallery-item-wa{position:absolute;bottom:16px;right:16px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:var(--solo-calcario);text-decoration:none;opacity:0;transform:translateY(8px);transition:all 0.3s var(--ease);z-index:3}
+    .gallery-item:hover .gallery-item-wa{opacity:1;transform:translateY(0)}
+    .gallery-item-wa:hover{background:var(--solo-ocre);transform:translateY(-2px) !important}
+    .gallery-item-wa svg{width:20px;height:20px;fill:var(--solo-basalto);transition:fill 0.3s var(--ease)}
+    .gallery-item-wa:hover svg{fill:var(--solo-calcario)}
+
+    /* Product highlight strips */
+    .product-highlight{padding:48px clamp(24px,5vw,72px);max-width:1344px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .product-highlight-card{padding:40px;background:var(--solo-basalto);color:var(--solo-calcario);position:relative;overflow:hidden;display:flex;flex-direction:column;gap:12px}
+    .product-highlight-card::before{content:"";position:absolute;inset:0;background:url("assets/patterns/SOLO_Pattern-S-4_Base.png") center/480px repeat;opacity:0.04;pointer-events:none}
+    .product-highlight-card h3{font-size:clamp(20px,2.5vw,28px);font-weight:600;line-height:1.15;position:relative}
+    .product-highlight-card p{font-size:14px;line-height:1.6;color:rgba(var(--solo-calcario-rgb),0.6);max-width:400px;position:relative}
+    .product-highlight-card .btn{align-self:flex-start;position:relative;min-height:44px;padding:12px 28px;font-size:12px}
+    .product-highlight-eyebrow{font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--solo-ocre);position:relative}
+    @media(max-width:768px){.product-highlight{grid-template-columns:1fr}}
+
+    /* Lightbox */
+    .lightbox{position:fixed;inset:0;z-index:200;background:rgba(var(--solo-basalto-rgb),0.95);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.35s var(--ease)}
+    .lightbox.open{opacity:1;pointer-events:auto}
+    .lightbox-img{max-width:90vw;max-height:85vh;object-fit:contain;border:none;transform:scale(0.96);transition:transform 0.4s var(--ease)}
+    .lightbox.open .lightbox-img{transform:scale(1)}
+    .lightbox-close{position:absolute;top:24px;right:28px;width:44px;height:44px;background:none;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center}
+    .lightbox-close svg{width:24px;height:24px;stroke:rgba(var(--solo-calcario-rgb),0.7);stroke-width:2;fill:none;transition:stroke 0.2s}
+    .lightbox-close:hover svg{stroke:var(--solo-calcario)}
+    .lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;background:rgba(var(--solo-calcario-rgb),0.1);border:1px solid rgba(var(--solo-calcario-rgb),0.15);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.2s}
+    .lightbox-nav:hover{background:rgba(var(--solo-calcario-rgb),0.2)}
+    .lightbox-nav svg{width:20px;height:20px;stroke:var(--solo-calcario);stroke-width:2;fill:none}
+    .lightbox-prev{left:24px}
+    .lightbox-next{right:24px}
+    .lightbox-info{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);text-align:center;color:rgba(var(--solo-calcario-rgb),0.7)}
+    .lightbox-info-name{font-size:16px;font-weight:600;color:var(--solo-calcario)}
+    .lightbox-info-detail{font-size:12px;margin-top:4px;opacity:0.6}
+    .lightbox-wa{display:inline-flex;align-items:center;gap:8px;margin-top:12px;padding:10px 24px;background:#25D366;color:#fff;font-family:var(--font);font-size:13px;font-weight:600;letter-spacing:0.03em;border:none;cursor:pointer;transition:all 0.25s var(--ease);text-decoration:none}
+    .lightbox-wa:hover{background:#1da851;transform:translateY(-1px)}
+    .lightbox-wa svg{width:16px;height:16px;fill:#fff}
 
     /* CTA Strip */
     .cta-strip{padding:64px clamp(24px,5vw,72px);background:var(--solo-basalto);color:var(--solo-calcario);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:32px;max-width:1344px;margin:0 auto;position:relative;overflow:hidden}
@@ -76,35 +128,7 @@
     .cta-final p{font-size:18px;font-weight:400;line-height:1.6;color:rgba(var(--solo-calcario-rgb),0.6);max-width:520px;margin:0 auto 40px}
     .cta-final-actions{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
 
-    .footer{padding:40px clamp(24px,5vw,72px);background:var(--solo-basalto);color:rgba(var(--solo-calcario-rgb),0.4);display:flex;justify-content:space-between;align-items:center;font-size:13px;border-top:1px solid rgba(var(--solo-calcario-rgb),0.06)}
-    .footer img{height:24px;opacity:0.4}
-    .whatsapp-float{position:fixed;bottom:24px;right:24px;z-index:90;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(0,0,0,0.18);transition:transform 0.3s var(--ease)}.whatsapp-float:hover{transform:scale(1.08)}.whatsapp-float svg{width:28px;height:28px;fill:#fff}
-
-    @media(max-width:768px){
-      .header nav{display:none}
-      .ambientes-grid{grid-template-columns:1fr}
-      .ambiente-block.tall,.ambiente-block.wide{grid-row:auto;grid-column:auto}
-      .cta-strip{flex-direction:column;text-align:center}
-    }
-  
-    /* Mobile Menu */
-    .menu-toggle{display:none;width:44px;height:44px;background:transparent;border:none;cursor:pointer;padding:10px;flex-direction:column;justify-content:space-between;align-items:center;z-index:110}
-    .menu-toggle span{display:block;width:24px;height:2px;background:var(--solo-calcario);transition:transform 0.3s var(--ease),opacity 0.3s var(--ease)}
-    .header[data-theme="light"] .menu-toggle span{background:var(--solo-basalto)}
-    .menu-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(11px) rotate(45deg)}
-    .menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
-    .menu-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-11px) rotate(-45deg)}
-    .mobile-menu{position:fixed;top:72px;left:0;right:0;bottom:0;background:var(--solo-basalto);z-index:99;transform:translateX(100%);transition:transform 0.4s var(--ease);overflow-y:auto;padding:32px clamp(24px,5vw,48px)}
-    .mobile-menu[aria-hidden="false"]{transform:translateX(0)}
-    .mobile-menu-nav{display:flex;flex-direction:column;gap:0}
-    .mobile-menu-nav a{display:block;padding:20px 0;font-size:18px;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;color:var(--solo-calcario);border-bottom:1px solid rgba(var(--solo-calcario-rgb),0.08);transition:color 0.2s;text-decoration:none}
-    .mobile-menu-nav a:hover{color:var(--solo-ocre)}
-    .mobile-menu-nav .mobile-menu-cta{margin-top:24px;padding:18px 24px;background:var(--solo-terracota);color:var(--solo-calcario);border:none;text-align:center;border-bottom:none;font-weight:600}
-    .mobile-menu-nav .mobile-menu-cta:hover{background:var(--solo-ocre);color:var(--solo-basalto)}
-    body.menu-open{overflow:hidden}
-    @media(max-width:768px){.menu-toggle{display:flex}}
-
-      /* Footer */
+    /* Footer */
     .site-footer{padding:64px 0 32px;background:var(--solo-basalto);color:rgba(var(--solo-calcario-rgb),0.7);position:relative;overflow:hidden}
     .site-footer::before{content:"";position:absolute;inset:0;background:url("assets/patterns/SOLO_Pattern-S-4_Base.png") center/480px repeat;opacity:0.03;pointer-events:none}
     .site-footer-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 clamp(24px,5vw,72px)}
@@ -114,44 +138,66 @@
     .site-footer p{font-size:13px;line-height:1.7}
     .site-footer a{transition:color 0.2s}.site-footer a:hover{color:var(--solo-calcario)}
     .site-footer-bottom{display:flex;justify-content:space-between;padding-top:24px;border-top:1px solid rgba(var(--solo-calcario-rgb),0.06);font-size:12px}
-    @media(max-width:768px){.site-footer-grid{grid-template-columns:1fr;gap:32px}.site-footer-bottom{flex-direction:column;gap:8px;text-align:center}}
-      *:focus-visible{outline:2px solid var(--solo-ocre);outline-offset:2px}
-      .footer-contact{list-style:none;display:grid;gap:8px}
+    .footer-contact{list-style:none;display:grid;gap:8px}
     .footer-contact li{display:flex;align-items:flex-start;gap:8px;font-size:13px;line-height:1.5}
     .footer-contact svg{width:14px;height:14px;flex-shrink:0;margin-top:2px;stroke:rgba(var(--solo-calcario-rgb),0.5);fill:none;stroke-width:1.5}
 
-  
-    /* ─── Enhanced Animations ─── */
-    .reveal{opacity:0;transform:translateY(40px);transition:opacity 0.8s var(--ease),transform 0.8s var(--ease)}
-    .reveal.visible{opacity:1;transform:translateY(0)}
-    .stagger>.reveal:nth-child(1){transition-delay:0s}.stagger>.reveal:nth-child(2){transition-delay:0.1s}.stagger>.reveal:nth-child(3){transition-delay:0.2s}.stagger>.reveal:nth-child(4){transition-delay:0.3s}.stagger>.reveal:nth-child(5){transition-delay:0.4s}.stagger>.reveal:nth-child(6){transition-delay:0.5s}.stagger>.reveal:nth-child(7){transition-delay:0.6s}.stagger>.reveal:nth-child(8){transition-delay:0.7s}.stagger>.reveal:nth-child(9){transition-delay:0.8s}
-    .reveal-left{opacity:0;transform:translateX(-40px);transition:opacity 0.8s var(--ease),transform 0.8s var(--ease)}.reveal-left.visible{opacity:1;transform:translateX(0)}
-    .reveal-right{opacity:0;transform:translateX(40px);transition:opacity 0.8s var(--ease),transform 0.8s var(--ease)}.reveal-right.visible{opacity:1;transform:translateX(0)}
-    .reveal-scale{opacity:0;transform:scale(0.92);transition:opacity 0.8s var(--ease),transform 0.8s var(--ease)}.reveal-scale.visible{opacity:1;transform:scale(1)}
-    .hover-tilt{transition:transform 0.4s var(--ease),box-shadow 0.4s var(--ease);transform-style:preserve-3d}.hover-tilt:hover{transform:perspective(800px) rotateX(2deg) rotateY(-2deg) translateY(-6px);box-shadow:0 20px 40px rgba(var(--solo-basalto-rgb),0.12)}
+    /* WhatsApp Float */
+    .whatsapp-float{position:fixed;bottom:24px;right:24px;z-index:90;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(0,0,0,0.18);transition:transform 0.3s var(--ease)}.whatsapp-float:hover{transform:scale(1.08)}.whatsapp-float svg{width:28px;height:28px;fill:#fff}
 
+    /* Mobile Menu */
+    .menu-toggle{display:none;width:44px;height:44px;background:transparent;border:none;cursor:pointer;padding:10px;flex-direction:column;justify-content:space-between;align-items:center;z-index:110}
+    .menu-toggle span{display:block;width:24px;height:2px;background:var(--solo-basalto);transition:transform 0.3s var(--ease),opacity 0.3s var(--ease)}
+    .menu-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(11px) rotate(45deg)}
+    .menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+    .menu-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-11px) rotate(-45deg)}
+    .mobile-menu{position:fixed;top:72px;left:0;right:0;bottom:0;background:var(--solo-basalto);z-index:99;transform:translateX(100%);transition:transform 0.4s var(--ease);overflow-y:auto;padding:32px clamp(24px,5vw,48px)}
+    .mobile-menu[aria-hidden="false"]{transform:translateX(0)}
+    .mobile-menu-nav{display:flex;flex-direction:column;gap:0}
+    .mobile-menu-nav a{display:block;padding:20px 0;font-size:18px;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;color:var(--solo-calcario);border-bottom:1px solid rgba(var(--solo-calcario-rgb),0.08);transition:color 0.2s}
+    .mobile-menu-nav a:hover{color:var(--solo-ocre)}
+    .mobile-menu-nav .mobile-menu-cta{margin-top:24px;padding:18px 24px;background:var(--solo-terracota);color:var(--solo-calcario);border:none;text-align:center;border-bottom:none;font-weight:600}
+    .mobile-menu-nav .mobile-menu-cta:hover{background:var(--solo-ocre);color:var(--solo-basalto)}
+    body.menu-open{overflow:hidden}
+
+    /* Responsive */
+    @media(max-width:960px){
+      .gallery-grid{grid-template-columns:repeat(2,1fr)}
+      .gallery-item.tall{grid-row:auto}
+    }
+    @media(max-width:768px){
+      .header nav{display:none}.menu-toggle{display:flex}
+      .gallery-grid{grid-template-columns:1fr;gap:3px}
+      .gallery-item.tall,.gallery-item.wide{grid-row:auto;grid-column:auto}
+      .gallery-item img,.gallery-item.tall img,.gallery-item.wide img{min-height:260px}
+      .cta-strip{flex-direction:column;text-align:center}
+      .site-footer-grid{grid-template-columns:1fr;gap:32px}
+      .site-footer-bottom{flex-direction:column;gap:8px;text-align:center}
+      .filters{gap:6px}
+      .filter-sep{display:none}
+      .filter-group{width:100%}
+      .lightbox-nav{display:none}
+    }
   </style>
 </head>
 <body>
 
   <header class="header" data-theme="light">
-    <a href="home-completa.html"><img src="assets/SOLO_Logotipo-H_Calcario.svg" alt="Solo Revestimentos"></a>
+    <a href="home-opcao-b-preview.html"><img src="assets/SOLO_Logotipo-H_Calcario.svg" alt="Solo Revestimentos"></a>
     <nav>
       <a href="ambientes.html" style="color:var(--solo-terracota)">Ambientes</a>
       <a href="catalogo.html">Catálogo</a>
       <a href="arquitetos.html">Arquitetos</a>
       <a href="showroom.html">Showroom</a>
     </nav>
-  
     <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
       <span></span><span></span><span></span>
     </button>
   </header>
 
-
   <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
     <nav class="mobile-menu-nav">
-      <a href="home-completa.html">Home</a>
+      <a href="home-opcao-b-preview.html">Home</a>
       <a href="sobre.html">Sobre</a>
       <a href="ambientes.html">Ambientes</a>
       <a href="catalogo.html">Catálogo</a>
@@ -167,128 +213,615 @@
 
     <div class="page-hero">
       <p class="page-hero-eyebrow reveal">Ambientes</p>
-      <h1 class="reveal">Inspiração por ambiente</h1>
-      <p class="reveal">Explore como cada revestimento transforma um espaço. Imagens de projetos reais e ambientações de showroom.</p>
+      <h1 class="reveal">Inspiração para cada espaço</h1>
+      <p class="reveal">Projetos reais e ambientações de showroom. Filtre por ambiente ou marca e descubra a combinação ideal para o seu projeto.</p>
     </div>
 
-    <div class="ambientes-grid stagger">
+    <!-- Filters -->
+    <div class="filters reveal" id="filters">
+      <div class="filter-group" data-label="Ambiente">
+        <button class="filter-btn active" data-filter="all" data-type="ambiente">Todos</button>
+        <button class="filter-btn" data-filter="salas" data-type="ambiente">Salas</button>
+        <button class="filter-btn" data-filter="cozinhas" data-type="ambiente">Cozinhas</button>
+        <button class="filter-btn" data-filter="banheiros" data-type="ambiente">Banheiros</button>
+        <button class="filter-btn" data-filter="piscinas" data-type="ambiente">Piscinas</button>
+        <button class="filter-btn" data-filter="fachadas" data-type="ambiente">Fachadas</button>
+        <button class="filter-btn" data-filter="paredes" data-type="ambiente">Paredes</button>
+        <button class="filter-btn" data-filter="integrados" data-type="ambiente">Integrados</button>
+        <button class="filter-btn" data-filter="quartos" data-type="ambiente">Quartos</button>
+      </div>
+      <div class="filter-sep"></div>
+      <div class="filter-group" data-label="Marca">
+        <button class="filter-btn active" data-filter="all" data-type="marca">Todas</button>
+        <button class="filter-btn" data-filter="castelatto" data-type="marca">Castelatto</button>
+        <button class="filter-btn" data-filter="villagres" data-type="marca">Villagres</button>
+        <button class="filter-btn" data-filter="lepri" data-type="marca">Lepri</button>
+        <button class="filter-btn" data-filter="atlas" data-type="marca">Atlas</button>
+        <button class="filter-btn" data-filter="eliane" data-type="marca">Eliane</button>
+        <button class="filter-btn" data-filter="vivarte" data-type="marca">Vivarte</button>
+      </div>
+    </div>
 
-      <a class="ambiente-block tall reveal" href="#" id="salas-jantar">
-        <img src="assets/villagres/Living-Off-White.jpg" alt="Salas e Jantar — Villagres Living Off White" loading="lazy">
-        <div class="ambiente-block-overlay">
-          <span class="ambiente-block-name">Salas e Jantar</span>
-          <span class="ambiente-block-desc">Porcelanatos e grandes formatos para pisos e paredes de áreas sociais integradas.</span>
-          <div class="ambiente-block-products">
-            <span class="ambiente-block-tag">Porcelanatos</span>
-            <span class="ambiente-block-tag">Grandes Formatos</span>
+    <div class="gallery-counter reveal" id="gallery-counter">43 ambientes</div>
+
+    <!-- Gallery Grid -->
+    <div class="gallery-grid" id="gallery-grid">
+
+      <!-- ═══ SALAS ═══ -->
+      <div class="gallery-item tall" data-ambiente="salas" data-marca="villagres">
+        <img src="assets/ambientes/villagres/Living-Off-White.jpg" alt="Living Off White — Villagres" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Living Off White</span>
+          <span class="gallery-item-desc">Porcelanato claro de grande formato em sala elegante com iluminação natural.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Villagres</span>
+            <span class="gallery-item-tag">Porcelanato</span>
           </div>
         </div>
-      </a>
+      </div>
 
-      <a class="ambiente-block reveal" href="#" id="fachadas-externas">
-        <img src="assets/villagres/Hannover.jpg" alt="Fachadas — Villagres Hannover" loading="lazy">
-        <div class="ambiente-block-overlay">
-          <span class="ambiente-block-name">Fachadas</span>
-          <span class="ambiente-block-desc">Revestimentos externos para fachadas, decks e varandas com resistência e estética.</span>
-          <div class="ambiente-block-products">
-            <span class="ambiente-block-tag">Porcelanatos</span>
-            <span class="ambiente-block-tag">Cimentícios</span>
+      <div class="gallery-item wide" data-ambiente="salas" data-marca="villagres">
+        <img src="assets/ambientes/villagres/Elysium.jpg" alt="Elysium — Villagres" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Elysium</span>
+          <span class="gallery-item-desc">Grande formato marble-look com vista para o mar. Piso e parede em continuidade.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Villagres</span>
+            <span class="gallery-item-tag">Grande Formato</span>
           </div>
         </div>
-      </a>
+      </div>
 
-      <a class="ambiente-block reveal" href="#" id="salas">
-        <img src="assets/castelatto/castelatto-living-casacor-arq-nando-nunes-foto-edgard-cesar.jpg" alt="Salas — Castelatto Granitte" loading="lazy">
-        <div class="ambiente-block-overlay">
-          <span class="ambiente-block-name">Salas</span>
-          <span class="ambiente-block-desc">Pisos e paredes que definem o caráter do ambiente principal.</span>
-          <div class="ambiente-block-products">
-            <span class="ambiente-block-tag">Castelatto</span>
-            <span class="ambiente-block-tag">Grandes Formatos</span>
-          </div>
-          <span class="ambiente-block-credit">Arq. Nando Nunes · Foto: Edgard Cesar · Casa Cor Goiás · Castelatto</span>
-        </div>
-      </a>
-
-      <a class="ambiente-block wide reveal" href="#" id="espacos-integrados">
-        <img src="assets/villagres/Chronos-Petra.jpg" alt="Espaços Integrados — Villagres Chronos Petra" loading="lazy">
-        <div class="ambiente-block-overlay">
-          <span class="ambiente-block-name">Espaços Integrados</span>
-          <span class="ambiente-block-desc">Porcelanatos para ambientes abertos com living e jantar integrados, valorizando amplitude e luz natural.</span>
-          <div class="ambiente-block-products">
-            <span class="ambiente-block-tag">Porcelanatos</span>
-            <span class="ambiente-block-tag">Grandes Formatos</span>
+      <div class="gallery-item" data-ambiente="salas" data-marca="villagres">
+        <img src="assets/ambientes/villagres/Montserrat-Terra.jpg" alt="Montserrat Terra — Villagres" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Montserrat Terra</span>
+          <span class="gallery-item-desc">Porcelanato terracota de grande formato em espaço minimalista com luz natural.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Villagres</span>
+            <span class="gallery-item-tag">Grande Formato</span>
           </div>
         </div>
-      </a>
+      </div>
 
-      <a class="ambiente-block reveal" href="#" id="piscinas-lazer">
-        <img src="assets/castelatto/castelatto-fachada-arq-cris-fernandez-foto-andre-monteiro.jpg" alt="Piscinas e Áreas de Lazer — Castelatto" loading="lazy">
-        <div class="ambiente-block-overlay">
-          <span class="ambiente-block-name">Piscinas e Lazer</span>
-          <span class="ambiente-block-desc">Pisos atérmicos e antiderrapantes para áreas de piscina e lazer externo.</span>
-          <div class="ambiente-block-products">
-            <span class="ambiente-block-tag">Castelatto</span>
-            <span class="ambiente-block-tag">Atérmico</span>
+      <div class="gallery-item wide" data-ambiente="salas" data-marca="villagres">
+        <img src="assets/ambientes/villagres/SALA-GERAL-LUNAR-PAREDE-2.jpg" alt="Lunar Parede — Villagres" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Lunar</span>
+          <span class="gallery-item-desc">Living com grande formato do piso à parede, sofá em tons neutros e forro de madeira ripada.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Villagres</span>
+            <span class="gallery-item-tag">Grande Formato</span>
           </div>
-          <span class="ambiente-block-credit">Arq. Cris Fernandez · Foto: André Monteiro · Castelatto</span>
         </div>
-      </a>
+      </div>
 
-      <a class="ambiente-block tall reveal" href="#" id="paredes-decorativas">
-        <img src="assets/castelatto/castelatto-adobe-terracota-casavogue-foto-favaro-jr.jpg" alt="Paredes Decorativas — Castelatto Adobe Terracota" loading="lazy">
-        <div class="ambiente-block-overlay">
-          <span class="ambiente-block-name">Paredes Decorativas</span>
-          <span class="ambiente-block-desc">Revestimentos com textura e personalidade para paredes de destaque em halls, corredores e espaços de convivência.</span>
-          <div class="ambiente-block-products">
-            <span class="ambiente-block-tag">Castelatto</span>
-            <span class="ambiente-block-tag">Cimentícios</span>
+      <div class="gallery-item" data-ambiente="salas" data-marca="villagres">
+        <img src="assets/ambientes/villagres/Living-Silver.jpg" alt="Living Silver — Villagres" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Living Silver</span>
+          <span class="gallery-item-desc">Jantar integrado com grande formato claro, cadeiras em palhinha e vista para o campo.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Villagres</span>
+            <span class="gallery-item-tag">Grande Formato</span>
           </div>
-          <span class="ambiente-block-credit">Casa Vogue Experience · Foto: Favaro Jr · Castelatto</span>
         </div>
-      </a>
+      </div>
 
-      <a class="ambiente-block reveal" href="#" id="varandas">
-        <img src="assets/castelatto/castelatto-dorica-calacatta-contemporare-foto-favaro-jr.jpg" alt="Varandas — Castelatto Dorica" loading="lazy">
-        <div class="ambiente-block-overlay">
-          <span class="ambiente-block-name">Varandas</span>
-          <span class="ambiente-block-desc">Revestimentos de parede e piso para varandas com sofisticação.</span>
-          <div class="ambiente-block-products">
-            <span class="ambiente-block-tag">Castelatto</span>
-            <span class="ambiente-block-tag">Cimentícios</span>
+      <div class="gallery-item" data-ambiente="salas" data-marca="villagres">
+        <img src="assets/ambientes/villagres/lillejatobá-ste.jpg" alt="Lille Jatobá — Villagres" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Lille Jatobá</span>
+          <span class="gallery-item-desc">Porcelanato efeito madeira jatobá com acabamento natural em living lifestyle.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Villagres</span>
+            <span class="gallery-item-tag">Madeira</span>
           </div>
-          <span class="ambiente-block-credit">Contemporare Arquitetura · Foto: Favaro Jr · Castelatto</span>
         </div>
-      </a>
+      </div>
 
-      <a class="ambiente-block reveal" href="#" id="piscinas">
-        <img src="assets/castelatto/castelatto-piscina-infinita-arq-joanna-cirufo-adriana-rezende.jpg" alt="Piscinas — Castelatto Atérmica" loading="lazy">
-        <div class="ambiente-block-overlay">
-          <span class="ambiente-block-name">Piscinas</span>
-          <span class="ambiente-block-desc">Bordas atérmicas, antiderrapantes e revestimentos para áreas molhadas.</span>
-          <div class="ambiente-block-products">
-            <span class="ambiente-block-tag">Castelatto</span>
-            <span class="ambiente-block-tag">Antiderrapante</span>
+      <div class="gallery-item" data-ambiente="salas" data-marca="castelatto">
+        <img src="assets/ambientes/castelatto/granitte-mezzo-chumbo-casa-cor-goias-2021-arq-nando-nunes-foto-edgard-cesar-1.jpg" alt="Granitte Mezzo — Castelatto" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Granitte Mezzo</span>
+          <span class="gallery-item-desc">Piso cimentício em sala contemporânea com divisória em madeira ripada.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Castelatto</span>
+            <span class="gallery-item-tag">Cimentício</span>
           </div>
-          <span class="ambiente-block-credit">Arqs. Joanna Cirufo e Adriana Rezende · Castelatto</span>
+          <span class="gallery-item-credit">Arq. Nando Nunes · Foto: Edgard Cesar · CasaCor Goiás 2021</span>
         </div>
-      </a>
+      </div>
 
-      <a class="ambiente-block reveal" href="#" id="externas">
-        <img src="assets/castelatto/castelatto-piscina-aerea-studio-gm-foto-guto-delgado.jpg" alt="Áreas Externas — Castelatto" loading="lazy">
-        <div class="ambiente-block-overlay">
-          <span class="ambiente-block-name">Áreas Externas</span>
-          <span class="ambiente-block-desc">Pisos atérmicos para decks, jardins e áreas de lazer.</span>
-          <div class="ambiente-block-products">
-            <span class="ambiente-block-tag">Castelatto</span>
-            <span class="ambiente-block-tag">Cimentícios</span>
+      <div class="gallery-item" data-ambiente="salas" data-marca="castelatto">
+        <img src="assets/ambientes/castelatto/ecobrick-grezzo-ocre-arquiteta-cassiana-fagoti-foto-favaro-jr.jpg" alt="Ecobrick Grezzo Ocre — Castelatto" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Ecobrick Grezzo Ocre</span>
+          <span class="gallery-item-desc">Parede de tijolinhos em sala com acento verde e tapete de pele natural.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Castelatto</span>
+            <span class="gallery-item-tag">Ecobrick</span>
           </div>
-          <span class="ambiente-block-credit">Studio GM · Foto: Guto Delgado · Castelatto</span>
+          <span class="gallery-item-credit">Arq. Cassiana Fagoti · Foto: Favaro Jr</span>
         </div>
-      </a>
+      </div>
+
+      <div class="gallery-item" data-ambiente="salas" data-marca="vivarte">
+        <img src="assets/ambientes/vivarte/PLAT0101-A8.jpg" alt="Pedra Natural — Vivarte" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Pedra Natural</span>
+          <span class="gallery-item-desc">Mosaico de pedra natural em parede de destaque com decoração contemporânea.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Vivarte</span>
+            <span class="gallery-item-tag">Pedra Natural</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-ambiente="salas" data-marca="lepri">
+        <img src="assets/ambientes/lepri/Brick-anticatto-Champagne-7x23-Ilha-de-conforto-Golden-Hour-Casacor-2022-Elaine-Vilela-Fot.-Luis-Gomes-15.jpg" alt="Brick Anticatto Champagne — Lepri" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Brick Anticatto Champagne</span>
+          <span class="gallery-item-desc">Piso em espinha de peixe com tons champagne, sala de estar acolhedora.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Lepri</span>
+            <span class="gallery-item-tag">Tijolo Artesanal</span>
+          </div>
+          <span class="gallery-item-credit">Arq. Elaine Vilela · Foto: Luis Gomes · CasaCor 2022</span>
+        </div>
+      </div>
+
+      <!-- ═══ COZINHAS ═══ -->
+      <div class="gallery-item wide" data-ambiente="cozinhas" data-marca="villagres">
+        <img src="assets/ambientes/villagres/Paraíso-ambeiente.jpg" alt="Paraíso — Villagres" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Paraíso</span>
+          <span class="gallery-item-desc">Azulejo verde esmaltado como backsplash em cozinha sofisticada com bancada de mármore.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Villagres</span>
+            <span class="gallery-item-tag">Porcelanato</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item wide" data-ambiente="cozinhas" data-marca="villagres">
+        <img src="assets/ambientes/villagres/Anticatto.jpg" alt="Anticatto — Villagres" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Anticatto</span>
+          <span class="gallery-item-desc">Cozinha integrada com grande formato claro, ilha de preparação e vista urbana panorâmica.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Villagres</span>
+            <span class="gallery-item-tag">Grande Formato</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-ambiente="cozinhas" data-marca="villagres">
+        <img src="assets/ambientes/villagres/Maytrea-ambient2.jpg" alt="Maytrea — Villagres" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Maytrea</span>
+          <span class="gallery-item-desc">Bancada em porcelanato pedra verde com backsplash Paraíso e marcenaria em nogueira.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Villagres</span>
+            <span class="gallery-item-tag">Porcelanato</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-ambiente="cozinhas" data-marca="villagres">
+        <img src="assets/ambientes/villagres/Maytrea-ambiente.jpg" alt="Maytrea Bancada — Villagres" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Maytrea Bancada</span>
+          <span class="gallery-item-desc">Detalhe da bancada em porcelanato verde com veios naturais, pia integrada e metais pretos.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Villagres</span>
+            <span class="gallery-item-tag">Grande Formato</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-ambiente="cozinhas" data-marca="atlas">
+        <img src="assets/ambientes/atlas/Projeto-Diego-Revollo-Fotografia-Alain-Brugier-Beufort-M6256-Hexagonal-1-785x615.jpg" alt="Beufort Hexagonal — Atlas" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Beufort Hexagonal</span>
+          <span class="gallery-item-desc">Mosaico hexagonal branco como backsplash em cozinha industrial contemporânea.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Atlas</span>
+            <span class="gallery-item-tag">Mosaico</span>
+          </div>
+          <span class="gallery-item-credit">Arq. Diego Revollo · Foto: Alain Brugier</span>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-ambiente="cozinhas" data-marca="atlas">
+        <img src="assets/ambientes/atlas/Cozinha_01-785x615.jpg" alt="Piso Herringbone — Atlas" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Piso Herringbone</span>
+          <span class="gallery-item-desc">Paginação espinha de peixe em cozinha profissional de alto padrão.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Atlas</span>
+            <span class="gallery-item-tag">Porcelanato</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-ambiente="cozinhas" data-marca="lepri">
+        <img src="assets/ambientes/lepri/CASACOR-2024-Cozinha-Torno-por-Bruno-Reis-e-Helena-Kallas-I-Foto-Israel-Golino-2-1-e1718202205114.jpg" alt="Cozinha Torno — Lepri" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Cozinha Torno</span>
+          <span class="gallery-item-desc">Tijolo artesanal terracota em cozinha autoral com mobiliário de design.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Lepri</span>
+            <span class="gallery-item-tag">Tijolo Artesanal</span>
+          </div>
+          <span class="gallery-item-credit">Bruno Reis e Helena Kallas · Foto: Israel Golino · CasaCor 2024</span>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-ambiente="cozinhas" data-marca="lepri">
+        <img src="assets/ambientes/lepri/olaria-terracota.jpg" alt="Olaria Terracota — Lepri" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Olaria Terracota</span>
+          <span class="gallery-item-desc">Cerâmica artesanal em tom terracota natural, detalhes de cozinha rústica.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Lepri</span>
+            <span class="gallery-item-tag">Cerâmica Artesanal</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ BANHEIROS ═══ -->
+      <div class="gallery-item wide" data-ambiente="banheiros" data-marca="villagres">
+        <img src="assets/ambientes/villagres/Serenità-Decor.jpg" alt="Serenità — Villagres" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Serenità</span>
+          <span class="gallery-item-desc">Banheiro minimalista com bancada monolítica em porcelanato natural e metais pretos.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Villagres</span>
+            <span class="gallery-item-tag">Porcelanato</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item tall" data-ambiente="banheiros" data-marca="castelatto">
+        <img src="assets/ambientes/castelatto/travertine-producao-castelatto-ft-favaro-jr-4.jpg" alt="Travertine — Castelatto" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Travertine</span>
+          <span class="gallery-item-desc">Banheiro spa com travertine do piso ao teto, banheira solta e jardim vertical.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Castelatto</span>
+            <span class="gallery-item-tag">Travertine</span>
+          </div>
+          <span class="gallery-item-credit">Foto: Favaro Jr · Castelatto</span>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-ambiente="banheiros" data-marca="eliane">
+        <img src="assets/ambientes/eliane/eliane-banheiro-20250609172402.jpg" alt="Banheiro Porcelanato — Eliane" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Banheiro Porcelanato</span>
+          <span class="gallery-item-desc">Porcelanato claro em banheiro clean com acabamento premium.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Eliane</span>
+            <span class="gallery-item-tag">Porcelanato</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-ambiente="banheiros" data-marca="eliane">
+        <img src="assets/ambientes/eliane/eliane-prisma-marfim-br-7x25cm-foto-taito-estudio-20230606122642.jpg" alt="Prisma Marfim — Eliane" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Prisma Marfim</span>
+          <span class="gallery-item-desc">Revestimento geométrico em tons de marfim, composição tridimensional sofisticada.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Eliane</span>
+            <span class="gallery-item-tag">Revestimento</span>
+          </div>
+          <span class="gallery-item-credit">Foto: Taito Estúdio</span>
+        </div>
+      </div>
+
+      <!-- ═══ PISCINAS ═══ -->
+      <div class="gallery-item wide" data-ambiente="piscinas" data-marca="castelatto">
+        <img src="assets/ambientes/castelatto/atermica-branco-hotel-llao-llao-barilhoche-e1628965288301.jpg" alt="Atérmica Branco — Castelatto" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Atérmica Branco</span>
+          <span class="gallery-item-desc">Piso atérmico em borda de piscina infinita com vista para os Andes. Hotel Llao Llao.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Castelatto</span>
+            <span class="gallery-item-tag">Atérmico</span>
+          </div>
+          <span class="gallery-item-credit">Hotel Llao Llao · Bariloche, Argentina</span>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-ambiente="piscinas" data-marca="castelatto">
+        <img src="assets/ambientes/castelatto/pacific-branco_-arq-glauber-mm-souza_-fot-favaro-jr.jpg" alt="Pacific Branco — Castelatto" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Pacific Branco</span>
+          <span class="gallery-item-desc">Área de piscina com piso atérmico branco e clube ao fundo.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Castelatto</span>
+            <span class="gallery-item-tag">Atérmico</span>
+          </div>
+          <span class="gallery-item-credit">Arq. Glauber MM Souza · Foto: Favaro Jr</span>
+        </div>
+      </div>
+
+      <div class="gallery-item tall" data-ambiente="piscinas" data-marca="castelatto">
+        <img src="assets/ambientes/castelatto/atermica-branco-escr-cicero-toledo-andre-paes-arquitetura-foto-ines-antich.jpg" alt="Piscina Noturna — Castelatto" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Atérmica Noturna</span>
+          <span class="gallery-item-desc">Arquitetura contemporânea com piscina curvilínea iluminada e piso atérmico.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Castelatto</span>
+            <span class="gallery-item-tag">Atérmico</span>
+          </div>
+          <span class="gallery-item-credit">Arqs. Cícero Toledo e André Paes · Foto: Inês Antich</span>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-ambiente="piscinas" data-marca="castelatto">
+        <img src="assets/ambientes/castelatto/adobe-sertao-arq-luciana-baggio-f-eduardo-macarios-6.jpg" alt="Adobe Sertão — Castelatto" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Adobe Sertão</span>
+          <span class="gallery-item-desc">Área de lazer integrada com piscina, jardim tropical e piso cimentício.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Castelatto</span>
+            <span class="gallery-item-tag">Cimentício</span>
+          </div>
+          <span class="gallery-item-credit">Arq. Luciana Baggio · Foto: Eduardo Macarios</span>
+        </div>
+      </div>
+
+      <!-- ═══ FACHADAS ═══ -->
+      <div class="gallery-item" data-ambiente="fachadas" data-marca="villagres">
+        <img src="assets/ambientes/villagres/Hannover.jpg" alt="Hannover — Villagres" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Hannover</span>
+          <span class="gallery-item-desc">Porcelanato efeito tijolinho para fachada residencial com personalidade.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Villagres</span>
+            <span class="gallery-item-tag">Porcelanato</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item wide" data-ambiente="fachadas" data-marca="villagres">
+        <img src="assets/ambientes/villagres/Pantheon.jpg" alt="Pantheon — Villagres" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Pantheon</span>
+          <span class="gallery-item-desc">Arquitetura minimalista com porcelanato de grande formato em fachada e piso externo.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Villagres</span>
+            <span class="gallery-item-tag">Grande Formato</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-ambiente="fachadas" data-marca="castelatto">
+        <img src="assets/ambientes/castelatto/dorica-colors_calacatta-gold_ibmr-arquitetos_foto-favaro-jr.jpg" alt="Dorica Calacatta Gold — Castelatto" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Dorica Calacatta Gold</span>
+          <span class="gallery-item-desc">Fachada em marble-look com brises de madeira e jardim.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Castelatto</span>
+            <span class="gallery-item-tag">Dorica</span>
+          </div>
+          <span class="gallery-item-credit">IBMR Arquitetos · Foto: Favaro Jr</span>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-ambiente="fachadas" data-marca="villagres">
+        <img src="assets/ambientes/villagres/Chronos-Petra.jpg" alt="Chronos Petra — Villagres" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Chronos Petra</span>
+          <span class="gallery-item-desc">Grande formato integrado do piso interno ao externo, continuidade visual.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Villagres</span>
+            <span class="gallery-item-tag">Grande Formato</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-ambiente="fachadas" data-marca="castelatto">
+        <img src="assets/ambientes/castelatto/apparente-regua-atermica-studio-gm-fot-guto-delgado.jpg" alt="Apparente Régua — Castelatto" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Apparente Régua</span>
+          <span class="gallery-item-desc">Régua cimentícia em fachada com piso atérmico combinando em área externa.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Castelatto</span>
+            <span class="gallery-item-tag">Cimentício</span>
+          </div>
+          <span class="gallery-item-credit">Studio GM · Foto: Guto Delgado</span>
+        </div>
+      </div>
+
+      <!-- ═══ PAREDES DECORATIVAS ═══ -->
+      <div class="gallery-item tall" data-ambiente="paredes" data-marca="castelatto">
+        <img src="assets/ambientes/castelatto/adobe-terracota-equipe-casa-vogue-experience-f-favaro-jr-6.jpg" alt="Adobe Terracota — Castelatto" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Adobe Terracota</span>
+          <span class="gallery-item-desc">Parede de adobe terracota com textura artesanal em ambientação premium.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Castelatto</span>
+            <span class="gallery-item-tag">Adobe</span>
+          </div>
+          <span class="gallery-item-credit">Casa Vogue Experience · Foto: Favaro Jr</span>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-ambiente="paredes" data-marca="castelatto">
+        <img src="assets/ambientes/castelatto/proj-natalia-candelaria_adobe-barbante_f-julia_ribeiro-1.jpg" alt="Adobe Barbante — Castelatto" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Adobe Barbante</span>
+          <span class="gallery-item-desc">Textura de adobe em tom natural para paredes com personalidade autêntica.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Castelatto</span>
+            <span class="gallery-item-tag">Adobe</span>
+          </div>
+          <span class="gallery-item-credit">Arq. Natalia Candelária · Foto: Julia Ribeiro</span>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-ambiente="paredes" data-marca="lepri">
+        <img src="assets/ambientes/lepri/Fontana-di-trevi.jpg" alt="Fontana di Trevi — Lepri" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Fontana di Trevi</span>
+          <span class="gallery-item-desc">Tijolo branco rústico com textura artesanal para paredes de charme.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Lepri</span>
+            <span class="gallery-item-tag">Tijolo Artesanal</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-ambiente="paredes" data-marca="lepri">
+        <img src="assets/ambientes/lepri/Due-Vecchio-Anciano-Bianco-4x115-1.jpg" alt="Due Vecchio — Lepri" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Due Vecchio Bianco</span>
+          <span class="gallery-item-desc">Cerâmica artesanal branca em grid vertical, composição com flores de cerejeira.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Lepri</span>
+            <span class="gallery-item-tag">Cerâmica Artesanal</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-ambiente="paredes" data-marca="villagres">
+        <img src="assets/ambientes/villagres/Paraíso-ambiente2.jpg" alt="Paraíso Decor — Villagres" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Paraíso Decor</span>
+          <span class="gallery-item-desc">Azulejo verde esmaltado com textura artesanal, composição com vasos de cerâmica.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Villagres</span>
+            <span class="gallery-item-tag">Porcelanato</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-ambiente="paredes" data-marca="eliane">
+        <img src="assets/ambientes/eliane/eliane-living-foto-lobo-estudio-20260303120827.jpg" alt="Parede Geométrica — Eliane" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Revestimento Geométrico</span>
+          <span class="gallery-item-desc">Parede com padronagem geométrica em tons neutros, composição com cerâmica decorativa.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Eliane</span>
+            <span class="gallery-item-tag">Revestimento</span>
+          </div>
+          <span class="gallery-item-credit">Foto: Lobo Estúdio</span>
+        </div>
+      </div>
+
+      <!-- ═══ ESPAÇOS INTEGRADOS ═══ -->
+      <div class="gallery-item wide" data-ambiente="integrados" data-marca="villagres">
+        <img src="assets/ambientes/villagres/GERAL_PROJETO_LUNAR_E_CERRADO.jpg" alt="Lunar e Cerrado — Villagres" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Lunar e Cerrado</span>
+          <span class="gallery-item-desc">Espaço integrado com grande formato do piso à parede, transição indoor-outdoor.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Villagres</span>
+            <span class="gallery-item-tag">Grande Formato</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-ambiente="integrados" data-marca="villagres">
+        <img src="assets/ambientes/villagres/Spazio.jpg" alt="Spazio — Villagres" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Spazio</span>
+          <span class="gallery-item-desc">Terrazzo de grande formato, detalhe de textura e acabamento em espaço refinado.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Villagres</span>
+            <span class="gallery-item-tag">Terrazzo</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item tall" data-ambiente="integrados" data-marca="villagres">
+        <img src="assets/ambientes/villagres/IMG_6749-editada.jpg" alt="Showroom Villagres" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Showroom</span>
+          <span class="gallery-item-desc">Porcelanato marble de grande formato com jardim interno de cactos e vegetação.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Villagres</span>
+            <span class="gallery-item-tag">Grande Formato</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-ambiente="integrados" data-marca="castelatto">
+        <img src="assets/ambientes/castelatto/crystalli-fino-arq-fernando-thunm-arch-image-5.jpg" alt="Crystalli Fino — Castelatto" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Crystalli Fino</span>
+          <span class="gallery-item-desc">Painel translúcido de cristalli em espaço integrado com iluminação natural filtrada.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Castelatto</span>
+            <span class="gallery-item-tag">Crystalli</span>
+          </div>
+          <span class="gallery-item-credit">Arq. Fernando Thunm</span>
+        </div>
+      </div>
+
+      <!-- ═══ QUARTOS ═══ -->
+      <div class="gallery-item" data-ambiente="quartos" data-marca="villagres">
+        <img src="assets/ambientes/villagres/paris-site.jpg" alt="Paris — Villagres" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Paris</span>
+          <span class="gallery-item-desc">Porcelanato efeito madeira em quarto aconchegante com luz natural filtrada.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Villagres</span>
+            <span class="gallery-item-tag">Madeira</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-ambiente="quartos" data-marca="villagres">
+        <img src="assets/ambientes/villagres/dijon-site.jpg" alt="Dijon — Villagres" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-name">Dijon</span>
+          <span class="gallery-item-desc">Porcelanato madeira carvalho com cortinas em linho e luz dourada de entardecer.</span>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-tag">Villagres</span>
+            <span class="gallery-item-tag">Madeira</span>
+          </div>
+        </div>
+      </div>
 
     </div>
 
+    <!-- Product Highlights -->
+    <div class="product-highlight reveal">
+      <div class="product-highlight-card">
+        <span class="product-highlight-eyebrow">Metais e Louças</span>
+        <h3>Lexxa e Docol para seu projeto</h3>
+        <p>Torneiras, misturadores e acessórios que completam cada ambiente com design e qualidade. Linha completa disponível no showroom.</p>
+        <a class="btn btn-light" href="https://wa.me/5519989133662?text=Oi!%20Vi%20no%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20metais%20e%20lou%C3%A7as%20Lexxa%20e%20Docol.">Ver metais disponíveis</a>
+      </div>
+      <div class="product-highlight-card">
+        <span class="product-highlight-eyebrow">Banheiras</span>
+        <h3>Banheiras Immerse</h3>
+        <p>Banheiras de imersão que transformam o banheiro em spa. Modelos freestanding e de embutir, com instalação assistida.</p>
+        <a class="btn btn-light" href="https://wa.me/5519989133662?text=Oi!%20Tenho%20interesse%20em%20banheiras%20Immerse.%20Quais%20modelos%20voc%C3%AAs%20t%C3%AAm%3F">Conhecer banheiras</a>
+      </div>
+    </div>
+
+    <div class="product-highlight reveal">
+      <div class="product-highlight-card">
+        <span class="product-highlight-eyebrow">Pisos Externos</span>
+        <h3>Pisos drenantes para áreas externas</h3>
+        <p>Pisos permeáveis que escoam a água da chuva, ideais para calçadas, jardins e estacionamentos. Sustentáveis e duráveis.</p>
+        <a class="btn btn-light" href="https://wa.me/5519989133662?text=Oi!%20Gostaria%20de%20saber%20mais%20sobre%20pisos%20drenantes%20para%20%C3%A1rea%20externa.">Ver pisos drenantes</a>
+      </div>
+      <div class="product-highlight-card">
+        <span class="product-highlight-eyebrow">Revestimentos</span>
+        <h3>Cimentícios Castelatto</h3>
+        <p>Adobe, Ecobrick, Dorica, Organic — revestimentos cimentícios artesanais para fachadas, paredes e pisos com personalidade.</p>
+        <a class="btn btn-light" href="https://wa.me/5519989133662?text=Oi!%20Gostaria%20de%20conhecer%20os%20ciment%C3%ADcios%20Castelatto%20dispon%C3%ADveis.">Ver cimentícios</a>
+      </div>
+    </div>
+
+    <!-- CTA Strip -->
     <div class="cta-strip reveal">
       <div>
         <h3>Não sabe por onde começar?</h3>
@@ -297,6 +830,7 @@
       <a class="btn btn-light" href="https://wa.me/5519989133662?text=Oi!%20Preciso%20de%20ajuda%20para%20escolher%20revestimentos%20por%20ambiente.">Falar com especialista</a>
     </div>
 
+    <!-- CTA Final -->
     <section class="cta-final">
       <h2 class="reveal">Visite o showroom e veja de perto</h2>
       <p class="reveal">Nossos showrooms em Campinas e Rio Claro têm ambientes montados para você ver, tocar e decidir.</p>
@@ -308,6 +842,7 @@
 
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="site-footer-inner">
       <div class="site-footer-grid">
@@ -319,20 +854,17 @@
           <h4>Campinas</h4>
           <ul class="footer-contact">
             <li><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Rua Coronel Quirino, 1609 — Cambuí</li>
-            <li><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>CEP 13025-002 — Campinas/SP</li>
             <li><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg><a href="tel:+551925110502">(19) 2511-0502</a></li>
             <li><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg><a href="https://instagram.com/solorevestimentos">@solorevestimentos</a></li>
-            <li><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:contato@solorevestimentos.com.br">contato@solorevestimentos.com.br</a></li>
           </ul>
         </div>
         <div>
           <h4>Rio Claro</h4>
           <ul class="footer-contact">
             <li><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Rua 14, 433 — Consolação</li>
-            <li><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>CEP 13500-130 — Rio Claro/SP</li>
-            <li><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg><a href="tel:+551935974635">(19) 3597-4635</a></li>
+            <li><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg><a href="tel:+5519999942960">(19) 9994-2960</a></li>
+            <li><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg><a href="https://wa.me/5519999942960?text=Oi!%20Vim%20pelo%20site%20da%20Solo%20Rio%20Claro." target="_blank" rel="noopener">@solorevestimentosrc</a></li>
             <li><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg><a href="https://instagram.com/solorevestimentosrc">@solorevestimentosrc</a></li>
-            <li><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:atendimento@solorevestimentos.com.br">atendimento@solorevestimentos.com.br</a></li>
           </ul>
         </div>
         <div>
@@ -347,11 +879,189 @@
     </div>
   </footer>
 
+  <!-- WhatsApp Float -->
   <a class="whatsapp-float" href="https://wa.me/5519989133662?text=Oi!%20Estou%20no%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista." aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
 
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-label="Visualizar imagem">
+    <button class="lightbox-close" aria-label="Fechar"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <button class="lightbox-nav lightbox-prev" aria-label="Anterior"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="">
+    <button class="lightbox-nav lightbox-next" aria-label="Próxima"><svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg></button>
+    <div class="lightbox-info">
+      <div class="lightbox-info-name" id="lightbox-name"></div>
+      <div class="lightbox-info-detail" id="lightbox-detail"></div>
+      <a class="lightbox-wa" id="lightbox-wa" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+        Quero saber mais
+      </a>
+    </div>
+  </div>
 
-  <script>const allReveals=document.querySelectorAll(".reveal,.reveal-left,.reveal-right,.reveal-scale");const revealObs=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add("visible"),i*80);revealObs.unobserve(e.target)}})},{threshold:0.08,rootMargin:"0px 0px -60px 0px"});allReveals.forEach(el=>revealObs.observe(el));</script>
-  <script>(function(){var t=document.querySelector('.menu-toggle'),m=document.querySelector('.mobile-menu');if(!t||!m)return;function o(){t.setAttribute('aria-expanded','true');t.setAttribute('aria-label','Fechar menu');m.setAttribute('aria-hidden','false');document.body.classList.add('menu-open')}function c(){t.setAttribute('aria-expanded','false');t.setAttribute('aria-label','Abrir menu');m.setAttribute('aria-hidden','true');document.body.classList.remove('menu-open')}t.addEventListener('click',function(){t.getAttribute('aria-expanded')==='true'?c():o()});document.querySelectorAll('.mobile-menu-nav a').forEach(function(l){l.addEventListener('click',c)});document.addEventListener('keydown',function(e){if(e.key==='Escape')c()})})();</script>
+  <script>
+  (function(){
+    // ─── Reveal animations ───
+    const reveals = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(el => obs.observe(el));
+
+    // ─── Mobile Menu ───
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.mobile-menu');
+    if (toggle && menu) {
+      function openMenu() { toggle.setAttribute('aria-expanded','true'); menu.setAttribute('aria-hidden','false'); document.body.classList.add('menu-open'); }
+      function closeMenu() { toggle.setAttribute('aria-expanded','false'); menu.setAttribute('aria-hidden','true'); document.body.classList.remove('menu-open'); }
+      toggle.addEventListener('click', () => toggle.getAttribute('aria-expanded') === 'true' ? closeMenu() : openMenu());
+      document.querySelectorAll('.mobile-menu-nav a').forEach(a => a.addEventListener('click', closeMenu));
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+    }
+
+    // ─── Filters ───
+    const grid = document.getElementById('gallery-grid');
+    const items = Array.from(grid.querySelectorAll('.gallery-item'));
+    const counter = document.getElementById('gallery-counter');
+    let activeAmbiente = 'all';
+    let activeMarca = 'all';
+
+    function applyFilters() {
+      let visible = 0;
+      items.forEach(item => {
+        const matchA = activeAmbiente === 'all' || item.dataset.ambiente === activeAmbiente;
+        const matchM = activeMarca === 'all' || item.dataset.marca === activeMarca;
+        if (matchA && matchM) {
+          item.classList.remove('hidden');
+          visible++;
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+      counter.textContent = visible + (visible === 1 ? ' ambiente' : ' ambientes');
+    }
+
+    document.getElementById('filters').addEventListener('click', (e) => {
+      const btn = e.target.closest('.filter-btn');
+      if (!btn) return;
+      const type = btn.dataset.type;
+      const value = btn.dataset.filter;
+
+      // Update active state within group
+      const group = btn.closest('.filter-group');
+      group.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      if (type === 'ambiente') activeAmbiente = value;
+      if (type === 'marca') activeMarca = value;
+
+      applyFilters();
+    });
+
+    // ─── WhatsApp helper ───
+    var WA = '5519989133662';
+    var WA_SVG = '<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>';
+
+    function waUrl(productName, brand) {
+      var msg = 'Oi! Vi no site o ambiente ' + productName + (brand ? ' da ' + brand : '') + ' e gostaria de saber mais sobre esse produto.';
+      return 'https://wa.me/' + WA + '?text=' + encodeURIComponent(msg);
+    }
+
+    // Inject WhatsApp buttons into each gallery item overlay
+    items.forEach(function(item) {
+      var nameEl = item.querySelector('.gallery-item-name');
+      var tags = item.querySelectorAll('.gallery-item-tag');
+      var overlay = item.querySelector('.gallery-item-overlay');
+      if (!nameEl || !overlay) return;
+      var pName = nameEl.textContent;
+      var brand = tags.length > 0 ? tags[0].textContent : '';
+      var link = document.createElement('a');
+      link.className = 'gallery-item-wa';
+      link.href = waUrl(pName, brand);
+      link.target = '_blank';
+      link.rel = 'noopener';
+      link.innerHTML = WA_SVG;
+      link.addEventListener('click', function(e) { e.stopPropagation(); });
+      item.appendChild(link);
+    });
+
+    // ─── Lightbox ───
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightbox-img');
+    const lbName = document.getElementById('lightbox-name');
+    const lbDetail = document.getElementById('lightbox-detail');
+    const lbWa = document.getElementById('lightbox-wa');
+    let currentIndex = -1;
+
+    function getVisibleItems() {
+      return items.filter(i => !i.classList.contains('hidden'));
+    }
+
+    function openLightbox(index) {
+      const visItems = getVisibleItems();
+      if (index < 0 || index >= visItems.length) return;
+      currentIndex = index;
+      const item = visItems[index];
+      const img = item.querySelector('img');
+      const name = item.querySelector('.gallery-item-name');
+      const credit = item.querySelector('.gallery-item-credit');
+      const tags = Array.from(item.querySelectorAll('.gallery-item-tag')).map(t => t.textContent);
+      const pName = name ? name.textContent : '';
+      const brand = tags.length > 0 ? tags[0] : '';
+
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lbName.textContent = pName;
+      lbDetail.textContent = (credit ? credit.textContent : tags.join(' · ')) || '';
+      lbWa.href = waUrl(pName, brand);
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+      setTimeout(() => { lbImg.src = ''; }, 350);
+    }
+
+    function navigate(dir) {
+      const visItems = getVisibleItems();
+      const next = currentIndex + dir;
+      if (next >= 0 && next < visItems.length) openLightbox(next);
+    }
+
+    items.forEach(item => {
+      item.addEventListener('click', (e) => {
+        if (e.target.closest('.gallery-item-wa')) return;
+        const visItems = getVisibleItems();
+        const idx = visItems.indexOf(item);
+        if (idx !== -1) openLightbox(idx);
+      });
+    });
+
+    document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+    document.querySelector('.lightbox-prev').addEventListener('click', () => navigate(-1));
+    document.querySelector('.lightbox-next').addEventListener('click', () => navigate(1));
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') navigate(-1);
+      if (e.key === 'ArrowRight') navigate(1);
+    });
+
+    // Touch swipe for lightbox
+    let touchStartX = 0;
+    lightbox.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+    lightbox.addEventListener('touchend', (e) => {
+      const diff = e.changedTouches[0].screenX - touchStartX;
+      if (Math.abs(diff) > 50) navigate(diff > 0 ? -1 : 1);
+    }, { passive: true });
+
+  })();
+  </script>
 
 </body>
 </html>

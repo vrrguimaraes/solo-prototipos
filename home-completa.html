@@ -4,7 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Solo Revestimentos — Curadoria em Revestimentos, Louças e Metais</title>
-  <meta name="description" content="Boutique de revestimentos com curadoria consultiva para arquitetos e clientes finais. Showroom em Campinas e Rio Claro.">
+  <meta name="description" content="Boutique de revestimentos com curadoria consultiva para arquitetos e clientes finais. Showroom em Campinas e Rio Claro. Mais de 70 marcas como Villagres, Eliane, Porcelanosa e Decortiles.">
+  <link rel="canonical" href="https://solorevestimentos.com.br/">
+  <link rel="icon" href="assets/favicon.ico" sizes="32x32">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Solo Revestimentos">
@@ -18,6 +21,8 @@
   <meta name="twitter:title" content="Solo Revestimentos — Curadoria em Revestimentos">
   <meta name="twitter:description" content="Boutique de revestimentos com curadoria consultiva para arquitetos e clientes finais. Showroom em Campinas e Rio Claro.">
   <meta name="twitter:image" content="https://solorevestimentos.com.br/assets/Geral-Projeto-Lunar-Cerrado.jpg">
+  <link rel="preload" as="image" href="assets/Geral-Projeto-Lunar-Cerrado.jpg" fetchpriority="high">
+  <link rel="dns-prefetch" href="https://wa.me">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -391,22 +396,22 @@
 
     .hero-copy { max-width: 740px; color: var(--solo-calcario); }
 
-    .hero-eyebrow {
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.14em;
+    .hero-tagline {
+      font-size: clamp(14px, 1.8vw, 18px);
+      font-weight: 500;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: var(--solo-argila);
-      margin-bottom: 24px;
+      color: var(--solo-ocre);
+      margin-bottom: 20px;
       opacity: 0;
       animation: fadeUp 0.8s var(--ease) 0.2s forwards;
     }
 
     .hero h1 {
-      font-size: clamp(40px, 6vw, 80px);
+      font-size: clamp(32px, 5vw, 64px);
       font-weight: 600;
-      line-height: 1.02;
-      letter-spacing: -0.02em;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
       color: var(--solo-calcario);
       opacity: 0;
       animation: fadeUp 0.8s var(--ease) 0.4s forwards;
@@ -429,25 +434,6 @@
       margin-top: 40px;
       opacity: 0;
       animation: fadeUp 0.8s var(--ease) 0.8s forwards;
-    }
-
-    .hero-micro {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-top: 32px;
-      font-size: 14px;
-      font-weight: 400;
-      line-height: 1.5;
-      color: var(--solo-calcario);
-      opacity: 0;
-      animation: fadeUp 0.8s var(--ease) 1s forwards;
-    }
-    .hero-micro::before {
-      content: "";
-      flex: 0 0 40px;
-      height: 1px;
-      background: var(--solo-calcario);
     }
 
     @keyframes fadeUp {
@@ -728,8 +714,6 @@
       }
     }
 
-    /* Villagres section removed */
-
     /* ═══════════════════════════════════════════
        CATÁLOGO — Product Categories
        ═══════════════════════════════════════════ */
@@ -1002,42 +986,6 @@
       margin-bottom: 8px;
     }
 
-    .avaliacoes-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .avaliacao-card {
-      padding: 40px 32px;
-      border: 1px solid rgba(var(--solo-basalto-rgb), 0.06);
-      background: rgba(var(--solo-basalto-rgb), 0.015);
-      transition: border-color 0.3s;
-    }
-    .avaliacao-card:hover { border-color: var(--solo-argila); }
-
-    .avaliacao-quote {
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 1.65;
-      font-style: italic;
-      color: var(--solo-basalto);
-      margin-bottom: 24px;
-    }
-
-    .avaliacao-author {
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .avaliacao-role {
-      font-size: 13px;
-      font-weight: 400;
-      color: var(--solo-basalto);
-      opacity: 0.6;
-      margin-top: 2px;
-    }
-
     /* ═══════════════════════════════════════════
        CTA FINAL
        ═══════════════════════════════════════════ */
@@ -1088,55 +1036,6 @@
     }
 
     /* ═══════════════════════════════════════════
-       FOOTER
-       ═══════════════════════════════════════════ */
-    .footer {
-      padding: 80px 0 40px;
-      background: var(--solo-basalto);
-      color: rgba(var(--solo-calcario-rgb), 0.5);
-      border-top: 1px solid rgba(var(--solo-calcario-rgb), 0.06);
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1.2fr 1.2fr;
-      gap: 40px;
-      margin-bottom: 64px;
-    }
-
-    .footer-brand-text {
-      font-size: 15px;
-      line-height: 1.6;
-      margin-top: 24px;
-      max-width: 320px;
-    }
-
-    .footer-col-title {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--solo-argila);
-      margin-bottom: 24px;
-    }
-
-    .footer-links { list-style: none; display: grid; gap: 8px; font-size: 14px; line-height: 1.5; }
-
-    .footer-links a {
-      transition: color 0.2s;
-    }
-    .footer-links a:hover { color: var(--solo-calcario); }
-
-    .footer-bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 32px;
-      border-top: 1px solid rgba(var(--solo-calcario-rgb), 0.06);
-      font-size: 13px;
-    }
-
-    /* ═══════════════════════════════════════════
        WhatsApp Floating Button
        ═══════════════════════════════════════════ */
     .whatsapp-float {
@@ -1163,11 +1062,8 @@
        ═══════════════════════════════════════════ */
     @media (max-width: 1024px) {
       .catalogo-grid { grid-template-columns: repeat(2, 1fr); }
-      .villagres { grid-template-columns: 1fr; }
-      .villagres-image img { min-height: 400px; }
       .showroom { grid-template-columns: 1fr; }
       .showroom-image { min-height: 400px; }
-      .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
     }
 
     @media (max-width: 768px) {
@@ -1175,7 +1071,8 @@
       .nav { display: none; }
 
       .hero-inner { padding-top: 80px; }
-      .hero h1 { font-size: clamp(32px, 8vw, 48px); }
+      .hero h1 { font-size: clamp(26px, 7vw, 40px); }
+      .hero-tagline { font-size: 13px; }
       .hero-actions { display: grid; grid-template-columns: 1fr; }
       .hero-actions .btn { width: 100%; }
       .btn-hero-cta { font-size: 14px; padding: 18px 32px; min-height: 56px; }
@@ -1204,7 +1101,6 @@
 
     @media (max-width: 480px) {
       .container { width: calc(100% - 40px); }
-      .villagres-lines { grid-template-columns: 1fr; }
     }
   
     /* Mobile Menu */
@@ -1242,20 +1138,38 @@
     .footer-contact svg{width:14px;height:14px;flex-shrink:0;margin-top:2px;stroke:rgba(var(--solo-calcario-rgb),0.5);fill:none;stroke-width:1.5}
 
   </style>
+  <noscript><style>.reveal,.reveal-left,.reveal-right,.reveal-scale{opacity:1!important;transform:none!important}</style></noscript>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Store",
   "name": "Solo Revestimentos",
   "legalName": "Solo Revestimentos Ltda",
-  "description": "Boutique de revestimentos com curadoria consultiva para arquitetos e clientes finais. Mais de 70 marcas representadas com parcerias estratégicas selecionadas.",
+  "description": "Boutique de revestimentos com curadoria consultiva para arquitetos e clientes finais em Campinas e Rio Claro. Mais de 70 marcas representadas incluindo Villagres, Eliane, Porcelanosa, Decortiles, Docol e Castelatto. Porcelanatos, revestimentos decorativos, louças, metais e banheiras com atendimento consultivo personalizado.",
   "url": "https://solorevestimentos.com.br",
   "telephone": "+55-19-2511-0502",
   "email": "contato@solorevestimentos.com.br",
   "image": "https://solorevestimentos.com.br/assets/Geral-Projeto-Lunar-Cerrado.jpg",
+  "logo": "https://solorevestimentos.com.br/assets/SOLO_Logotipo-H_Calcario.svg",
   "priceRange": "$$$",
   "foundingDate": "2015-06-01",
   "taxID": "22.569.893/0001-23",
+  "areaServed": [
+    {"@type": "City", "name": "Campinas", "sameAs": "https://pt.wikipedia.org/wiki/Campinas"},
+    {"@type": "City", "name": "Rio Claro", "sameAs": "https://pt.wikipedia.org/wiki/Rio_Claro_(S%C3%A3o_Paulo)"},
+    {"@type": "State", "name": "São Paulo"}
+  ],
+  "geo": [
+    {"@type": "GeoCoordinates", "latitude": -22.8963, "longitude": -47.0616},
+    {"@type": "GeoCoordinates", "latitude": -22.4149, "longitude": -47.5651}
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "bestRating": "5",
+    "ratingCount": "200",
+    "reviewCount": "200"
+  },
   "address": [
     {
       "@type": "PostalAddress",
@@ -1263,7 +1177,8 @@
       "addressLocality": "Campinas",
       "addressRegion": "SP",
       "postalCode": "13025-002",
-      "addressCountry": "BR"
+      "addressCountry": "BR",
+      "name": "Solo Revestimentos Campinas — Cambuí"
     },
     {
       "@type": "PostalAddress",
@@ -1271,7 +1186,8 @@
       "addressLocality": "Rio Claro",
       "addressRegion": "SP",
       "postalCode": "13500-130",
-      "addressCountry": "BR"
+      "addressCountry": "BR",
+      "name": "Solo Revestimentos Rio Claro — Consolação"
     }
   ],
   "openingHoursSpecification": [
@@ -1288,9 +1204,113 @@
       "closes": "13:00"
     }
   ],
+  "brand": [
+    {"@type": "Brand", "name": "Villagres"},
+    {"@type": "Brand", "name": "Eliane"},
+    {"@type": "Brand", "name": "Porcelanosa"},
+    {"@type": "Brand", "name": "Decortiles"},
+    {"@type": "Brand", "name": "Docol"},
+    {"@type": "Brand", "name": "Castelatto"},
+    {"@type": "Brand", "name": "Tarkett"},
+    {"@type": "Brand", "name": "Santa Luzia"},
+    {"@type": "Brand", "name": "Colormix"},
+    {"@type": "Brand", "name": "Adamá"},
+    {"@type": "Brand", "name": "Scirocco"},
+    {"@type": "Brand", "name": "Immersi"},
+    {"@type": "Brand", "name": "Atlas"},
+    {"@type": "Brand", "name": "Konkre"},
+    {"@type": "Brand", "name": "Gauss"},
+    {"@type": "Brand", "name": "Manufatti"},
+    {"@type": "Brand", "name": "Vivarte"},
+    {"@type": "Brand", "name": "Lexxa"}
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Catálogo Solo Revestimentos",
+    "itemListElement": [
+      {"@type": "OfferCatalog", "name": "Porcelanatos e grandes formatos"},
+      {"@type": "OfferCatalog", "name": "Revestimentos decorativos"},
+      {"@type": "OfferCatalog", "name": "Louças e banheiras"},
+      {"@type": "OfferCatalog", "name": "Metais e acessórios"},
+      {"@type": "OfferCatalog", "name": "Pisos vinílicos e laminados"},
+      {"@type": "OfferCatalog", "name": "Mosaicos e pastilhas"}
+    ]
+  },
+  "knowsAbout": [
+    "revestimentos cerâmicos",
+    "porcelanatos",
+    "especificação de materiais para arquitetos",
+    "grandes formatos e lastras",
+    "louças e metais sanitários",
+    "pisos vinílicos",
+    "mosaicos e pastilhas",
+    "consultoria de revestimentos"
+  ],
   "sameAs": [
     "https://instagram.com/solorevestimentos",
     "https://instagram.com/solorevestimentosrc"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Quais marcas de revestimentos a Solo Revestimentos trabalha?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Solo Revestimentos trabalha com mais de 70 marcas nacionais e importadas, incluindo Villagres, Eliane, Porcelanosa, Decortiles, Docol, Castelatto, Tarkett, Santa Luzia, Adamá, Gauss, Manufatti, entre outras. A curadoria prioriza qualidade, tendência e aplicabilidade técnica."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "A Solo Revestimentos atende arquitetos e especificadores?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. A Solo tem atendimento dedicado para arquitetos e designers, com amostras sob demanda, catálogos e fichas técnicas, suporte técnico para especificação e um showroom preparado para receber clientes de profissionais. São mais de 10 anos apoiando especificadores na região de Campinas e Rio Claro."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Onde ficam os showrooms da Solo Revestimentos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Solo tem dois showrooms: em Campinas, na Rua Coronel Quirino, 1609 — Cambuí (telefone 19 2511-0502), e em Rio Claro, na Rua 14, 433 — Consolação (telefone 19 3597-4635). O horário de funcionamento é de segunda a sexta das 9h às 18h e sábado das 9h às 13h."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "A Solo Revestimentos vende louças, metais e banheiras?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. Além de revestimentos e porcelanatos, a Solo oferece uma linha completa de louças, metais e banheiras com marcas como Lexxa, Docol, Deca, Immersi, Doka, Konkre e Kromma. O atendimento integra revestimentos e complementos para acabamento completo do projeto."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como agendar uma visita ao showroom da Solo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Você pode agendar uma visita pelo WhatsApp oficial da Solo Revestimentos no número (19) 98913-3662, ou ligar diretamente para a unidade desejada: Campinas (19) 2511-0502 ou Rio Claro (19) 3597-4635. O atendimento é consultivo e personalizado."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://solorevestimentos.com.br/"
+    }
   ]
 }
 </script>
@@ -1308,7 +1328,9 @@
       <a href="#ambientes">Ambientes</a>
       <a href="#catalogo">Catálogo</a>
       <a href="#arquitetos">Arquitetos</a>
+      <a href="referencias.html">Referências</a>
       <a href="#showroom">Showroom</a>
+      <a href="grandes-formatos.html">Grandes Formatos</a>
       <a href="https://wa.me/5519989133662?text=Oi!%20Estou%20no%20site%20e%20gostaria%20de%20agendar%20uma%20visita." class="header-cta">Agendar Visita</a>
     </nav>
     <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
@@ -1340,9 +1362,9 @@
       <div class="hero-fade"></div>
       <div class="hero-inner">
         <div class="hero-copy">
-          <p class="hero-eyebrow">Curadoria de revestimentos · Campinas e Rio Claro</p>
-          <h1>Material certo.<br>Projeto inteiro.</h1>
-          <p class="hero-sub">Boutique de revestimentos com curadoria consultiva — para arquitetos especificando projetos e para quem está construindo ou reformando a própria casa com critério.</p>
+          <p class="hero-tagline">Material certo. Projeto inteiro.</p>
+          <h1>Curadoria de revestimentos para arquitetos e seu projeto — Campinas e Rio Claro</h1>
+          <p class="hero-sub">Boutique de revestimentos com curadoria consultiva — para arquitetos especificando projetos e para quem está construindo ou reformando com critério.</p>
           <div class="hero-actions">
             <a class="btn btn-hero-cta" href="https://wa.me/5519989133662?text=Olá!%20Vim%20pelo%20site%20da%20Solo%20e%20gostaria%20de%20conversar.">Falar com especialista</a>
             <a class="btn btn-ghost" href="catalogo.html">Ver curadoria</a>
@@ -1363,7 +1385,6 @@
           <span class="btn btn-light">Conhecer benefícios</span>
         </div>
       </a>
-      <!-- TODO: destino final do caminho cliente final ainda em definição. Provisoriamente apontando para ambientes.html. Pode mudar para /sua-casa/ ou /catalogo/ no futuro. -->
       <a class="seg-card reveal-scale" href="ambientes.html">
         <div class="seg-card-bg" style="background-image:url('assets/castelatto/castelatto-living-casacor-arq-nando-nunes-foto-edgard-cesar.jpg')"></div>
         <div class="seg-card-overlay"></div>
@@ -1415,35 +1436,35 @@
         <p class="section-sub reveal">Explore projetos reais e descubra como cada revestimento transforma um espaço.</p>
         <div class="ambientes-grid stagger">
           <a class="ambiente-card" href="ambientes.html#salas">
-            <img src="assets/villagres/Living-Off-White.jpg" alt="Salas e Jantar" loading="lazy">
+            <img src="assets/villagres/Living-Off-White.jpg" alt="Revestimento porcelanato em sala de estar e jantar — ambiente com piso claro Solo Revestimentos" loading="lazy">
             <div class="ambiente-card-overlay">
               <span class="ambiente-card-name">Salas e Jantar</span>
               <span class="ambiente-card-count">Pisos, paredes e grandes formatos</span>
             </div>
           </a>
           <a class="ambiente-card" href="ambientes.html#fachadas-externas">
-            <img src="assets/villagres/Hannover.jpg" alt="Fachadas e Externas" loading="lazy">
+            <img src="assets/villagres/Hannover.jpg" alt="Revestimento para fachada e área externa — porcelanato Hannover Villagres" loading="lazy">
             <div class="ambiente-card-overlay">
               <span class="ambiente-card-name">Fachadas e Externas</span>
               <span class="ambiente-card-count">Revestimentos externos e pisos</span>
             </div>
           </a>
           <a class="ambiente-card" href="ambientes.html#varandas">
-            <img src="assets/villagres/Pantheon.jpg" alt="Varandas e Áreas de Lazer" loading="lazy">
+            <img src="assets/villagres/Pantheon.jpg" alt="Porcelanato em varanda e área de lazer — piso externo Pantheon Villagres" loading="lazy">
             <div class="ambiente-card-overlay">
               <span class="ambiente-card-name">Varandas e Lazer</span>
               <span class="ambiente-card-count">Pisos internos e externos integrados</span>
             </div>
           </a>
           <a class="ambiente-card" href="ambientes.html#salas">
-            <img src="assets/villagres/Chronos-Petra.jpg" alt="Espaços Integrados" loading="lazy">
+            <img src="assets/villagres/Chronos-Petra.jpg" alt="Porcelanato Chronos Petra em espaço integrado — sala e jantar com vista" loading="lazy">
             <div class="ambiente-card-overlay">
               <span class="ambiente-card-name">Espaços Integrados</span>
               <span class="ambiente-card-count">Living e jantar com vista</span>
             </div>
           </a>
           <a class="ambiente-card" href="ambientes.html#paredes-decorativas">
-            <img src="assets/villagres/Montserrat-Terra.jpg" alt="Estar e Lounge" loading="lazy">
+            <img src="assets/villagres/Montserrat-Terra.jpg" alt="Revestimento pedra natural Montserrat Terra em parede de estar e lounge" loading="lazy">
             <div class="ambiente-card-overlay">
               <span class="ambiente-card-name">Estar e Lounge</span>
               <span class="ambiente-card-count">Revestimento pedra natural em parede e piso</span>
@@ -1463,50 +1484,49 @@
           <div>
             <p class="eyebrow reveal">Marcas Parceiras</p>
             <h2 class="section-heading reveal">Curadoria de marcas nacionais e importadas</h2>
+            <p class="section-sub reveal">Mais de 70 marcas selecionadas por qualidade, tendência e aplicabilidade técnica.</p>
           </div>
         </div>
         <div class="marcas-grid reveal stagger">
-          <img class="marca-logo" src="assets/marcas/Villagres.png" alt="Villagres">
-          <img class="marca-logo" src="assets/marcas/Decortiles.png" alt="Decortiles">
-          <img class="marca-logo" src="assets/marcas/Porcelosa.png" alt="Porcelanosa">
-          <img class="marca-logo" src="assets/marcas/Eliane.png" alt="Eliane">
-          <img class="marca-logo" src="assets/marcas/Docol.png" alt="Docol">
-          <img class="marca-logo" src="assets/marcas/Tarkett.png" alt="Tarkett">
-          <img class="marca-logo" src="assets/marcas/Gauss.png" alt="Gauss">
-          <img class="marca-logo" src="assets/marcas/Santa Luzia.png" alt="Santa Luzia">
-          <img class="marca-logo" src="assets/marcas/Colormix.png" alt="Colormix">
-          <img class="marca-logo" src="assets/marcas/Adamá.png" alt="Adamá">
-          <img class="marca-logo" src="assets/marcas/scirocco.png" alt="Scirocco">
-          <img class="marca-logo" src="assets/marcas/Immersi.png" alt="Immersi">
-          <img class="marca-logo" src="assets/marcas/Atlas.png" alt="Atlas">
-          <img class="marca-logo" src="assets/marcas/Konkre.png" alt="Konkre">
-          <img class="marca-logo" src="assets/marcas/Asper.png" alt="Asper">
-          <img class="marca-logo" src="assets/marcas/Gart.png" alt="Gart">
-          <img class="marca-logo" src="assets/marcas/Arquitech.png" alt="Arquitech">
-          <img class="marca-logo" src="assets/marcas/Manufati.png" alt="Manufatti">
-          <img class="marca-logo" src="assets/marcas/Castelatto.png" alt="Castelatto">
-          <img class="marca-logo" src="assets/marcas/Vivarte.png" alt="Vivarte">
-          <img class="marca-logo" src="assets/marcas/Nina Martineli.png" alt="Nina Martinelli">
-          <img class="marca-logo" src="assets/marcas/Lepri.png" alt="Lepri">
-          <img class="marca-logo" src="assets/marcas/Styllo.png" alt="Styllo">
-          <img class="marca-logo" src="assets/marcas/Eleve.png" alt="Eleve">
-          <img class="marca-logo" src="assets/marcas/Teto Vinilico.png" alt="Teto Vinílico">
-          <img class="marca-logo" src="assets/marcas/ceramfix-logo-png_seeklogo-401688.png" alt="Ceramfix">
-          <img class="marca-logo" src="assets/marcas/Glass Mosaic.png" alt="Glass Mosaic">
-          <img class="marca-logo" src="assets/marcas/Aiello.png" alt="Aiello">
-          <img class="marca-logo" src="assets/marcas/Diore.png" alt="Diore">
-          <img class="marca-logo" src="assets/marcas/Calblock.png" alt="Calblock">
-          <img class="marca-logo" src="assets/marcas/Studio Vetro.png" alt="Studio Vetro">
-          <img class="marca-logo" src="assets/marcas/Lexxa.png" alt="Lexxa">
-          <img class="marca-logo" src="assets/marcas/Baepi.png" alt="Baepi">
-          <img class="marca-logo" src="assets/marcas/decorcril.png" alt="Decorcril">
-          <img class="marca-logo" src="assets/marcas/Ceral.png" alt="Ceral">
-          <img class="marca-logo" src="assets/marcas/Drenaltec.png" alt="Drenaltec">
+          <img class="marca-logo" loading="lazy" src="assets/marcas/Villagres.png" alt="Villagres">
+          <img class="marca-logo" loading="lazy" src="assets/marcas/Decortiles.png" alt="Decortiles">
+          <img class="marca-logo" loading="lazy" src="assets/marcas/Porcelosa.png" alt="Porcelanosa">
+          <img class="marca-logo" loading="lazy" src="assets/marcas/Eliane.png" alt="Eliane">
+          <img class="marca-logo" loading="lazy" src="assets/marcas/Docol.png" alt="Docol">
+          <img class="marca-logo" loading="lazy" src="assets/marcas/Tarkett.png" alt="Tarkett">
+          <img class="marca-logo" loading="lazy" src="assets/marcas/Gauss.png" alt="Gauss">
+          <img class="marca-logo" loading="lazy" src="assets/marcas/Santa Luzia.png" alt="Santa Luzia">
+          <img class="marca-logo" loading="lazy" src="assets/marcas/Colormix.png" alt="Colormix">
+          <img class="marca-logo" loading="lazy" src="assets/marcas/Adamá.png" alt="Adamá">
+          <img class="marca-logo" loading="lazy" src="assets/marcas/scirocco.png" alt="Scirocco">
+          <img class="marca-logo" loading="lazy" src="assets/marcas/Immersi.png" alt="Immersi">
+          <img class="marca-logo" loading="lazy" src="assets/marcas/Atlas.png" alt="Atlas">
+          <img class="marca-logo" loading="lazy" src="assets/marcas/Konkre.png" alt="Konkre">
+          <img class="marca-logo" loading="lazy" src="assets/marcas/Asper.png" alt="Asper">
+          <img class="marca-logo" loading="lazy" src="assets/marcas/Gart.png" alt="Gart">
+          <img class="marca-logo" loading="lazy" src="assets/marcas/Arquitech.png" alt="Arquitech">
+          <img class="marca-logo" loading="lazy" src="assets/marcas/Manufati.png" alt="Manufatti">
+          <img class="marca-logo" loading="lazy" src="assets/marcas/Castelatto.png" alt="Castelatto">
+          <img class="marca-logo" loading="lazy" src="assets/marcas/Vivarte.png" alt="Vivarte">
+          <img class="marca-logo" loading="lazy" src="assets/marcas/Nina Martineli.png" alt="Nina Martinelli">
+          <img class="marca-logo" loading="lazy" src="assets/marcas/Lepri.png" alt="Lepri">
+          <img class="marca-logo" loading="lazy" src="assets/marcas/Styllo.png" alt="Styllo">
+          <img class="marca-logo" loading="lazy" src="assets/marcas/Eleve.png" alt="Eleve">
+          <img class="marca-logo" loading="lazy" src="assets/marcas/Teto Vinilico.png" alt="Teto Vinílico">
+          <img class="marca-logo" loading="lazy" src="assets/marcas/ceramfix-logo-png_seeklogo-401688.png" alt="Ceramfix">
+          <img class="marca-logo" loading="lazy" src="assets/marcas/Glass Mosaic.png" alt="Glass Mosaic">
+          <img class="marca-logo" loading="lazy" src="assets/marcas/Aiello.png" alt="Aiello">
+          <img class="marca-logo" loading="lazy" src="assets/marcas/Diore.png" alt="Diore">
+          <img class="marca-logo" loading="lazy" src="assets/marcas/Calblock.png" alt="Calblock">
+          <img class="marca-logo" loading="lazy" src="assets/marcas/Studio Vetro.png" alt="Studio Vetro">
+          <img class="marca-logo" loading="lazy" src="assets/marcas/Lexxa.png" alt="Lexxa">
+          <img class="marca-logo" loading="lazy" src="assets/marcas/Baepi.png" alt="Baepi">
+          <img class="marca-logo" loading="lazy" src="assets/marcas/decorcril.png" alt="Decorcril">
+          <img class="marca-logo" loading="lazy" src="assets/marcas/Ceral.png" alt="Ceral">
+          <img class="marca-logo" loading="lazy" src="assets/marcas/Drenaltec.png" alt="Drenaltec">
         </div>
       </div>
     </section>
-
-    <!-- Villagres section removed -->
 
     <!-- ═══ CATÁLOGO ═══ -->
     <section class="catalogo" id="catalogo">
@@ -1522,7 +1542,7 @@
         <div class="catalogo-grid stagger">
           <a class="catalogo-card reveal hover-tilt" href="catalogo.html?cat=porcelanato">
             <div class="catalogo-card-img">
-              <img src="assets/villagres/Chronos-Petra.jpg" alt="Porcelanatos" loading="lazy">
+              <img src="assets/villagres/Chronos-Petra.jpg" alt="Porcelanatos e grandes formatos — catálogo Solo Revestimentos" loading="lazy">
             </div>
             <div class="catalogo-card-info">
               <p class="catalogo-card-name">Porcelanatos</p>
@@ -1534,11 +1554,35 @@
           </a>
           <a class="catalogo-card reveal hover-tilt" href="catalogo.html?cat=revestimento">
             <div class="catalogo-card-img">
-              <img src="assets/villagres/Paraíso-ambiente2.jpg" alt="Revestimentos Decorativos" loading="lazy">
+              <img src="assets/villagres/Paraíso-ambiente2.jpg" alt="Revestimentos decorativos de parede — mais de 70 marcas na Solo Revestimentos" loading="lazy">
             </div>
             <div class="catalogo-card-info">
               <p class="catalogo-card-name">Revestimentos</p>
               <p class="catalogo-card-count">+70 marcas com parcerias selecionadas</p>
+            </div>
+            <span class="catalogo-card-arrow">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E7DED2" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+          <a class="catalogo-card reveal hover-tilt" href="catalogo.html?cat=piso">
+            <div class="catalogo-card-img">
+              <img src="assets/villagres/Living-Silver.jpg" alt="Pisos vinílicos e laminados — Tarkett e outras marcas na Solo Revestimentos" loading="lazy">
+            </div>
+            <div class="catalogo-card-info">
+              <p class="catalogo-card-name">Pisos</p>
+              <p class="catalogo-card-count">Vinílicos, laminados e SPC</p>
+            </div>
+            <span class="catalogo-card-arrow">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E7DED2" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+          <a class="catalogo-card reveal hover-tilt" href="catalogo.html?cat=mosaico">
+            <div class="catalogo-card-img">
+              <img src="assets/atlas/Safi-OMD16117_20x20_1-6-785x615.jpg" alt="Mosaicos e pastilhas — Atlas, Glass Mosaic e mais na Solo Revestimentos" loading="lazy">
+            </div>
+            <div class="catalogo-card-info">
+              <p class="catalogo-card-name">Mosaicos e Pastilhas</p>
+              <p class="catalogo-card-count">Atlas, Glass Mosaic e mais</p>
             </div>
             <span class="catalogo-card-arrow">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E7DED2" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -1638,12 +1682,12 @@
     <section class="avaliacoes" id="avaliacoes">
       <div class="container">
         <div class="avaliacoes-header">
-          <div class="avaliacoes-stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <div class="avaliacoes-stars" role="img" aria-label="Avaliação 4.9 de 5 estrelas no Google">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
           <p class="avaliacoes-score reveal">4.9 no Google</p>
           <h2 class="section-heading reveal">O que dizem nossos clientes</h2>
@@ -1732,7 +1776,6 @@
   <script>
     /* ─── Header scroll effect ─── */
     const header = document.getElementById('header');
-    let lastScroll = 0;
     window.addEventListener('scroll', () => {
       header.classList.toggle('scrolled', window.scrollY > 60);
     }, { passive: true });
