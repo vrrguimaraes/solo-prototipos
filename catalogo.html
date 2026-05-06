@@ -442,6 +442,9 @@
       .product-modal-name { font-size: 22px; }
     }
 
+    .cat-highlight{animation:catHighlight 2.4s var(--ease) forwards}
+    @keyframes catHighlight{0%,30%{box-shadow:0 0 0 4px var(--solo-terracota)}100%{box-shadow:0 0 0 0 transparent}}
+
   </style>
   <noscript><style>.reveal,.reveal-left,.reveal-right,.reveal-scale{opacity:1!important;transform:none!important;animation:none!important}</style></noscript>
 </head>
@@ -498,11 +501,11 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
       </button>
       <div class="filter-dropdown">
-        <button class="filter-option" onclick="selectFilter(this)">Porcelanatos</button>
-        <button class="filter-option" onclick="selectFilter(this)">Revestimentos Decorativos</button>
+        <button id="porcelanato" class="filter-option" onclick="selectFilter(this)">Porcelanatos</button>
+        <button id="revestimento" class="filter-option" onclick="selectFilter(this)">Revestimentos Decorativos</button>
         <button class="filter-option" onclick="selectFilter(this)">Cimentícios</button>
         <button class="filter-option" onclick="selectFilter(this)">Cerâmica Rústica</button>
-        <button class="filter-option" onclick="selectFilter(this)">Pastilhas</button>
+        <button id="mosaico" class="filter-option" onclick="selectFilter(this)">Pastilhas</button>
         <button class="filter-option" onclick="selectFilter(this)">Pedra Natural</button>
         <button class="filter-option" onclick="selectFilter(this)">Vinílicos</button>
         <button class="filter-option" onclick="selectFilter(this)">Louças e Cubas</button>
@@ -609,7 +612,7 @@
   </div>
 
   <!-- Product Grid -->
-  <div class="catalog-content">
+  <div id="piso" class="catalog-content">
     <div class="product-grid stagger">
 
       <a class="product-card reveal hover-tilt" href="#">
@@ -953,5 +956,21 @@
     </div>
   </footer>
 
+  <script>
+    (function(){
+      var cat = new URLSearchParams(location.search).get('cat');
+      if (!cat) return;
+      var target = document.getElementById(cat);
+      if (!target) return;
+      if (target.classList.contains('filter-option')) {
+        selectFilter(target);
+      }
+      var grid = document.querySelector('.catalog-content');
+      requestAnimationFrame(function(){
+        grid.scrollIntoView({behavior:'smooth',block:'start'});
+        grid.classList.add('cat-highlight');
+      });
+    })();
+  </script>
 </body>
 </html>
