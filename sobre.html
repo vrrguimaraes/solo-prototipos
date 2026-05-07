@@ -469,5 +469,57 @@
     }, { passive: true });
     // TODO: submit_form — disparar quando form for adicionado ao protótipo
   </script>
+  <!-- Schema.org LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://solorevestimentos.com.br/#campinas",
+        "name": "Solo Revestimentos — Campinas",
+        "image": "https://solorevestimentos.com.br/og/showroom-campinas.jpg",
+        "telephone": "+551925110502",
+        "email": "contato@solorevestimentos.com.br",
+        "url": "https://solorevestimentos.com.br/showroom/",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Rua Coronel Quirino, 1609",
+          "addressLocality": "Campinas",
+          "addressRegion": "SP",
+          "postalCode": "13025-002",
+          "addressCountry": "BR"
+        },
+        "openingHoursSpecification": [
+          { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00" },
+          { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "13:00" }
+        ],
+        "sameAs": ["https://instagram.com/solorevestimentos"]
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://solorevestimentos.com.br/#rioclaro",
+        "name": "Solo Revestimentos — Rio Claro",
+        "image": "https://solorevestimentos.com.br/og/showroom-rioclaro.jpg",
+        "telephone": "+551935974635",
+        "email": "atendimento@solorevestimentos.com.br",
+        "url": "https://solorevestimentos.com.br/showroom/",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Rua 14, 433",
+          "addressLocality": "Rio Claro",
+          "addressRegion": "SP",
+          "postalCode": "13500-130",
+          "addressCountry": "BR"
+        },
+        "openingHoursSpecification": [
+          { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00" },
+          { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "13:00" }
+        ],
+        "sameAs": ["https://instagram.com/solorevestimentosrc"]
+      }
+    ]
+  }
+  </script>
 </body>
 </html>
