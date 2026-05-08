@@ -292,7 +292,8 @@
     }
     @media (max-width: 768px) {
       .header nav { display: none; }
-      .filter-bar { top: 72px; overflow-x: auto; flex-wrap: nowrap; }
+      .filter-bar { flex-wrap: wrap; overflow-x: visible; gap: 8px; }
+      .filter-bar > * { flex-shrink: 0; }
       .filter-count { display: none; }
       .product-grid { grid-template-columns: 1fr; gap: 32px; }
       .cta-strip { flex-direction: column; gap: 24px; text-align: center; padding: 32px 24px; }
