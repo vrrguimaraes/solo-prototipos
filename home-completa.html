@@ -22,6 +22,7 @@
   <meta name="twitter:title" content="Solo Revestimentos — Curadoria de revestimentos para arquitetura">
   <meta name="twitter:description" content="Curadoria assertiva de porcelanatos, revestimentos e mosaicos para arquitetos e clientes finais em Campinas e Rio Claro. Showroom + visita.">
   <meta name="twitter:image" content="https://solorevestimentos.com.br/assets/Geral-Projeto-Lunar-Cerrado.jpg">
+  <link rel="preload" as="image" href="assets/Geral-Projeto-Lunar-Cerrado.webp" type="image/webp" fetchpriority="high">
   <link rel="preload" as="image" href="assets/Geral-Projeto-Lunar-Cerrado.jpg" fetchpriority="high">
   <link rel="dns-prefetch" href="https://wa.me">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -363,7 +364,8 @@
 
     .hero-bg {
       position: absolute; inset: 0;
-      background: url("assets/Geral-Projeto-Lunar-Cerrado.jpg") center/cover no-repeat;
+      background: url("assets/Geral-Projeto-Lunar-Cerrado.webp") center/cover no-repeat;
+      background: image-set(url("assets/Geral-Projeto-Lunar-Cerrado.webp") type("image/webp"), url("assets/Geral-Projeto-Lunar-Cerrado.jpg") type("image/jpeg")) center/cover no-repeat;
     }
 
     .hero-overlay {
@@ -1413,7 +1415,7 @@
         <h2 class="section-heading reveal">Mais do que vender revestimentos, a Solo orienta escolhas.</h2>
         <div class="why-grid">
           <div class="why-image reveal-left">
-            <img src="assets/villagres/Spazio.jpg" alt="Showroom Solo Revestimentos — ambiente com revestimentos de alto padrão" loading="lazy">
+            <picture><source srcset="assets/villagres/Spazio.webp" type="image/webp"><img src="assets/villagres/Spazio.jpg" alt="Showroom Solo Revestimentos — ambiente com revestimentos de alto padrão" loading="lazy" width="1600" height="900"></picture>
           </div>
           <div class="why-pillars">
             <div class="pillar reveal">
@@ -1445,35 +1447,35 @@
         <p class="section-sub reveal">Explore projetos reais e descubra como cada revestimento transforma um espaço.</p>
         <div class="ambientes-grid stagger">
           <a class="ambiente-card" href="ambientes.html#salas">
-            <img src="assets/villagres/Living-Off-White.jpg" alt="Revestimento porcelanato em sala de estar e jantar — ambiente com piso claro Solo Revestimentos" loading="lazy">
+            <picture><source srcset="assets/villagres/Living-Off-White.webp" type="image/webp"><img src="assets/villagres/Living-Off-White.jpg" alt="Revestimento porcelanato em sala de estar e jantar — ambiente com piso claro Solo Revestimentos" loading="lazy" width="1600" height="900"></picture>
             <div class="ambiente-card-overlay">
               <span class="ambiente-card-name">Salas e Jantar</span>
               <span class="ambiente-card-count">Pisos, paredes e grandes formatos</span>
             </div>
           </a>
           <a class="ambiente-card" href="ambientes.html#fachadas-externas">
-            <img src="assets/villagres/Hannover.jpg" alt="Revestimento para fachada e área externa — porcelanato Hannover Villagres" loading="lazy">
+            <picture><source srcset="assets/villagres/Hannover.webp" type="image/webp"><img src="assets/villagres/Hannover.jpg" alt="Revestimento para fachada e área externa — porcelanato Hannover Villagres" loading="lazy" width="1600" height="900"></picture>
             <div class="ambiente-card-overlay">
               <span class="ambiente-card-name">Fachadas e Externas</span>
               <span class="ambiente-card-count">Revestimentos externos e pisos</span>
             </div>
           </a>
           <a class="ambiente-card" href="ambientes.html#varandas">
-            <img src="assets/villagres/Pantheon.jpg" alt="Porcelanato em varanda e área de lazer — piso externo Pantheon Villagres" loading="lazy">
+            <picture><source srcset="assets/villagres/Pantheon.webp" type="image/webp"><img src="assets/villagres/Pantheon.jpg" alt="Porcelanato em varanda e área de lazer — piso externo Pantheon Villagres" loading="lazy" width="1600" height="900"></picture>
             <div class="ambiente-card-overlay">
               <span class="ambiente-card-name">Varandas e Lazer</span>
               <span class="ambiente-card-count">Pisos internos e externos integrados</span>
             </div>
           </a>
           <a class="ambiente-card" href="ambientes.html#salas">
-            <img src="assets/villagres/Chronos-Petra.jpg" alt="Porcelanato Chronos Petra em espaço integrado — sala e jantar com vista" loading="lazy">
+            <picture><source srcset="assets/villagres/Chronos-Petra.webp" type="image/webp"><img src="assets/villagres/Chronos-Petra.jpg" alt="Porcelanato Chronos Petra em espaço integrado — sala e jantar com vista" loading="lazy" width="1600" height="900"></picture>
             <div class="ambiente-card-overlay">
               <span class="ambiente-card-name">Espaços Integrados</span>
               <span class="ambiente-card-count">Living e jantar com vista</span>
             </div>
           </a>
           <a class="ambiente-card" href="ambientes.html#paredes-decorativas">
-            <img src="assets/villagres/Montserrat-Terra.jpg" alt="Revestimento pedra natural Montserrat Terra em parede de estar e lounge" loading="lazy">
+            <picture><source srcset="assets/villagres/Montserrat-Terra.webp" type="image/webp"><img src="assets/villagres/Montserrat-Terra.jpg" alt="Revestimento pedra natural Montserrat Terra em parede de estar e lounge" loading="lazy" width="1600" height="900"></picture>
             <div class="ambiente-card-overlay">
               <span class="ambiente-card-name">Estar e Lounge</span>
               <span class="ambiente-card-count">Revestimento pedra natural em parede e piso</span>
@@ -1497,42 +1499,42 @@
           </div>
         </div>
         <div class="marcas-grid reveal stagger">
-          <img class="marca-logo" loading="lazy" src="assets/marcas/Villagres.png" alt="Villagres">
-          <img class="marca-logo" loading="lazy" src="assets/marcas/Decortiles.png" alt="Decortiles">
-          <img class="marca-logo" loading="lazy" src="assets/marcas/Porcelosa.png" alt="Porcelanosa">
-          <img class="marca-logo" loading="lazy" src="assets/marcas/Eliane.png" alt="Eliane">
-          <img class="marca-logo" loading="lazy" src="assets/marcas/Docol.png" alt="Docol">
-          <img class="marca-logo" loading="lazy" src="assets/marcas/Tarkett.png" alt="Tarkett">
-          <img class="marca-logo" loading="lazy" src="assets/marcas/Gauss.png" alt="Gauss">
+          <picture><source srcset="assets/marcas/Villagres.webp" type="image/webp"><img class="marca-logo" loading="lazy" src="assets/marcas/Villagres.png" alt="Villagres" width="1600" height="1000"></picture>
+          <picture><source srcset="assets/marcas/Decortiles.webp" type="image/webp"><img class="marca-logo" loading="lazy" src="assets/marcas/Decortiles.png" alt="Decortiles" width="1200" height="504"></picture>
+          <picture><source srcset="assets/marcas/Porcelosa.webp" type="image/webp"><img class="marca-logo" loading="lazy" src="assets/marcas/Porcelosa.png" alt="Porcelanosa" width="1600" height="1000"></picture>
+          <picture><source srcset="assets/marcas/Eliane.webp" type="image/webp"><img class="marca-logo" loading="lazy" src="assets/marcas/Eliane.png" alt="Eliane" width="1600" height="1000"></picture>
+          <picture><source srcset="assets/marcas/Docol.webp" type="image/webp"><img class="marca-logo" loading="lazy" src="assets/marcas/Docol.png" alt="Docol" width="1600" height="1000"></picture>
+          <picture><source srcset="assets/marcas/Tarkett.webp" type="image/webp"><img class="marca-logo" loading="lazy" src="assets/marcas/Tarkett.png" alt="Tarkett" width="1600" height="1000"></picture>
+          <picture><source srcset="assets/marcas/Gauss.webp" type="image/webp"><img class="marca-logo" loading="lazy" src="assets/marcas/Gauss.png" alt="Gauss" width="1600" height="1000"></picture>
           <img class="marca-logo" loading="lazy" src="assets/marcas/Santa Luzia.png" alt="Santa Luzia">
-          <img class="marca-logo" loading="lazy" src="assets/marcas/Colormix.png" alt="Colormix">
-          <img class="marca-logo" loading="lazy" src="assets/marcas/Adamá.png" alt="Adamá">
-          <img class="marca-logo" loading="lazy" src="assets/marcas/scirocco.png" alt="Scirocco">
-          <img class="marca-logo" loading="lazy" src="assets/marcas/Immersi.png" alt="Immersi">
-          <img class="marca-logo" loading="lazy" src="assets/marcas/Atlas.png" alt="Atlas">
-          <img class="marca-logo" loading="lazy" src="assets/marcas/Konkre.png" alt="Konkre">
-          <img class="marca-logo" loading="lazy" src="assets/marcas/Asper.png" alt="Asper">
-          <img class="marca-logo" loading="lazy" src="assets/marcas/Gart.png" alt="Gart">
-          <img class="marca-logo" loading="lazy" src="assets/marcas/Arquitech.png" alt="Arquitech">
-          <img class="marca-logo" loading="lazy" src="assets/marcas/Manufati.png" alt="Manufatti">
-          <img class="marca-logo" loading="lazy" src="assets/marcas/Castelatto.png" alt="Castelatto">
-          <img class="marca-logo" loading="lazy" src="assets/marcas/Vivarte.png" alt="Vivarte">
+          <picture><source srcset="assets/marcas/Colormix.webp" type="image/webp"><img class="marca-logo" loading="lazy" src="assets/marcas/Colormix.png" alt="Colormix" width="1600" height="1000"></picture>
+          <picture><source srcset="assets/marcas/Adamá.webp" type="image/webp"><img class="marca-logo" loading="lazy" src="assets/marcas/Adamá.png" alt="Adamá" width="1600" height="1000"></picture>
+          <picture><source srcset="assets/marcas/scirocco.webp" type="image/webp"><img class="marca-logo" loading="lazy" src="assets/marcas/scirocco.png" alt="Scirocco" width="486" height="104"></picture>
+          <picture><source srcset="assets/marcas/Immersi.webp" type="image/webp"><img class="marca-logo" loading="lazy" src="assets/marcas/Immersi.png" alt="Immersi" width="1600" height="1000"></picture>
+          <picture><source srcset="assets/marcas/Atlas.webp" type="image/webp"><img class="marca-logo" loading="lazy" src="assets/marcas/Atlas.png" alt="Atlas" width="1600" height="1000"></picture>
+          <picture><source srcset="assets/marcas/Konkre.webp" type="image/webp"><img class="marca-logo" loading="lazy" src="assets/marcas/Konkre.png" alt="Konkre" width="1600" height="1000"></picture>
+          <picture><source srcset="assets/marcas/Asper.webp" type="image/webp"><img class="marca-logo" loading="lazy" src="assets/marcas/Asper.png" alt="Asper" width="1600" height="1000"></picture>
+          <picture><source srcset="assets/marcas/Gart.webp" type="image/webp"><img class="marca-logo" loading="lazy" src="assets/marcas/Gart.png" alt="Gart" width="1600" height="1000"></picture>
+          <picture><source srcset="assets/marcas/Arquitech.webp" type="image/webp"><img class="marca-logo" loading="lazy" src="assets/marcas/Arquitech.png" alt="Arquitech" width="1600" height="1000"></picture>
+          <picture><source srcset="assets/marcas/Manufati.webp" type="image/webp"><img class="marca-logo" loading="lazy" src="assets/marcas/Manufati.png" alt="Manufatti" width="1600" height="1000"></picture>
+          <picture><source srcset="assets/marcas/Castelatto.webp" type="image/webp"><img class="marca-logo" loading="lazy" src="assets/marcas/Castelatto.png" alt="Castelatto" width="1600" height="1000"></picture>
+          <picture><source srcset="assets/marcas/Vivarte.webp" type="image/webp"><img class="marca-logo" loading="lazy" src="assets/marcas/Vivarte.png" alt="Vivarte" width="1600" height="1000"></picture>
           <img class="marca-logo" loading="lazy" src="assets/marcas/Nina Martineli.png" alt="Nina Martinelli">
-          <img class="marca-logo" loading="lazy" src="assets/marcas/Lepri.png" alt="Lepri">
-          <img class="marca-logo" loading="lazy" src="assets/marcas/Styllo.png" alt="Styllo">
-          <img class="marca-logo" loading="lazy" src="assets/marcas/Eleve.png" alt="Eleve">
+          <picture><source srcset="assets/marcas/Lepri.webp" type="image/webp"><img class="marca-logo" loading="lazy" src="assets/marcas/Lepri.png" alt="Lepri" width="1600" height="1000"></picture>
+          <picture><source srcset="assets/marcas/Styllo.webp" type="image/webp"><img class="marca-logo" loading="lazy" src="assets/marcas/Styllo.png" alt="Styllo" width="1600" height="1000"></picture>
+          <picture><source srcset="assets/marcas/Eleve.webp" type="image/webp"><img class="marca-logo" loading="lazy" src="assets/marcas/Eleve.png" alt="Eleve" width="1600" height="1000"></picture>
           <img class="marca-logo" loading="lazy" src="assets/marcas/Teto Vinilico.png" alt="Teto Vinílico">
-          <img class="marca-logo" loading="lazy" src="assets/marcas/ceramfix-logo-png_seeklogo-401688.png" alt="Ceramfix">
+          <picture><source srcset="assets/marcas/ceramfix-logo-png_seeklogo-401688.webp" type="image/webp"><img class="marca-logo" loading="lazy" src="assets/marcas/ceramfix-logo-png_seeklogo-401688.png" alt="Ceramfix" width="320" height="320"></picture>
           <img class="marca-logo" loading="lazy" src="assets/marcas/Glass Mosaic.png" alt="Glass Mosaic">
-          <img class="marca-logo" loading="lazy" src="assets/marcas/Aiello.png" alt="Aiello">
-          <img class="marca-logo" loading="lazy" src="assets/marcas/Diore.png" alt="Diore">
-          <img class="marca-logo" loading="lazy" src="assets/marcas/Calblock.png" alt="Calblock">
+          <picture><source srcset="assets/marcas/Aiello.webp" type="image/webp"><img class="marca-logo" loading="lazy" src="assets/marcas/Aiello.png" alt="Aiello" width="1600" height="1000"></picture>
+          <picture><source srcset="assets/marcas/Diore.webp" type="image/webp"><img class="marca-logo" loading="lazy" src="assets/marcas/Diore.png" alt="Diore" width="451" height="409"></picture>
+          <picture><source srcset="assets/marcas/Calblock.webp" type="image/webp"><img class="marca-logo" loading="lazy" src="assets/marcas/Calblock.png" alt="Calblock" width="1600" height="1000"></picture>
           <img class="marca-logo" loading="lazy" src="assets/marcas/Studio Vetro.png" alt="Studio Vetro">
-          <img class="marca-logo" loading="lazy" src="assets/marcas/Lexxa.png" alt="Lexxa">
-          <img class="marca-logo" loading="lazy" src="assets/marcas/Baepi.png" alt="Baepi">
-          <img class="marca-logo" loading="lazy" src="assets/marcas/decorcril.png" alt="Decorcril">
-          <img class="marca-logo" loading="lazy" src="assets/marcas/Ceral.png" alt="Ceral">
-          <img class="marca-logo" loading="lazy" src="assets/marcas/Drenaltec.png" alt="Drenaltec">
+          <picture><source srcset="assets/marcas/Lexxa.webp" type="image/webp"><img class="marca-logo" loading="lazy" src="assets/marcas/Lexxa.png" alt="Lexxa" width="1600" height="1000"></picture>
+          <picture><source srcset="assets/marcas/Baepi.webp" type="image/webp"><img class="marca-logo" loading="lazy" src="assets/marcas/Baepi.png" alt="Baepi" width="1600" height="1000"></picture>
+          <picture><source srcset="assets/marcas/decorcril.webp" type="image/webp"><img class="marca-logo" loading="lazy" src="assets/marcas/decorcril.png" alt="Decorcril" width="225" height="225"></picture>
+          <picture><source srcset="assets/marcas/Ceral.webp" type="image/webp"><img class="marca-logo" loading="lazy" src="assets/marcas/Ceral.png" alt="Ceral" width="1600" height="1000"></picture>
+          <picture><source srcset="assets/marcas/Drenaltec.webp" type="image/webp"><img class="marca-logo" loading="lazy" src="assets/marcas/Drenaltec.png" alt="Drenaltec" width="1600" height="1000"></picture>
         </div>
       </div>
     </section>
@@ -1551,7 +1553,7 @@
         <div class="catalogo-grid stagger">
           <a class="catalogo-card reveal hover-tilt" href="catalogo.html?cat=porcelanato">
             <div class="catalogo-card-img">
-              <img src="assets/villagres/Chronos-Petra.jpg" alt="Porcelanatos e grandes formatos — catálogo Solo Revestimentos" loading="lazy">
+              <picture><source srcset="assets/villagres/Chronos-Petra.webp" type="image/webp"><img src="assets/villagres/Chronos-Petra.jpg" alt="Porcelanatos e grandes formatos — catálogo Solo Revestimentos" loading="lazy" width="1600" height="900"></picture>
             </div>
             <div class="catalogo-card-info">
               <p class="catalogo-card-name">Porcelanatos</p>
@@ -1563,7 +1565,7 @@
           </a>
           <a class="catalogo-card reveal hover-tilt" href="catalogo.html?cat=revestimento">
             <div class="catalogo-card-img">
-              <img src="assets/villagres/Paraíso-ambiente2.jpg" alt="Revestimentos decorativos de parede — mais de 70 marcas na Solo Revestimentos" loading="lazy">
+              <picture><source srcset="assets/villagres/Paraíso-ambiente2.webp" type="image/webp"><img src="assets/villagres/Paraíso-ambiente2.jpg" alt="Revestimentos decorativos de parede — mais de 70 marcas na Solo Revestimentos" loading="lazy"></picture>
             </div>
             <div class="catalogo-card-info">
               <p class="catalogo-card-name">Revestimentos</p>
@@ -1575,7 +1577,7 @@
           </a>
           <a class="catalogo-card reveal hover-tilt" href="catalogo.html?cat=piso">
             <div class="catalogo-card-img">
-              <img src="assets/villagres/Living-Silver.jpg" alt="Pisos vinílicos e laminados — Tarkett e outras marcas na Solo Revestimentos" loading="lazy">
+              <picture><source srcset="assets/villagres/Living-Silver.webp" type="image/webp"><img src="assets/villagres/Living-Silver.jpg" alt="Pisos vinílicos e laminados — Tarkett e outras marcas na Solo Revestimentos" loading="lazy" width="1600" height="900"></picture>
             </div>
             <div class="catalogo-card-info">
               <p class="catalogo-card-name">Pisos</p>
@@ -1587,7 +1589,7 @@
           </a>
           <a class="catalogo-card reveal hover-tilt" href="catalogo.html?cat=mosaico">
             <div class="catalogo-card-img">
-              <img src="assets/atlas/Safi-OMD16117_20x20_1-6-785x615.jpg" alt="Mosaicos e pastilhas — Atlas, Glass Mosaic e mais na Solo Revestimentos" loading="lazy">
+              <picture><source srcset="assets/atlas/Safi-OMD16117_20x20_1-6-785x615.webp" type="image/webp"><img src="assets/atlas/Safi-OMD16117_20x20_1-6-785x615.jpg" alt="Mosaicos e pastilhas — Atlas, Glass Mosaic e mais na Solo Revestimentos" loading="lazy" width="785" height="615"></picture>
             </div>
             <div class="catalogo-card-info">
               <p class="catalogo-card-name">Mosaicos e Pastilhas</p>
@@ -1654,7 +1656,7 @@
             </div>
           </div>
           <div class="arquitetos-image reveal-right">
-            <img src="assets/villagres/Maytrea-ambiente.jpg" alt="Ambiente de showroom com revestimentos premium" loading="lazy">
+            <picture><source srcset="assets/villagres/Maytrea-ambiente.webp" type="image/webp"><img src="assets/villagres/Maytrea-ambiente.jpg" alt="Ambiente de showroom com revestimentos premium" loading="lazy" width="1600" height="900"></picture>
             <div class="arquitetos-image-badge">
               <strong>10+</strong>
               anos apoiando arquitetos e especificadores na região de Campinas
@@ -1683,7 +1685,7 @@
         <a data-event="contact_us" class="btn btn-light" href="https://wa.me/5519989133662?text=Oi!%20Gostaria%20de%20agendar%20uma%20visita%20ao%20showroom.">Agendar visita</a>
       </div>
       <div class="showroom-image">
-        <img src="assets/loja/Fachada-Solo.jpg" alt="Fachada do Showroom Solo Revestimentos" loading="lazy">
+        <picture><source srcset="assets/loja/Fachada-Solo.webp" type="image/webp"><img src="assets/loja/Fachada-Solo.jpg" alt="Fachada do Showroom Solo Revestimentos" loading="lazy" width="1200" height="900"></picture>
       </div>
     </section>
 
