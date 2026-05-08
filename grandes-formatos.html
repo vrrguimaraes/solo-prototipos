@@ -40,7 +40,7 @@
 
     /* Full-bleed Hero — dramatic premium */
     .gf-hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;text-align:center}
-    .gf-hero-bg{position:absolute;inset:0;background:url("assets/villagres/CHRONUS_02.webp") center/cover no-repeat;background:image-set(url("assets/villagres/CHRONUS_02.webp") type("image/webp"),url("assets/villagres/CHRONUS_02.jpg") type("image/jpeg")) center/cover no-repeat}
+    .gf-hero-bg{position:absolute;inset:0;overflow:hidden}.gf-hero-bg img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
     .gf-hero-overlay{position:absolute;inset:0;background:rgba(var(--solo-basalto-rgb),0.55)}
     .gf-hero-content{position:relative;z-index:2;color:var(--solo-calcario);max-width:800px;padding:0 24px}
     .gf-hero-eyebrow{font-size:14px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--solo-ocre);margin-bottom:32px}
@@ -177,7 +177,7 @@
   <main>
 
     <section class="gf-hero">
-      <div class="gf-hero-bg"></div>
+      <div class="gf-hero-bg"><picture><source srcset="assets/villagres/CHRONUS_02.webp" type="image/webp"><img src="assets/villagres/CHRONUS_02.jpg" alt="" width="1600" height="1066" fetchpriority="high"></picture></div>
       <div class="gf-hero-overlay"></div>
       <div class="gf-hero-content">
         <p class="gf-hero-eyebrow">Grandes Formatos</p>
