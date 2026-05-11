@@ -479,10 +479,10 @@
     .seg-card-bg {
       position: absolute;
       inset: 0;
-      background-size: cover;
-      background-position: center;
+      overflow: hidden;
       transition: transform 0.7s var(--ease);
     }
+    .seg-card-bg img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; }
     .seg-card:hover .seg-card-bg { transform: scale(1.04); }
 
     .seg-card-overlay {
@@ -1410,7 +1410,7 @@
     <!-- ═══ SEGMENTAÇÃO DUPLA ═══ -->
     <section class="segmentacao reveal">
       <a class="seg-card reveal-scale" href="arquitetos.html">
-        <div class="seg-card-bg" style="background-image:url('assets/villagres/Maytrea-ambiente.jpg')"></div>
+        <div class="seg-card-bg"><picture><source srcset="assets/villagres/Maytrea-ambiente.webp" type="image/webp"><img src="assets/villagres/Maytrea-ambiente.jpg" alt="" loading="lazy" width="1600" height="900"></picture></div>
         <div class="seg-card-overlay"></div>
         <div class="seg-card-content">
           <p class="seg-card-eyebrow">Para profissionais</p>
@@ -1420,7 +1420,7 @@
         </div>
       </a>
       <a class="seg-card reveal-scale" href="ambientes.html">
-        <div class="seg-card-bg" style="background-image:url('assets/castelatto/castelatto-living-casacor-arq-nando-nunes-foto-edgard-cesar.jpg')"></div>
+        <div class="seg-card-bg"><picture><source srcset="assets/castelatto/castelatto-living-casacor-arq-nando-nunes-foto-edgard-cesar.webp" type="image/webp"><img src="assets/castelatto/castelatto-living-casacor-arq-nando-nunes-foto-edgard-cesar.jpg" alt="" loading="lazy" width="1600" height="1066"></picture></div>
         <div class="seg-card-overlay"></div>
         <div class="seg-card-content">
           <p class="seg-card-eyebrow">Para sua casa</p>
