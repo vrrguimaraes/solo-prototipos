@@ -1115,6 +1115,10 @@
     @media (max-width: 480px) {
       .container { width: calc(100% - 40px); }
     }
+
+    @media (max-width: 430px) {
+      .hero h1 { font-size: clamp(22px, 6vw, 34px); }
+    }
   
     /* Mobile Menu */
     .menu-toggle{display:none;width:44px;height:44px;background:transparent;border:none;cursor:pointer;padding:10px;flex-direction:column;justify-content:space-between;align-items:center;z-index:110}
@@ -1438,7 +1442,12 @@
         <h2 class="section-heading reveal">Mais do que vender revestimentos, a Solo orienta escolhas.</h2>
         <div class="why-grid">
           <div class="why-image reveal-left">
-            <picture><source srcset="assets/villagres/Spazio.webp" type="image/webp"><img src="assets/villagres/Spazio.jpg" alt="Showroom Solo Revestimentos — ambiente com revestimentos de alto padrão" loading="lazy" width="1600" height="900"></picture>
+            <picture>
+              <source srcset="assets/villagres/Spazio-800.webp 800w, assets/villagres/Spazio.webp 1600w"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      type="image/webp">
+              <img src="assets/villagres/Spazio.jpg" alt="Showroom Solo Revestimentos — ambiente com revestimentos de alto padrão" loading="lazy" width="1600" height="900">
+            </picture>
           </div>
           <div class="why-pillars">
             <div class="pillar reveal">
@@ -1470,35 +1479,60 @@
         <p class="section-sub reveal">Explore projetos reais e descubra como cada revestimento transforma um espaço.</p>
         <div class="ambientes-grid stagger">
           <a class="ambiente-card" href="ambientes.html#salas">
-            <picture><source srcset="assets/villagres/Living-Off-White.webp" type="image/webp"><img src="assets/villagres/Living-Off-White.jpg" alt="Revestimento porcelanato em sala de estar e jantar — ambiente com piso claro Solo Revestimentos" loading="lazy" width="1600" height="900"></picture>
+            <picture>
+              <source srcset="assets/villagres/Living-Off-White-800.webp 800w, assets/villagres/Living-Off-White.webp 1600w"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      type="image/webp">
+              <img src="assets/villagres/Living-Off-White.jpg" alt="Revestimento porcelanato em sala de estar e jantar — ambiente com piso claro Solo Revestimentos" loading="lazy" width="1600" height="900">
+            </picture>
             <div class="ambiente-card-overlay">
               <span class="ambiente-card-name">Salas e Jantar</span>
               <span class="ambiente-card-count">Pisos, paredes e grandes formatos</span>
             </div>
           </a>
           <a class="ambiente-card" href="ambientes.html#fachadas-externas">
-            <picture><source srcset="assets/villagres/Hannover.webp" type="image/webp"><img src="assets/villagres/Hannover.jpg" alt="Revestimento para fachada e área externa — porcelanato Hannover Villagres" loading="lazy" width="1600" height="900"></picture>
+            <picture>
+              <source srcset="assets/villagres/Hannover-800.webp 800w, assets/villagres/Hannover.webp 1600w"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      type="image/webp">
+              <img src="assets/villagres/Hannover.jpg" alt="Revestimento para fachada e área externa — porcelanato Hannover Villagres" loading="lazy" width="1600" height="900">
+            </picture>
             <div class="ambiente-card-overlay">
               <span class="ambiente-card-name">Fachadas e Externas</span>
               <span class="ambiente-card-count">Revestimentos externos e pisos</span>
             </div>
           </a>
           <a class="ambiente-card" href="ambientes.html#varandas">
-            <picture><source srcset="assets/villagres/Pantheon.webp" type="image/webp"><img src="assets/villagres/Pantheon.jpg" alt="Porcelanato em varanda e área de lazer — piso externo Pantheon Villagres" loading="lazy" width="1600" height="900"></picture>
+            <picture>
+              <source srcset="assets/villagres/Pantheon-800.webp 800w, assets/villagres/Pantheon.webp 1600w"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      type="image/webp">
+              <img src="assets/villagres/Pantheon.jpg" alt="Porcelanato em varanda e área de lazer — piso externo Pantheon Villagres" loading="lazy" width="1600" height="900">
+            </picture>
             <div class="ambiente-card-overlay">
               <span class="ambiente-card-name">Varandas e Lazer</span>
               <span class="ambiente-card-count">Pisos internos e externos integrados</span>
             </div>
           </a>
           <a class="ambiente-card" href="ambientes.html#salas">
-            <picture><source srcset="assets/villagres/Chronos-Petra.webp" type="image/webp"><img src="assets/villagres/Chronos-Petra.jpg" alt="Porcelanato Chronos Petra em espaço integrado — sala e jantar com vista" loading="lazy" width="1600" height="900"></picture>
+            <picture>
+              <source srcset="assets/villagres/Chronos-Petra-800.webp 800w, assets/villagres/Chronos-Petra.webp 1600w"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      type="image/webp">
+              <img src="assets/villagres/Chronos-Petra.jpg" alt="Porcelanato Chronos Petra em espaço integrado — sala e jantar com vista" loading="lazy" width="1600" height="900">
+            </picture>
             <div class="ambiente-card-overlay">
               <span class="ambiente-card-name">Espaços Integrados</span>
               <span class="ambiente-card-count">Living e jantar com vista</span>
             </div>
           </a>
           <a class="ambiente-card" href="ambientes.html#paredes-decorativas">
-            <picture><source srcset="assets/villagres/Montserrat-Terra.webp" type="image/webp"><img src="assets/villagres/Montserrat-Terra.jpg" alt="Revestimento pedra natural Montserrat Terra em parede de estar e lounge" loading="lazy" width="1600" height="900"></picture>
+            <picture>
+              <source srcset="assets/villagres/Montserrat-Terra-800.webp 800w, assets/villagres/Montserrat-Terra.webp 1600w"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      type="image/webp">
+              <img src="assets/villagres/Montserrat-Terra.jpg" alt="Revestimento pedra natural Montserrat Terra em parede de estar e lounge" loading="lazy" width="1600" height="900">
+            </picture>
             <div class="ambiente-card-overlay">
               <span class="ambiente-card-name">Estar e Lounge</span>
               <span class="ambiente-card-count">Revestimento pedra natural em parede e piso</span>
@@ -1679,7 +1713,12 @@
             </div>
           </div>
           <div class="arquitetos-image reveal-right">
-            <picture><source srcset="assets/villagres/Maytrea-ambiente.webp" type="image/webp"><img src="assets/villagres/Maytrea-ambiente.jpg" alt="Ambiente de showroom com revestimentos premium" loading="lazy" width="1600" height="900"></picture>
+            <picture>
+              <source srcset="assets/villagres/Maytrea-ambiente-800.webp 800w, assets/villagres/Maytrea-ambiente.webp 1600w"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      type="image/webp">
+              <img src="assets/villagres/Maytrea-ambiente.jpg" alt="Ambiente de showroom com revestimentos premium" loading="lazy" width="1600" height="900">
+            </picture>
             <div class="arquitetos-image-badge">
               <strong>10+</strong>
               anos apoiando arquitetos e especificadores na região de Campinas
